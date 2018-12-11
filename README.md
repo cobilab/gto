@@ -3,7 +3,7 @@
 <p align="center"><img src="imgs/logo.png"
 alt="GTO" height="200" border="0" /></p>
 
-<p align="center">GTO: a genomics toolkit</p>
+<p align="center"><b>GTO: a genomics toolkit</b></p>
 <br>
 
 ## INSTALL
