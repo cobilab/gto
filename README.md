@@ -7,7 +7,7 @@ alt="GTO" height="100" border="0" /></p>
 <br>
 
 ## INSTALL
-Get GOOSE and make the project, using:
+Get GTO and make the project, using:
 ```bash
 git clone https://github.com/pratas/GTO.git
 cd GTO/src/
