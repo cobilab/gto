@@ -1,0 +1,45 @@
+\chapter{Introduction}
+\label{intro}
+
+Recent advances in {DNA} sequencing have revolutionized the field of genomics,
+making it possible for research groups to generate large amounts of sequenced
+data, very rapidly and at substantially lower cost. Its storage have been
+made using specific file formats, such as FASTQ and FASTA. Therefore, its
+analysis and manipulation is crucial \cite{Buermans-2014a}. Several
+frameworks for analysis and manipulation emerged, namely \texttt{GALAXY}
+\cite{Giardine-2005a}, \texttt{GATK} \cite{DePristo-2011a}, \texttt{HTSeq}
+\cite{Anders-2014a}, \texttt{MEGA} \cite{Kumar-2016a}, among others.
+In the majority, these frameworks require licenses and do not provide
+a low level access to the information, since they are commonly approached
+by scripting or interfaces.
+
+We describe \texttt{GOOSE}, a (free) novel toolkit for analyzing and manipulating
+FASTA-FASTQ formats and sequences (DNA, amino acids, text), with many 
+complementary tools. The toolkit is for Linux-based systems, built for fast 
+processing. \texttt{GOOSE} supports pipes for easy integration. It includes tools 
+for information display, randomizing, edition, conversion, extraction, 
+searching, calculation and visualization. \texttt{GOOSE} is prepared to deal with
+very large datasets, typically in the scale Gigabytes or Terabytes. 
+
+The toolkit is a command line version, using the prefix ``goose-'' 
+followed by the suffix with the respective name of the program.
+\texttt{GOOSE} is implemented in \texttt{C} language and it is available, 
+under GPLv3, at:
+\begin{lstlisting}
+https://pratas.github.io/goose
+\end{lstlisting}
+
+\section{Installation}
+
+For \texttt{GOOSE} installation, run:
+\begin{lstlisting}
+git clone https://github.com/pratas/goose.git
+cd goose/src/
+make
+\end{lstlisting}
+
+\section{License}
+
+The license is \textbf{GPLv3}. In resume, everyone is permitted to copy and 
+distribute verbatim copies of this license document, but changing it is not 
+allowed. For details on the license, consult: \url{http://www.gnu.org/licenses/gpl-3.0.html}.

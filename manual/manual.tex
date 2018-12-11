@@ -1,0 +1,99 @@
+%\documentclass{report}
+%\documentclass[11pt,twoside,a4paper]{report}
+\documentclass[11pt,journal,compsoc]{report}[1]
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\usepackage{lipsum}
+\usepackage{epstopdf}
+\usepackage{amsthm}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[T1]{fontenc}
+\usepackage[draft]{hyperref}
+\usepackage{graphicx}
+\usepackage[cmex10]{amsmath}
+%\usepackage{algorithmic}
+%\usepackage{algorithm}
+\usepackage{array}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+\usepackage{eqparbox}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{graphicx}
+%\usepackage{caption}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+
+
+\usepackage[framemethod=tikz]{mdframed}
+
+\definecolor{light-gray}{gray}{0.95}
+\lstset{basicstyle=\scriptsize\upshape\ttfamily,tabsize=4,numbersep=10pt,language=Matlab,keywordstyle=\color{black}\bfseries}
+
+\surroundwithmdframed[
+  hidealllines=true,
+  backgroundcolor=light-gray,
+  innerleftmargin=10pt,
+  innertopmargin=0pt,
+  innerbottommargin=0pt]{lstlisting}                  
+
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\newcommand*{\argminl}{\argmin\limits}
+\newcommand*{\argmaxl}{\argmax\limits}
+\newcommand{\Am}{\mathrm{A}}
+\newcommand{\Cm}{\mathrm{C}}
+\newcommand{\Gm}{\mathrm{G}}
+\newcommand{\Tm}{\mathrm{T}}
+
+\AtBeginDocument{\renewcommand{\abstractname}{}}
+\renewcommand{\abstractname}{} 
+\renewcommand{\baselinestretch}{1.3}
+
+\begin{document}
+
+\title{
+%
+\begin{figure}[h!]
+\centerline{\includegraphics[width=5cm]{../imgs/logo.pdf}}
+\label{logo}
+\end{figure}
+~\\
+\textbf{A toolkit for DNA sequence\\ analysis and manipulation}
+~\\~\\
+\large
+J. R. Almeida (joao.rafael.almeida@ua.pt)\\
+D. Pratas (pratas@ua.pt)\\
+A. J. Pinho (ap@ua.pt)
+~\\~\\
+\small
+IEETA/DETI, University of Aveiro, Portugal\\
+~\\
+Version 1.1
+}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\def \FASTQToolsPath {sections/FASTQ_tools}
+
+\input{sections/introduction.tex}
+\input{\FASTQToolsPath/FASTQ_tools.tex}
+
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{IEEEtran}
+\bibliography{defs,SPLc,SPLj,Cod,Bio,Book,Anc,Patho}
+
+\end{document}
