@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/pratas/GTO.svg?branch=master)](https://travis-ci.org/pratas/GTO)
 [![License: MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 <p align="center"><img src="imgs/logo.png"
