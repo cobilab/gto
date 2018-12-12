@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/pratas/GTO.svg?branch=master)](https://travis-ci.org/pratas/GTO)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/53c822299f6841fbb7680d065be5b796)](https://www.codacy.com/app/pratas/GTO?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pratas/GTO&amp;utm_campaign=Badge_Grade)
 [![License: MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 <p align="center"><img src="imgs/logo.png"
