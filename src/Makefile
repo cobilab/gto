@@ -17,9 +17,9 @@ OBJS     	= argparse.o buffer.o mem.o misc.o
 all:
 	$(MAKE) progs
 progs: $(PROGS)
-$(BIN)/GTO: GTO.c $(DEPS) $(OBJS) 
+$(BIN)/gto: GTO.c $(DEPS) $(OBJS) 
 	$(CC) $(CFLAGS) -o $(BIN)/gto GTO.c $(OBJS) $(LIBS)
-$(BIN)/GTO-Fastq2Fasta: Fastq2Fasta.c $(DEPS) $(OBJS)
+$(BIN)/gto_fastq_to_fasta: FastqToFasta.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_to_fasta FastqToFasta.c $(OBJS) $(LIBS)
 
 argparse.o: argparse.c argparse.h $(DEPS)
