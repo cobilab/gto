@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 <p align="center"><img src="imgs/logo.png"
-alt="GTO" height="100" border="0" /></p>
+alt="GTO" height="90" border="0" /></p>
 
 <p align="center"><b>The genomics toolkit</b></p>
 <br>
