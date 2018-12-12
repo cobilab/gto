@@ -1,0 +1,60 @@
+\section{Program goose-newlineonnewx}
+The \texttt{goose-newlineonnewx} splits different rows with a new empty row.\\
+For help type:
+\begin{lstlisting}
+./goose-newlineonnewx -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{goose-newlineonnewx} program needs two streams for the computation, namely the input and output standard. The input stream is a matrix file format with 3 columns.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./goose-newlineonnewx [options] [[--] args]
+   or: ./goose-newlineonnewx [options]
+
+It splits different rows with a new empty row.
+
+    -h, --help    show this help message and exit
+
+Basic options
+    < input       Input file with 3 column matrix format (stdin)
+    > output      Output file with 3 column matrix format (stdout)
+
+Example: ./goose-newlineonnewx < input > output
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+1	2	2
+1	2	2
+4	4	1
+10	12	2
+15	15	1
+45	47	3
+45	47	3
+45	47	3
+45	47	3
+55	55	1
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{goose-newlineonnewx} program is a 3 column matrix, with an empty line between different rows.\\
+An example, for the input, is:
+\begin{lstlisting}
+1.000000	2.000000	2.000000
+1.000000	2.000000	2.000000
+
+4.000000	4.000000	1.000000
+
+10.000000	12.000000	2.000000
+
+15.000000	15.000000	1.000000
+
+45.000000	47.000000	3.000000
+45.000000	47.000000	3.000000
+45.000000	47.000000	3.000000
+45.000000	47.000000	3.000000
+
+55.000000	55.000000	1.000000
+\end{lstlisting}

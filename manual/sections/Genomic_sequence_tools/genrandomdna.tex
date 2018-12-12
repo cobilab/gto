@@ -1,0 +1,42 @@
+\section{Program goose-genrandomdna}
+The \texttt{goose-genrandomdna} generates a synthetic DNA.\\
+For help type:
+\begin{lstlisting}
+./goose-genrandomdna -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{goose-genrandomdna} program needs one stream for the computation,
+namely the output standard.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./goose-genrandomdna [options] [[--] args]
+   or: ./goose-genrandomdna [options]
+
+It generates a synthetic DNA.
+
+    -h, --help                show this help message and exit
+
+Basic options
+    > output.seq              Output synthetic DNA sequence (stdout)
+    -s, --seed=<int>          Starting point to the random generator (Default 0)
+    -n, --nSymbols=<int>      Number of symbols generated (Default 100)
+    -f, --frequency=<str>     The frequency of each base. It should be represented 
+    						  in the following format: <fa,fc,fg,ft>.
+
+Example: ./goose-genrandomdna > output.seq
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{goose-genrandomdna} program is a sequence group file whith the synthetic DNA.\\
+Using the seed value as 1 and the number of symbols as 400, an example of an execution, is: 
+\begin{lstlisting}
+TCTTTACTCGCGCGTTGGAGAAATACAATAGTGCGGCTCTGTCTCCTTATGAAGTCAACAATTTCGCTGGGACTTGCGGC
+TCTTTACTCGCGCGTTGGAGAAATACAATAGTGCGGCTCTGTCTCCTTATGAAGTCAACAATTTCGCTGGGACTTGCGGC
+GACTTCATCGTGGTCTCTGTCATTATGCGCTCCAACGCATAACTTTGCGCCAGAAGATAGATAGAATGGTGTAAGAAACT
+GTAATATATATAATGAACTTCGGCGAGTCTGTGGAGTTTTTGTTGCATTAGAGAGCCAAGAGGTCGGACGTCCTCACGTA
+GCCCGAGACGGGCAGGGCGATGGCGACTGAACGGGCTCCATATCACTTTGAGCTTTTATGCTTTCGACTCCTCCAGGAGC
+TGAACAACCTTGTTCCCGGCAAAGCCCACTGCGTCATGGAGCTCACGGTCTACATTCATGACTGACTAACCGTAAACTGC
+\end{lstlisting}

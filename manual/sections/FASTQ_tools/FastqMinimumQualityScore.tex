@@ -1,0 +1,56 @@
+\section{Program gto\char`_fastq\char`_minimum\char`_quality\char`_score}
+The \texttt{gto\char`_fastq\char`_minimum\char`_quality\char`_score} discards reads with average quality-score below of the defined.\\
+For help type:
+\begin{lstlisting}
+./gto_fastq_minimum_quality_score -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_fastq\char`_minimum\char`_quality\char`_score} program needs two streams for the computation,
+namely the input and output standard. The input stream is a FASTQ file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_fastq_minimum_quality_score [options] [[--] args]
+   or: ./gto_fastq_minimum_quality_score [options]
+
+It discards reads with average quality-score below value.
+
+    -h, --help            show this help message and exit
+
+Basic options
+    -m, --min=<int>       The minimum average quality-score (Value 25 or 30 is commonly used)
+    < input.fastq         Input FASTQ file format (stdin)
+    > output              Output read information (stdout)
+
+Example: ./gto_fastq_minimum_quality_score < input.fastq > output
+
+Output example :
+<FASTQ non-filtered reads>
+Total reads    : value
+Filtered reads : value
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGGTTTTCAAATAGA
++SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
+@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+GTTCAGGGATACGACGTTTGTATTTTAAGAATCTGAAGCAGAAGTCGATGATAATACGCGTCGTTTTATCAT
++SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+54599<>77977==6=?I6IBI::33344235521677999>>><<<@@A@BBCDGGBFFH>IIIII-I)8I
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_fastq\char`_minimum\char`_quality\char`_score} program is a set of all the filtered FASTQ reads, followed by the execution report.\\
+Using the minimum average value as 30, an example for this input, is:
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGGTTTTCAAATAGA
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
+Total reads    : 2
+Filtered reads : 1
+\end{lstlisting}

@@ -1,0 +1,77 @@
+\section{Program \texttt{gto\char`_amino\char`_acid\char`_to\char`_group}}
+
+The \texttt{gto\char`_amino\char`_acid\char`_to\char`_group} converts an amino acid sequence to a group 
+sequence.\\
+For help type:
+\begin{lstlisting}
+./gto_amino_acid_to_group -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_amino\char`_acid\char`_to\char`_group} program needs two streams for the computation,
+namely the input and output standard. The input stream is an amino acid sequence.
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_amino_acid_to_group [options] [[--] args]
+   or: ./gto_amino_acid_to_group [options]
+
+It converts a amino acid sequence to a group sequence.
+
+    -h, --help            show this help message and exit
+
+Basic options
+    < input.prot          Input amino acid sequence file (stdin)
+    > output.group        Output group sequence file (stdout)
+
+Example: ./gto_amino_acid_to_group < input.prot > output.group
+Table:
+Prot	Group
+R	P
+H	P  Amino acids with electric charged side chains: POSITIVE
+K	P
+-	-
+D	N
+E	N  Amino acids with electric charged side chains: NEGATIVE
+-	-
+S	U
+T	U
+N	U  Amino acids with electric UNCHARGED side chains
+Q	U
+-	-
+C	S
+U	S
+G	S  Special cases
+P	S
+-	-
+A	H
+V	H
+I	H
+L	H
+M	H  Amino acids with hydrophobic side chains
+F	H
+Y	H
+W	H
+-	-
+*	*  Others
+X	X  Unknown
+\end{lstlisting}
+It can be used to group amino acids by properties, such as electric charge (positive
+and negative), uncharged side chains, hydrophobic side chains and special cases.
+An example on such an input file is:
+\begin{lstlisting}
+IPFLLKKQFALADKLVLSKLRQLLGGRIKMMPCGGAKLEPAIGLFFHAIGINIKLGYGMTETTATVSCWHDFQFNPNSIG
+TLMPKAEVKIGENNEILVRGGMVMKGYYKKPEETAQAFTEDGFLKTGDAGEFDEQGNLFITDRIKELMKTSNGKYIAPQY
+IESKIGKDKFIEQIAIIADAKKYVSALIVPCFDSLEEYAKQLNIKYHDRLELLKNSDILKMFE
+\end{lstlisting}
+
+\subsection*{Output}
+
+The output of the \texttt{gto\char`_amino\char`_acid\char`_to\char`_group} program is a group sequence.\\
+An example, for the input, is:
+\begin{lstlisting}
+HSHHHPPUHHHHNPHHHUPHPUHHSSPHPHHSSSSHPHNSHHSHHHPHHSHUHPHSHSHUNUUHUHUSHPNHUHUSUUHS
+UHHSPHNHPHSNUUNHHHPSSHHHPSHHPPSNNUHUHHUNNSHHPUSNHSNHNNUSUHHHUNPHPNHHPUUUSPHHHSUH
+HNUPHSPNPHHNUHHHHHNHPPHHUHHHHSSHNUHNNHHPUHUHPHPNPHNHHPUUNHHPHHN
+\end{lstlisting}

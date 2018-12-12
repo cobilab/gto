@@ -1,0 +1,74 @@
+\section{Program gto\char`_protein\char`_to\char`_pseudo\char`_dna}
+
+The \texttt{gto\char`_protein\char`_to\char`_pseudo\char`_dna} converts an amino acid (protein) sequence to a pseudo DNA sequence.\\
+For help type:
+\begin{lstlisting}
+./gto_protein_to_pseudo_dna -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_protein\char`_to\char`_pseudo\char`_dna} program needs two streams for the computation,
+namely the input and output standard. The input stream is an amino acid sequence.
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_protein_to_pseudo_dna [options] [[--] args]
+   or: ./gto_protein_to_pseudo_dna [options]
+
+It converts a protein sequence to a pseudo DNA sequence.
+
+    -h, --help        show this help message and exit
+
+Basic options
+    < input.prot      Input amino acid sequence file (stdin)
+    > output.dna      Output DNA sequence file (stdout)
+
+Example: ./gto_protein_to_pseudo_dna < input.prot > output.dna
+Table:
+Prot	DNA
+A	GCA
+C	TGC
+D	GAC
+E	GAG
+F	TTT
+G	GGC
+H	CAT
+I	ATC
+K	AAA
+L	CTG
+M	ATG
+N	AAC
+P	CCG
+Q	CAG
+R	CGT
+S	TCT
+T	ACG
+V	GTA
+W	TGG
+Y	TAC
+*	TAG
+X	GGG
+\end{lstlisting}
+It can be used to generate pseudo-DNA with characteristics passed by amino acid (protein) sequences. An example on such an input file is:
+\begin{lstlisting}
+IPFLLKKQFALADKLVLSKLRQLLGGRIKMMPCGGAKLEPAIGLFFHAIGINIKLGYGMTETTATVSCWHDFQFNPNSIG
+TLMPKAEVKIGENNEILVRGGMVMKGYYKKPEETAQAFTEDGFLKTGDAGEFDEQGNLFITDRIKELMKTSNGKYIAPQY
+IESKIGKDKFIEQIAIIADAKKYVSALIVPCFDSLEEYAKQLNIKYHDRLELLKNSDILKMFE
+\end{lstlisting}
+
+\subsection*{Output}
+
+The output of the \texttt{gto\char`_protein\char`_to\char`_pseudo\char`_dna} program is a DNA sequence.\\
+An example, for the input, is:
+\begin{lstlisting}
+ATCCCGTTTCTGCTGAAAAAACAGTTTGCACTGGCAGACAAACTGGTACTGTCTAAACTGCGTCAGCTGCTGGGCGGCCG
+TATCAAAATGATGCCGTGCGGCGGCGCAAAACTGGAGCCGGCAATCGGCCTGTTTTTTCATGCAATCGGCATCAACATCA
+AACTGGGCTACGGCATGACGGAGACGACGGCAACGGTATCTTGCTGGCATGACTTTCAGTTTAACCCGAACTCTATCGGC
+ACGCTGATGCCGAAAGCAGAGGTAAAAATCGGCGAGAACAACGAGATCCTGGTACGTGGCGGCATGGTAATGAAAGGCTA
+CTACAAAAAACCGGAGGAGACGGCACAGGCATTTACGGAGGACGGCTTTCTGAAAACGGGCGACGCAGGCGAGTTTGACG
+AGCAGGGCAACCTGTTTATCACGGACCGTATCAAAGAGCTGATGAAAACGTCTAACGGCAAATACATCGCACCGCAGTAC
+ATCGAGTCTAAAATCGGCAAAGACAAATTTATCGAGCAGATCGCAATCATCGCAGACGCAAAAAAATACGTATCTGCACT
+GATCGTACCGTGCTTTGACTCTCTGGAGGAGTACGCAAAACAGCTGAACATCAAATACCATGACCGTCTGGAGCTGCTGA
+AAAACTCTGACATCCTGAAAATGTTTGAG
+\end{lstlisting}

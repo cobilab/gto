@@ -1,0 +1,57 @@
+\section{Program gto\char`_fastq\char`_maximum\char`_read\char`_size}
+The \texttt{gto\char`_fastq\char`_maximum\char`_read\char`_size} filters the FASTQ reads with the length higher than the value defined.\\
+For help type:
+\begin{lstlisting}
+./gto_fastq_maximum_read_size -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_fastq\char`_maximum\char`_read\char`_size} program needs two streams for the computation,
+namely the input and output standard. The input stream is a FASTQ file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_fastq_maximum_read_size [options] [[--] args]
+   or: ./gto_fastq_maximum_read_size [options]
+
+It filters the FASTQ reads with the length higher than the value defined. 
+If present, it will erase the second header (after +).
+
+    -h, --help            show this help message and exit
+
+Basic options
+    -s, --size=<int>      The maximum read length
+    < input.fastq         Input FASTQ file format (stdin)
+    > output              Output read information (stdout)
+
+Example: ./gto_fastq_maximum_read_size < input.fastq > output
+
+Output example :
+<FASTQ non-filtered reads>
+Total reads    : value
+Filtered reads : value
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=60
+GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGG
++SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=60
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIII
+@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+GTTCAGGGATACGACGTTTGTATTTTAAGAATCTGAAGCAGAAGTCGATGATAATACGCGTCGTTTTATCAT
++SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_fastq\char`_maximum\char`_read\char`_size} program is a set of all the filtered FASTQ reads, followed by the execution report.\\
+Using the size value as 60, an example for this input, is: 
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=60
+GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGG
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIII
+Total reads    : 2
+Filtered reads : 1
+\end{lstlisting}
