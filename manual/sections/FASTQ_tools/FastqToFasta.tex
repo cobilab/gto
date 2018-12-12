@@ -1,19 +1,19 @@
-\section{Program GTO-Fastq2Fasta}
-The \texttt{GTO-Fastq2Fasta} converts a FASTQ file format to a pseudo FASTA file. However, it does not align the sequence. Also, it extracts the sequence and adds a pseudo header.\\
+\section{Program gto\char`_fastq\char`_to\char`_fasta}
+The \texttt{gto\char`_fastq\char`_to\char`_fasta} converts a FASTQ file format to a pseudo FASTA file. However, it does not align the sequence. Also, it extracts the sequence and adds a pseudo header.\\
 For help type:
 \begin{lstlisting}
-./GTO-Fastq2Fasta -h
+./gto_fastq_to_fasta -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{GTO-Fastq2Fasta} program needs two streams for the computation,
+The \texttt{gto\char`_fastq\char`_to\char`_fasta} program needs two streams for the computation,
 namely the input and output standard. The input stream is a FASTQ file.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./GTO-Fastq2Fasta [options] [[--] args]
-   or: ./GTO-Fastq2Fasta [options]
+Usage: ./gto_fastq_to_fasta [options] [[--] args]
+   or: ./gto_fastq_to_fasta [options]
 
 It converts a FASTQ file format to a pseudo FASTA file.
 It does NOT align the sequence.
@@ -25,7 +25,7 @@ Basic options
     < input.fastq         Input FASTQ file format (stdin)
     > output.fasta        Output FASTA file format (stdout)
 
-Example: ./GTO-Fastq2Fasta < input.fastq > output.fasta
+Example: ./gto_fastq_to_fasta < input.fastq > output.fasta
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
@@ -40,7 +40,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{GTO-Fastq2Fasta} program a FASTA file.\\
+The output of the \texttt{gto\char`_fastq\char`_to\char`_fasta} program a FASTA file.\\
 An example, for the input, is:
 \begin{lstlisting}
 GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGGTTTTCAAATAGA

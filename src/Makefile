@@ -9,8 +9,8 @@ CFLAGS 		= -O3 -Wall $(CPLP)
 #-----------------------------------------------------------------------------
 LIBS   		= -lm
 DEPS   		= defs.h
-PROGS  	 	= $(BIN)/GTO \
-         	  $(BIN)/GTO-Fastq2Fasta
+PROGS  	 	= $(BIN)/gto \
+         	  $(BIN)/gto_fastq_to_fasta
 
 OBJS     	= argparse.o buffer.o mem.o misc.o
 #-----------------------------------------------------------------------------
@@ -18,9 +18,9 @@ all:
 	$(MAKE) progs
 progs: $(PROGS)
 $(BIN)/GTO: GTO.c $(DEPS) $(OBJS) 
-	$(CC) $(CFLAGS) -o $(BIN)/GTO GTO.c $(OBJS) $(LIBS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto GTO.c $(OBJS) $(LIBS)
 $(BIN)/GTO-Fastq2Fasta: Fastq2Fasta.c $(DEPS) $(OBJS)
-	$(CC) $(CFLAGS) -o $(BIN)/GTO-Fastq2Fasta Fastq2Fasta.c $(OBJS) $(LIBS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_to_fasta FastqToFasta.c $(OBJS) $(LIBS)
 
 argparse.o: argparse.c argparse.h $(DEPS)
 	$(CC) -c $(CFLAGS) argparse.c
