@@ -1,0 +1,51 @@
+\section{Program gto\char`_fastq\char`_to\char`_mfasta}
+The \texttt{gto\char`_fastq\char`_to\char`_mfasta} onverts a FASTQ file format to a pseudo Multi-FASTA file. However, it does not align the sequence. Also, it extracts the sequence and adds a pseudo header.\\
+For help type:
+\begin{lstlisting}
+./gto_fastq_to_mfasta -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_fastq\char`_to\char`_mfasta} program needs two streams for the computation,
+namely the input and output standard. The input stream is a FASTQ file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_fastq_to_mfasta [options] [[--] args]
+   or: ./gto_fastq_to_mfasta [options]
+
+It converts a FASTQ file format to a pseudo Multi-FASTA file.
+It does NOT align the sequence.
+It extracts the sequence and adds each header in a Multi-FASTA format.
+
+
+    -h, --help            show this help message and exit
+
+Basic options
+    < input.fastq         Input FASTQ file format (stdin)
+    > output.mfasta       Output Multi-FASTA file format (stdout)
+
+Example: ./gto_fastq_to_mfasta < input.fastq > output.mfasta
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGGTTTTCAAATAGA
++SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
+@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+GTTCAGGGATACGACGTTTGTATTTTAAGAATCTGAAGCAGAAGTCGATGATAATACGCGTCGTTTTATCAT
++SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_fastq\char`_to\char`_mfasta} program a Multi-FASTA file.\\
+An example, for the input, is:
+\begin{lstlisting}
+>SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGGTTTTCAAATAGA
+>SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+GTTCAGGGATACGACGTTTGTATTTTAAGAATCTGAAGCAGAAGTCGATGATAATACGCGTCGTTTTATCAT
+\end{lstlisting}
