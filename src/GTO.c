@@ -3,13 +3,56 @@
 #include "defs.h"
 
 int main(int argc, char *argv[]){
-  fprintf(stdout, "\n  GTO - THE GENOMICS TOOLKIT v%u.%u, UNIVERSITY OF AVEIRO\n",
+  fprintf(stderr, 
+  "                                                                          \n"
+  "                    ██████╗████████╗ ██████╗                              \n"
+  "                   ██╔════╝╚══██╔══╝██╔═══██╗                             \n"
+  "                   ██║  ███╗  ██║   ██║   ██║                             \n"
+  "                   ██║   ██║  ██║   ██║   ██║                             \n"
+  "                   ╚██████╔╝  ██║   ╚██████╔╝                             \n"
+  "                    ╚═════╝   ╚═╝    ╚═════╝                              \n"
+  "                                                                          \n"
+  "NAME                                                                      \n"
+  "      GTO v%u.%u,                                                         \n"
+  "      The Genomics Toolkit.                                               \n"
+  "                                                                          \n"
+  "AUTHORS                                                                   \n"
+  "      João Almeida        joao.rafael.almeida@ua.pt                       \n"
+  "      Diogo Pratas        pratas@ua.pt                                    \n"
+  "                                                                          \n"
+  "SYNOPSIS                                                                  \n"
+  "      ./gto_[PROGRAM]                                                     \n"
+  "                                                                          \n"
+  "SAMPLE                                                                    \n"
+  "      Run Info:  ./gto_info < sequence.txt                                \n"
+  "                                                                          \n"
+  "DESCRIPTION                                                               \n"
+  "      A complete set of fast and efficient tools for genomics.            \n"
+  "      The gto works as the \"LEGOs\", since it allows multiple            \n"
+  "      combinations through the usage of multiple programs with            \n"
+  "      pipes. The gto includes multiple functions, such as view,           \n"
+  "      convert, compress, simulate, analyze, invert, modify, and           \n"
+  "      many others.                                                        \n"
+  "                                                                          \n"
+  "PROGRAMS                                                                  \n"
+  "      [gto_fastq_to_fasta]                                                \n"
+  "          It converts a FASTQ file into a FASTA file format.              \n"
+  "                                                                          \n"
+  "      [gto_info]                                                          \n"
+  "          It gives the basic properties of the file, namely               \n"
+  "          size, cardinality, distribution percentage of the               \n"
+  "          symbols, among others.                                          \n"
+  "                                                                          \n"
+  "                                                                          \n"
+  "                                                                          \n"
+  "COPYRIGHT                                                                 \n"
+  "      Copyright (C) 2014-2019, IEETA, University of Aveiro.               \n"
+  "      This is a Free software, under MIT. You may redistribute            \n"
+  "      copies of it under the terms of the MIT license. See more           \n"
+  "      at <https://opensource.org/licenses/MIT>. There is NOT              \n"
+  "      ANY WARRANTY, to the extent permitted by law.                       \n"
+  "                                                                          \n",
   VERSION, RELEASE);
-  fprintf(stdout, "  A toolkit for DNA sequences analysis and manipulation\n\n");
-  fprintf(stdout, "  Sub-programs:\n\n");
-  fprintf(stdout, 
-  "  GTO-Fastq2Fasta\n");
-  fprintf(stdout, "\n");
   return EXIT_SUCCESS;
   }
 
