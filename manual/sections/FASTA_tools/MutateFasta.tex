@@ -1,0 +1,68 @@
+\section{Program gto\char`_mutate\char`_fasta}
+The \texttt{gto\char`_mutate\char`_fasta} creates a synthetic mutation of a FASTA file given specific rates of editions, deletions and additions. All these paramenters are defined by the user, and their are optional.\\
+For help type:
+\begin{lstlisting}
+./gto_mutate_fasta -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_mutate\char`_fasta} program needs two streams for the computation, namely the input and output standard. However, optional settings can be supplied too, such as the starting point to the random generator, and the edition, deletion and insertion rates. Also, the user can choose to use the ACGTN alphabet in the synthetic mutation. The input stream is a FASTA or Multi-FASTA File.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_mutate_fasta [options] [[--] args]
+   or: ./gto_mutate_fasta [options]
+
+Creates a synthetic mutation of a fasta file given specific rates of editions, 
+deletions and additions
+
+    -h, --help                    show this help message and exit
+
+Basic options
+    < input.fasta                 Input FASTA or Multi-FASTA file format (stdin)
+    > output.fasta                Output FASTA or Multi-FASTA file format (stdout)
+
+Optional
+    -s, --seed=<int>              Starting point to the random generator
+    -e, --edit-rate=<dbl>         Defines the edition rate (default 0.0)
+    -d, --deletion-rate=<dbl>     Defines the deletion rate (default 0.0)
+    -i, --insertion-rate=<dbl>    Defines the insertion rate (default 0.0)
+    -a, --ACGTN-alphabet          When active, the application uses the ACGTN alphabet
+
+Example: ./gto_mutate_fasta -s <seed> -e <edit rate> -d <deletion rate> -i 
+<insertion rate> -a < input.fasta > output.fasta
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+>AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
+ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCCC
+GGCCCCACCTAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAA
+GTGGTTTGAGTGGACCTCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGCAGGCCAGTGCC
+GCGAATCCGCGCGCCGGGACAGAATCTCCTGCAAAGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCACCCCCCCAGC
+TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+>AB000263 |acc=AB000263|descr=Homo sapiens mRNA 
+ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCCCCTGGAGGGT
+GGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTG
+GTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAG
+GCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAA
+TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_mutate\char`_fasta} program is a FASTA or Multi-FASTA file whith the synthetic mutation of input file.\\
+Using the seed value as 1 and the edition rate as 0.5, an example for this input, is: 
+\begin{lstlisting}
+>AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
+ACGCAACGNATTCCTGCTGATCATANTGTNCCGCNCCCCNGCGACGGGGNCTCNCNNGCACACATNGTACCATTGTCCAC
+NCTTNCANGTNANCGCTAGCAGGCTACNGTTTNTCCTCNCCTANNCCAANCNGGCGTNNNTACACTGGCACGTGCAGGCA
+TNGGTCGGCNGGNNCCTCCGGNAACGGCACCGGAGACGAAGCTCGGNGGNTATACAGGTGTCANGAAACATCCCCGCGNC
+GNGTGNCCNNGAANCCANAGAGTATCTCACTCACAACCCTGCGTGCACNTCTAGAGNANGACCTTACNCACCNTCCCNTT
+NNGTACCACACCAATGAACGCTGCAGAAAGTCTGTTTNNAGGNGNGCA
+>AB000263 |acc=AB000263|descr=Homo sapiens mRNA 
+ATTTGAAGGCAANCGGNCCAGNAATNCGGNGGGTGCNGCTCNTGTNGGCTACGGNCATCGCGGCCCTGCTNTANTAAGCN
+TGAACCACCGNTCGNNGCACTTAGCAATNGCGNAANCCGTCGGCACGGCGGAGACNAANCCGCTANTNNTTTCCCGCTNA
+ATGGNTGTACAAGACCNACTANACCANCCTCCGTCACCACACTGGAGCGCANGATGGNNCGCTGNCTAGNAGNCNNTGAG
+GCGCTCCNTCCTANAAANCCGTGGNCGAGCNCCCTATGGNAGNGTGGGGGTTTTACCGGAAGACCNTCGNGCCCTATGGG
+AGCAATCANAANCTAGAAAGCTTACNGATGGTGANGAANTAGACTANG
+\end{lstlisting}

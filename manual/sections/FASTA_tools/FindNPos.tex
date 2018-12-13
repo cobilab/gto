@@ -1,0 +1,51 @@
+\section{Program gto\char`_find\char`_n\char`_pos}
+The \texttt{gto\char`_find\char`_n\char`_pos} reports the ''N'' regions in a sequence or FASTA (seq) file.\\
+For help type:
+\begin{lstlisting}
+./gto_find_n_pos -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_find\char`_n\char`_pos} program needs two streams for the computation,
+namely the input and output standard. The input stream is a FASTA file or a sequence.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_find_n_pos [options] [[--] args]
+   or: ./gto_find_n_pos [options]
+
+It reports the 'N' regions in a sequence or FASTA (seq) file.
+
+    -h, --help            show this help message and exit
+
+Basic options
+    < input.fasta         Input FASTQ file format or a sequence (stdin)
+    > output              Output report of 'N' positions (stdout)
+
+Example: ./gto_find_n_pos < input.fasta > output
+
+The output obeys the following structure:
+Begin	End	Positions
+<value>	<value>	<value>
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+>AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
+NCNNNACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCCC
+GNCCCCACCTAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAA
+GTNGTTTGAGTGGACCTCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGCAGGCCAGTGCC
+GCGAATCCGCGCGCCGGGACAGAATCTCCTGCAAAGCCCTGCAGGAACNTCTTCTGGAAGACCTTCTCCACCCCCCCAGC
+TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAN
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_find\char`_n\char`_pos} program is a structured report of ''N'' appearances in the sequence or FASTA file. The first column is the first position of the ''N'' appearance, the second is the position of the last ''N'' in the interval found, and the last column is the count of ''N'' in this interval. \\
+An example, for the input, is:
+\begin{lstlisting}
+1	1	1
+3	5	3
+82	82	1
+163	163	1
+289	289	1
+\end{lstlisting}

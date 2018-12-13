@@ -6,8 +6,26 @@ Current available FASTA tools, for analysis and manipulation, are:
 \begin{enumerate}
 \item \texttt{gto\char`_fasta\char`_to\char`_seq}: it converts a FASTA or Multi-FASTA file format to a seq.
 \item \texttt{gto\char`_seq\char`_to\char`_fasta}: it converts a genomic sequence to pseudo FASTA file format.
+\item \texttt{gto\char`_fasta\char`_extract}: it extracts sequences from a FASTA file, which the range is defined by the user in the parameters.
+\item \texttt{gto\char`_fasta\char`_extract\char`_by\char`_read}: it extracts sequences from each read in a Multi-FASTA file (splited by \textbackslash n), which the range is defined by the user in the parameters.
+\item \texttt{gto\char`_fasta\char`_info}: it shows the readed information of a FASTA or Multi-FASTA file format.
+\item \texttt{gto\char`_mutate\char`_fasta}: it reates a synthetic mutation of a fasta file given specific rates of editions, deletions and additions.
+\item \texttt{gto\char`_rand\char`_fasta\char`_extra\char`_chars}: it substitues in the DNA sequence the outside ACGT chars by random ACGT symbols.
+\item \texttt{gto\char`_extract\char`_read\char`_by\char`_pattern}: it extracts reads from a Multi-FASTA file format given a pattern in the header.
+\item \texttt{gto\char`_find\char`_n\char`_pos}: it reports the ''N'' regions in a sequence or FASTA (seq) file.
+\item \texttt{gto\char`_split\char`_reads}: it splits a Multi-FASTA file to multiple FASTA files.
+\item \texttt{gto\char`_rename\char`_human\char`_headers}: it changes the headers of FASTA or Multi-FASTA file to simple chrX by order, where X is the number.
 
 \end{enumerate}
 
 \input{\FASTAToolsPath/FastaToSeq.tex}
 \input{\FASTAToolsPath/SeqToFasta.tex}
+\input{\FASTAToolsPath/FastaExtract.tex}
+\input{\FASTAToolsPath/FastaExtractByRead.tex}
+\input{\FASTAToolsPath/FastaInfo.tex} 
+\input{\FASTAToolsPath/MutateFasta.tex}
+\input{\FASTAToolsPath/RandFastaExtraChars.tex}
+\input{\FASTAToolsPath/ExtractReadByPattern.tex}
+\input{\FASTAToolsPath/FindNPos.tex}
+\input{\FASTAToolsPath/SplitReads.tex}
+\input{\FASTAToolsPath/RenameHumanHeaders.tex}

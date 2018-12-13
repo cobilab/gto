@@ -1,0 +1,44 @@
+\section{Program gto\char`_fasta\char`_extract}
+The \texttt{gto\char`_fasta\char`_extract} extracts sequences from a FASTA file, which the range is defined by the user in the parameters.\\
+For help type:
+\begin{lstlisting}
+./gto_fasta_extract -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_fasta\char`_extract} program needs two paramenters, which defines the begin and the end of the extraction, and two streams for the computation, namely the input and output standard. The input stream is a FASTA file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_fasta_extract [options] [[--] args]
+   or: ./gto_fasta_extract [options]
+
+It extracts sequences from a FASTA file.
+
+    -h, --help            show this help message and exit
+
+Basic options
+    -i, --init=<int>      The first position to start the extraction (default 0)
+    -e, --end=<int>       The last extract position (default 100)
+    < input.fasta         Input FASTA or Multi-FASTA file format (stdin)
+    > output.seq          Output sequence file (stdout)
+
+Example: ./gto_fasta_extract -i <init> -e <end> < input.fasta > output.seq
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+>AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
+ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCCC
+GGCCCCACCTAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAA
+GTGGTTTGAGTGGACCTCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGCAGGCCAGTGCC
+GCGAATCCGCGCGCCGGGACAGAATCTCCTGCAAAGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCACCCCCCCAGC
+TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_fasta\char`_extract} program is a group sequence.\\
+An example, using the value 0 as extraction starting point and the 50 as the end, for the provided input, is:
+\begin{lstlisting}
+ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGG
+\end{lstlisting}

@@ -1,0 +1,52 @@
+\section{Program gto\char`_split\char`_reads}
+The \texttt{gto\char`_split\char`_reads} splits a Multi-FASTA file to multiple FASTA files.\\
+For help type:
+\begin{lstlisting}
+./gto_split_reads -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_split\char`_reads} program needs one stream for the computation,
+namely the input standard. This input stream is a Multi-FASTA file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_split_reads [options] [[--] args]
+   or: ./gto_split_reads [options]
+
+It splits a Multi-FASTA file to multiple FASTA files.
+
+    -h, --help            show this help message and exit
+
+Basic options
+    < input.fasta         Input Multi-FASTA file format (stdin)
+
+Optional options
+    -l, --location=<str>  Location to store the files
+
+Example: ./gto_split_reads < input.fasta
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+>AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
+ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCCC
+GGCCCCACCTAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAA
+GTGGTTTGAGTGGACCTCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGCAGGCCAGTGCC
+GCGAATCCGCGCGCCGGGACAGAATCTCCTGCAAAGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCACCCCCCCAGC
+TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+>AB000263 |acc=AB000263|descr=Homo sapiens mRNA 
+ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCCCCTGGAGGGT
+GGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTG
+GTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAG
+GCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAA
+TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_split\char`_reads} program is a report summary of the execution, and the files created in the defined location.\\ 
+An example, for the input, is:
+\begin{lstlisting}
+1 : Splitting to file:./out1.fasta
+2 : Splitting to file:./out2.fasta
+\end{lstlisting}

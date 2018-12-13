@@ -1,22 +1,22 @@
-\section{Program goose-char2line}
-The \texttt{goose-char2line} splits a sequence into lines, creating an output sequence which has a char for each line.
+\section{Program gto\char`_reverse}
+The \texttt{gto\char`_reverse} reverses the order of a sequence file.
 
 For help type:
 \begin{lstlisting}
-./goose-char2line -h
+./gto_reverse -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{goose-char2line} program needs two streams for the computation,
+The \texttt{gto\char`_reverse} program needs two streams for the computation,
 namely the input and output standard. The input stream is a sequence file.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./goose-char2line [options] [[--] args]
-   or: ./goose-char2line [options]
+Usage: ./gto_reverse [options] [[--] args]
+   or: ./gto_reverse [options]
 
-It splits a sequence into lines, creating an output sequence which has a char for each line.
+It reverses the order of a sequence file.
 
     -h, --help        show this help message and exit
 
@@ -24,7 +24,7 @@ Basic options
     < input.seq       Input sequence file (stdin)
     > output.seq      Output sequence file (stdout)
 
-Example: ./goose-char2line < input.seq > output.seq
+Example: ./gto_reverse < input.seq > output.seq
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
@@ -41,29 +41,17 @@ TAATTACAGACCTGAA
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{goose-char2line} program is a group sequence splited by \textbackslash n foreach character.\\
+The output of the \texttt{gto\char`_reverse} program is a group sequence.\\
 An example, for the input, is:
 \begin{lstlisting}
-A
-C
-A
-A
-G
-A
-C
-G
-G
-C
-C
-T
-C
-C
-T
-G
-C
-T
-G
-C
-T
-...
+AAGTCCAGACATTAATTTGAACGCACTCGTAAGTACCCACTCCAAAATAAACGTCCTCCTCTTCCAGAAGGTCTTCTTCA
+AGGACGTCCCGTAAGACAGGGCCGCGCGCCTAACGACCCCCCCACGCGGAAGGACGGCGGACCGGTGGAGGGCTCGAAGG
+AGAGGATACTCCCCGGGCCGTGACCGGACCCTCCAGGTGAGTTTGGTGGTTCGCTCCTTTCAGTCCTCCGACGAAAAGGA
+ATAAGGACGGCGAAGGACGTATACGAGCGACAGAGCCGGCCACCCCGGTGGGAGGTCCCCGTCCCGTCGCCACCGGCACC
+GGGGCCTCTCGTCGTCGTCGTCCTCCGGCCCCCTGTTACCGTAGAACAAAGTCCAGACATTAATTTGAACGCACTCGTAA
+GTACCCACTCCAAAATCGACCCCCCCACCTCTTCCAGAAGGTCTTCTTCAAGGACGTCCCGAAACGTCCTCTAAGACAGG
+GCCGCGCGCCTAAGCGCCGTGACCGGACGAAGGACGGCGGACCGGTGGAGGGCTCGAAGGAGAGGATACTCCCCGGGCCT
+CCAGGTGAGTTTGGTGAAGGACGGCGAAGGACGTATACGAGCGACAGAGCCGGGTTCGCTCCTTTCAGTCCTCCGACGAA
+AAGGAATCCACCCCGGCCCCTGTTACCGTCGTCCCGTCGCCACCTGGGAGGTCCCGGCACCGGGGCCTCTCGTCGTCGTC
+GTCCTCCGGCAGAACA
 \end{lstlisting}

@@ -1,0 +1,60 @@
+\section{Program gto\char`_fasta\char`_info}
+The \texttt{gto\char`_fasta\char`_info} shows the readed information of a FASTA or Multi-FASTA file format.\\
+For help type:
+\begin{lstlisting}
+./gto_fasta_info -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_fasta\char`_info} program needs two streams for the computation,
+namely the input and output standard. The input stream is a FASTA or Multi-FASTA file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_fasta_info [options] [[--] args]
+   or: ./gto_fasta_info [options]
+
+It shows read information of a FASTA or Multi-FASTA file format.
+
+    -h, --help            show this help message and exit
+
+Basic options
+    < input.fasta         Input FASTA or Multi-FASTA file format (stdin)
+    > output              Output read information (stdout)
+
+Example: ./gto_fasta_info < input.fasta > output
+
+Output example :
+Number of reads      : value
+Number of bases      : value
+MIN of bases in read : value
+MAX of bases in read : value
+AVG of bases in read : value
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+>AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
+ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCCC
+GGCCCCACCTAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAA
+GTGGTTTGAGTGGACCTCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGCAGGCCAGTGCC
+GCGAATCCGCGCGCCGGGACAGAATCTCCTGCAAAGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCACCCCCCCAGC
+TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+>AB000263 |acc=AB000263|descr=Homo sapiens mRNA 
+ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCCCCTGGAGGGT
+GGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTG
+GTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAG
+GCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAA
+TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_fasta\char`_info} program is a set of informations related with the file readed. \\
+An example, for the input, is:
+\begin{lstlisting}
+Number of reads      : 2
+Number of bases      : 736
+MIN of bases in read : 368
+MAX of bases in read : 368
+AVG of bases in read : 368.0000
+\end{lstlisting}
