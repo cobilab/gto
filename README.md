@@ -23,7 +23,7 @@ Moreover, there are many scripts to download sequences, shuffle, transform, etc.
 
 ## CITE
 Please cite the followings, if you use GTO:
-* J. R. Almeida, D. Pratas. GTO: a genomics toolkit, 2018.
+* J. R. Almeida, D. Pratas. GTO: the genomics toolkit, 2018.
 
 ## RELEASES
 [Release](https://github.com/pratas/GTO/releases) 1.1
