@@ -6,7 +6,6 @@
 alt="GTO" height="74" border="0" /></p>
 
 <p align="center"><b>The genomics toolkit</b></p>
-<br>
 
 ## INSTALL
 Get GTO and make the project, using:
