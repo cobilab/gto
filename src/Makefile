@@ -42,8 +42,9 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_fastq_split \
 	          $(BIN)/gto_fastq_pack \
 	          $(BIN)/gto_fastq_unpack \
-	          $(BIN)/gto_upper_bound\
-	          $(BIN)/gto_lower_bound
+	          $(BIN)/gto_upper_bound \
+	          $(BIN)/gto_lower_bound \
+	          $(BIN)/gto_fastq_quality_score_info
 	         
 	          
 
@@ -122,6 +123,8 @@ $(BIN)/gto_upper_bound: UpperBound.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_upper_bound UpperBound.c $(OBJS) $(LIBS)
 $(BIN)/gto_lower_bound: LowerBound.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_lower_bound LowerBound.c $(OBJS) $(LIBS)
+$(BIN)/gto_fastq_quality_score_info: FastqQualityScoreInfo.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_quality_score_info FastqQualityScoreInfo.c $(OBJS) $(LIBS)
 
 
 argparse.o: argparse.c argparse.h $(DEPS)
