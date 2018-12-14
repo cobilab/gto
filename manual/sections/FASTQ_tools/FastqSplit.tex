@@ -23,8 +23,9 @@ Basic options
     -f, --forward=<str>   Output forward file
     -r, --reverse=<str>   Output reverse file
     < input.fastq         Input FASTQ file format (stdin)
+    > output         	  Output read information (stdout)
 
-Example: ./gto_fastq_split output_forward.fastq output_reverse.fastq < input.fastq
+Example: ./gto_fastq_split -t <output_forward.fastq> -r <output_reverse.fastq> < input.fastq > output
 
 Output example :
 Total reads      : value
@@ -34,12 +35,30 @@ Reverse reads    : value
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
-TO DO
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72 1
+GNNTGATGGCCGCTGCCGATGGCGNANAATCCCACCAANATACCCTTAACAACTTAAGGGTTNTCAAATAGA
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
+@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72 2
+NTTCAGGGATACGACGNTTGTATTTTAAGAATCTGNAGCAGAAGTCGATGATAATACGCGNCGTTTTATCAN
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fastq\char`_split} program ...\\
+The output of the \texttt{gto\char`_fastq\char`_split} program is a set of informations related with the file readed.\\
 An example, for the input, is:
 \begin{lstlisting}
-TO DO
+Total reads     : 2
+Singleton reads : 0
+Forward reads   : 65536
+Reverse reads   : 1
+\end{lstlisting}
+Also, this program generates two FASTQ files, with the reverse and forward reads.\\
+An example of the forward reads, for the input, is: 
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72 1
+GNNTGATGGCCGCTGCCGATGGCGNANAATCCCACCAANATACCCTTAACAACTTAAGGGTTNTCAAATAGA
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
 \end{lstlisting}

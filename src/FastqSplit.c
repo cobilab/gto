@@ -26,13 +26,14 @@ int main(int argc, char *argv[])
         OPT_STRING('f', "forward", &output_forward, "Output forward file"),
         OPT_STRING('r', "reverse", &output_reverse, "Output reverse file"),
         OPT_BUFF('<', "input.fastq", "Input FASTQ file format (stdin)"),
+        OPT_BUFF('>', "output", "Output read information (stdout)"),
         OPT_END(),
   };
   struct argparse argparse;
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " output_forward.fastq output_reverse.fastq < input.fastq\n"
+  strcat(usage, " -t <output_forward.fastq> -r <output_reverse.fastq> < input.fastq > output\n"
     "\nOutput example :\n"
     "Total reads      : value\n"  
     "Singleton reads  : value\n"

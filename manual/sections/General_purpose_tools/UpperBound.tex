@@ -1,0 +1,56 @@
+\section{Program gto\char`_upper\char`_bound}
+The \texttt{gto\char`_upper\char`_bound} sets an upper bound in a file with a value per line.\\
+For help type:
+\begin{lstlisting}
+./gto_upper_bound -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_upper\char`_bound} program needs two streams for the computation,
+namely the input and output standard. The input stream is a numeric file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_upper_bound [options] [[--] args]
+   or: ./gto_upper_bound [options]
+
+It sets an upper bound in a file with a value per line.
+
+    -h, --help                show this help message and exit
+
+Basic options
+    -u, --upperbound=<int>    The upper bound value
+    < input                   Input numeric file (stdin)
+    > output                  Output numeric file (stdout)
+
+Example: ./gto_upper_bound -u <upperbound> < input > output
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+0.123
+3.432
+2.341
+1.323
+7.538
+4.122
+0.242
+0.654
+5.633
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_upper\char`_bound} program is a set of numbers truncated at the a defined upper bound.\\
+An example, for the input, is:
+\begin{lstlisting}
+Using upper bound: 4
+0.123000
+3.432000
+2.341000
+1.323000
+4.000000
+4.000000
+0.242000
+0.654000
+4.000000
+\end{lstlisting}

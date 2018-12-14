@@ -1,0 +1,56 @@
+\section{Program gto\char`_lower\char`_bound}
+The \texttt{gto\char`_lower\char`_bound} sets an lower bound in a file with a value per line.\\
+For help type:
+\begin{lstlisting}
+./gto_lower_bound -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_lower\char`_bound} program needs two streams for the computation,
+namely the input and output standard. The input stream is a numeric file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_lower_bound [options] [[--] args]
+   or: ./gto_lower_bound [options]
+
+It sets an lower bound in a file with a value per line.
+
+    -h, --help                show this help message and exit
+
+Basic options
+    -u, --lowerbound=<int>    The lower bound value
+    < input                   Input numeric file (stdin)
+    > output                  Output numeric file (stdout)
+
+Example: ./gto_lower_bound -u <lowerbound> < input > output
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+0.123
+3.432
+2.341
+1.323
+7.538
+4.122
+0.242
+0.654
+5.633
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_lower\char`_bound} program is a set of numbers truncated at the a defined lower bound.\\
+An example, for the input, is:
+\begin{lstlisting}
+Using lower bound: 2
+2.000000
+3.432000
+2.341000
+2.000000
+7.538000
+4.122000
+2.000000
+2.000000
+5.633000
+\end{lstlisting}
