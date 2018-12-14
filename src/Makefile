@@ -39,6 +39,9 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_fasta_rename_human_headers \
               $(BIN)/gto_reverse \
 	          $(BIN)/gto_fasta_split_reads \
+	          $(BIN)/gto_fastq_split \
+	          $(BIN)/gto_fastq_pack \
+	          $(BIN)/gto_fastq_unpack
 	         
 	          
 
@@ -107,6 +110,12 @@ $(BIN)/gto_reverse: Reverse.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_reverse Reverse.c $(OBJS) $(LIBS)
 $(BIN)/gto_fasta_split_reads: FastaSplitReads.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_split_reads FastaSplitReads.c $(OBJS) $(LIBS)	
+$(BIN)/gto_fastq_split: FastqSplit.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_split FastqSplit.c $(OBJS) $(LIBS)	
+$(BIN)/gto_fastq_pack: FastqPack.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_pack FastqPack.c $(OBJS) $(LIBS)
+$(BIN)/gto_fastq_unpack: FastqUnpack.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_unpack FastqUnpack.c $(OBJS) $(LIBS)
 
 
 argparse.o: argparse.c argparse.h $(DEPS)

@@ -1,0 +1,45 @@
+\section{Program gto\char`_fastq\char`_split}
+The \texttt{gto\char`_fastq\char`_split} splits Paired End files according to the direction of the strand ('/1' or '/2'). It writes by default singleton reads as forward stands. \\
+For help type:
+\begin{lstlisting}
+./gto_fastq_split -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_fastq\char`_split} program needs a stream for the computation,
+namely the input standard. The input stream is a FASTQ file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_fastq_split [options] [[--] args]
+   or: ./gto_fastq_split [options]
+
+It writes by default singleton reads as forward stands.
+
+    -h, --help            show this help message and exit
+
+Basic options
+    -f, --forward=<str>   Output forward file
+    -r, --reverse=<str>   Output reverse file
+    < input.fastq         Input FASTQ file format (stdin)
+
+Example: ./gto_fastq_split output_forward.fastq output_reverse.fastq < input.fastq
+
+Output example :
+Total reads      : value
+Singleton reads  : value
+Forward reads    : value
+Reverse reads    : value
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+TO DO
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_fastq\char`_split} program ...\\
+An example, for the input, is:
+\begin{lstlisting}
+TO DO
+\end{lstlisting}

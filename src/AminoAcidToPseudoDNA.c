@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
   char value;
   BUF *Buffer;
 
-
   char *programName = argv[0];
   struct argparse_option options[] = {
         OPT_HELP(),

@@ -1,0 +1,61 @@
+\section{Program gto\char`_fastq\char`_pack}
+The \texttt{gto\char`_fastq\char`_pack} packages each FASTQ read in a single line. It can show the read score first or the dna sequence, depending on the execution mode. \\
+For help type:
+\begin{lstlisting}
+./gto_fastq_pack -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_fastq\char`_pack} program needs two streams for the computation,
+namely the input and output standard. The input stream is a FASTQ file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_fastq_pack [options] [[--] args]
+   or: ./gto_fastq_pack [options]
+
+It packages each FASTQ read in a single line.
+
+    -h, --help            show this help message and exit
+
+Basic options
+    -s, --scores          When active, the application show the scores first
+    < input.fastq         Input FASTQ file format (stdin)
+    > output.fastq        Output FASTQ file format (stdout)
+
+Example: ./gto_fastq_pack -s < input.fastq > output.fastq
+
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+GNNTGATGGCCGCTGCCGATGGCGNANAATCCCACCAANATACCCTTAACAACTTAAGGGTTNTCAAATAGA
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
+@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+NTTCAGGGATACGACGNTTGTATTTTAAGAATCTGNAGCAGAAGTCGATGATAATACGCGNCGTTTTATCAN
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_fastq\char`_pack} program is a packaged FASTQ file.\\
+An example, for the input, is:
+\begin{lstlisting}
+GNNTGATGGCCGCTGCCGATGGCGNANAATCCCACCAANATACCCTTAACAACTTAAGGGTTNTCAAATAGA
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
+SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72+	0
+NTTCAGGGATACGACGNTTGTATTTTAAGAATCTGNAGCAGAAGTCGATGATAATACGCGNCGTTTTATCAN
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
+SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72+	1
+\end{lstlisting}
+Another example for the same input, but using the scores first (flag ''s''), is:
+\begin{lstlisting}
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
+GNNTGATGGCCGCTGCCGATGGCGNANAATCCCACCAANATACCCTTAACAACTTAAGGGTTNTCAAATAGA
+SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72+	0
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
+NTTCAGGGATACGACGNTTGTATTTTAAGAATCTGNAGCAGAAGTCGATGATAATACGCGNCGTTTTATCAN
+SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72+	1
+\end{lstlisting}
