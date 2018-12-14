@@ -1,30 +1,14 @@
 \chapter{Introduction}
 \label{intro}
 
-Recent advances in {DNA} sequencing have revolutionized the field of genomics,
-making it possible for research groups to generate large amounts of sequenced
-data, very rapidly and at substantially lower cost. Its storage have been
-made using specific file formats, such as FASTQ and FASTA. Therefore, its
-analysis and manipulation is crucial \cite{Buermans-2014a}. Several
-frameworks for analysis and manipulation emerged, namely \texttt{GALAXY}
-\cite{Giardine-2005a}, \texttt{GATK} \cite{DePristo-2011a}, \texttt{HTSeq}
-\cite{Anders-2014a}, \texttt{MEGA} \cite{Kumar-2016a}, among others.
-In the majority, these frameworks require licenses and do not provide
-a low level access to the information, since they are commonly approached
-by scripting or interfaces.
+Recent advances in {DNA} sequencing have revolutionized the field of genomics, making it possible for research groups to generate large amounts of sequenced data, very rapidly and at substantially lower cost \cite{Mardis-2017a}. The storage of genomic data is being addressed using specific file formats, such as FASTQ and FASTA. Therefore, its analysis and manipulation is crucial \cite{Buermans-2014a}. Many frameworks for analysis and manipulation emerged, namely \texttt{GALAXY} \cite{Giardine-2005a}, \texttt{GATK} \cite{DePristo-2011a}, \texttt{HTSeq} \cite{Anders-2014a}, \texttt{MEGA} \cite{Kumar-2016a}, among others. Several of these frameworks require licenses, while others do not provide a low level access to the information, since they are commonly approached
+by scripting or programming laguages not efficient for the purpose. Moreover, several lack on variety, namely the ability to perform multiple tasks using only one toolkit.
 
-We describe \texttt{GTO}, a (free) novel toolkit for analyzing and manipulating
-FASTA-FASTQ formats and sequences (DNA, amino acids, text), with many 
-complementary tools. The toolkit is for Linux-based systems, built for fast 
-processing. \texttt{GTO} supports pipes for easy integration. It includes tools 
-for information display, randomizing, edition, conversion, extraction, 
-searching, calculation and visualization. \texttt{GTP} is prepared to deal with
-very large datasets, typically in the scale Gigabytes or Terabytes. 
+We describe \texttt{GTO}, a complete toolkit for genomics, namely for FASTA-FASTQ formats and sequences (DNA, amino acids, text), with many complementary tools. The toolkit is for Linux- and Unix-based systems, built for ultra-fast computations. \texttt{GTO} supports pipes for easy integration with the sub-programs belonging to \texttt{GTO} as well as external tools. \texttt{GTO} works as the \textit{LEGOs}, since it allows the construction of multiple pipelines with many combinations.
 
-The toolkit is a command line version, using the prefix ``GTO-'' 
-followed by the suffix with the respective name of the program.
-\texttt{GTO} is implemented in \texttt{C} language and it is available, 
-under GPLv3, at:
+\texttt{GTO} includes tools for information display, randomization, edition, conversion, extraction, search, calculation, and visualization. \texttt{GTO} is prepared to deal with very large datasets, typically in the scale Gigabytes or Terabytes (but not limited).
+
+The complete toolkit is an optimized command line version, using the prefix ``gto-'' followed by the suffix with the respective name of the program. \texttt{GTO} is implemented in \texttt{C} language and it is available, under the MIT license, at:
 \begin{lstlisting}
 https://pratas.github.io/GTO
 \end{lstlisting}
@@ -40,6 +24,21 @@ make
 
 \section{License}
 
-The license is \textbf{GPLv3}. In resume, everyone is permitted to copy and 
-distribute verbatim copies of this license document, but changing it is not 
-allowed. For details on the license, consult: \url{http://www.gnu.org/licenses/gpl-3.0.html}.
+The license is \textbf{MIT}. In resume, it is a short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.\\
+\textbf{Permissions}:
+\begin{itemize}
+	\item commercial use;
+	\item modification;
+	\item distribution;
+	\item private use.
+\end{itemize}
+\textbf{Limitations}:
+\begin{itemize}
+	\item liability;
+	\item warranty.
+\end{itemize}
+\textbf{Conditions}:
+\begin{itemize}
+        \item License and copyright notice.
+\end{itemize}
+For details on the license, consult: \url{https://opensource.org/licenses/MIT}.
