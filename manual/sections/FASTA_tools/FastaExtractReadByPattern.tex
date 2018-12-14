@@ -1,19 +1,19 @@
-\section{Program gto\char`_extract\char`_read\char`_by\char`_pattern}
-The \texttt{gto\char`_extract\char`_read\char`_by\char`_pattern} extracts reads from a Multi-FASTA file format given a pattern in the header. Also, this pattern is case insensitive. \\
+\section{Program gto\char`_fasta\char`_extract\char`_read\char`_by\char`_pattern}
+The \texttt{gto\char`_fasta\char`_extract\char`_read\char`_by\char`_pattern} extracts reads from a Multi-FASTA file format given a pattern in the header. Also, this pattern is case insensitive. \\
 For help type:
 \begin{lstlisting}
-./gto_extract_read_by_pattern -h
+./gto_fasta_extract_read_by_pattern -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_extract\char`_read\char`_by\char`_pattern} program needs two streams for the computation,
+The \texttt{gto\char`_fasta\char`_extract\char`_read\char`_by\char`_pattern} program needs two streams for the computation,
 namely the input and output standard. The input stream is a Multi-FASTA file.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./gto_extract_read_by_pattern [options] [[--] args]
-   or: ./gto_extract_read_by_pattern [options]
+Usage: ./gto_fasta_extract_read_by_pattern [options] [[--] args]
+   or: ./gto_fasta_extract_read_by_pattern [options]
 
 It extracts reads from a Multi-FASTA file format given a pattern in the header (ID).
 
@@ -24,7 +24,7 @@ Basic options
     < input.fasta            Input Multi-FASTA file format (stdin)
     > output.fasta           Output Multi-FASTA file format (stdout)
 
-Example: ./gto_extract_read_by_pattern-p <pattern> < input.fasta > output.fasta
+Example: ./gto_fasta_extract_read_by_pattern-p <pattern> < input.fasta > output.fasta
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
@@ -43,7 +43,7 @@ TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_extract\char`_read\char`_by\char`_pattern} program is a Multi-FASTA file.\\
+The output of the \texttt{gto\char`_fasta\char`_extract\char`_read\char`_by\char`_pattern} program is a Multi-FASTA file.\\
 An example, using the pattern ''264'', for the provided input, is:
 \begin{lstlisting}
 >AB000264 |acc=AB000264|descr=Homo sapiens mRNA 

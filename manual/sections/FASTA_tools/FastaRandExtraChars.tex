@@ -1,19 +1,19 @@
-\section{Program gto\char`_rand\char`_fasta\char`_extra\char`_chars}
-The \texttt{gto\char`_rand\char`_fasta\char`_extra\char`_chars} substitues in the DNA sequence the outside ACGT chars by random ACGT symbols. It works both in FASTA and Multi-FASTA file formats.\\
+\section{Program gto\char`_fasta\char`_rand\char`_extra\char`_chars}
+The \texttt{gto\char`_fasta\char`_rand\char`_extra\char`_chars} substitues in the DNA sequence the outside ACGT chars by random ACGT symbols. It works both in FASTA and Multi-FASTA file formats.\\
 For help type:
 \begin{lstlisting}
-./gto_rand_fasta_extra_chars -h
+./gto_fasta_rand_extra_chars -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_rand\char`_fasta\char`_extra\char`_chars} program needs two streams for the computation,
+The \texttt{gto\char`_fasta\char`_rand\char`_extra\char`_chars} program needs two streams for the computation,
 namely the input and output standard. The input stream is a FASTA or Multi-FASTA file.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./gto_rand_fasta_extra_chars [options] [[--] args]
-   or: ./gto_rand_fasta_extra_chars [options]
+Usage: ./gto_fasta_rand_extra_chars [options] [[--] args]
+   or: ./gto_fasta_rand_extra_chars [options]
 
 It substitues in the DNA sequence the outside ACGT chars by random ACGT symbols.
 It works both in FASTA and Multi-FASTA file formats
@@ -25,7 +25,7 @@ Basic options
     < input.fasta         Input FASTA or Multi-FASTA file format (stdin)
     > output.fasta        Output FASTA or Multi-FASTA file format (stdout)
 
-Example: ./gto_rand_fasta_extra_chars < input.fasta > output.fasta
+Example: ./gto_fasta_rand_extra_chars < input.fasta > output.fasta
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
@@ -44,7 +44,7 @@ TCACGCAANTTTAATTACAGACCTGAATAAANNNTCACCCATGAATGC
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_rand\char`_fasta\char`_extra\char`_chars} program is a FASTA or Multi-FASTA file.\\
+The output of the \texttt{gto\char`_fasta\char`_rand\char`_extra\char`_chars} program is a FASTA or Multi-FASTA file.\\
 An example, for the input, is:
 \begin{lstlisting}
 >AB000264 |acc=AB000264|descr=Homo sapiens mRNA 

@@ -1,19 +1,19 @@
-\section{Program gto\char`_seq\char`_to\char`_fastq}
-The \texttt{gto\char`_seq\char`_to\char`_fastq} converts a genomic sequence to pseudo FASTQ file format.\\
+\section{Program gto\char`_fastq\char`_from\char`_seq}
+The \texttt{gto\char`_fastq\char`_from\char`_seq} converts a genomic sequence to pseudo FASTQ file format.\\
 For help type:
 \begin{lstlisting}
-./gto_seq_to_fastq -h
+./gto_fastq_from_seq -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_seq\char`_to\char`_fastq} program needs two streams for the computation,
+The \texttt{gto\char`_fastq\char`_from\char`_seq} program needs two streams for the computation,
 namely the input and output standard. The input stream is a sequence group file.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./gto_seq_to_fastq [options] [[--] args]
-   or: ./gto_seq_to_fastq [options]
+Usage: ./gto_fastq_from_seq [options] [[--] args]
+   or: ./gto_fastq_from_seq [options]
 
 It converts a genomic sequence to pseudo FASTQ file format.
 
@@ -27,7 +27,7 @@ Optional options
     -n, --name=<str>      The read's header
     -l, --lineSize=<int>  The maximum of chars for line
 
-Example: ./gto_seq_to_fastq -l <lineSize> -n <name> < input.seq > output.fastq
+Example: ./gto_fastq_from_seq -l <lineSize> -n <name> < input.seq > output.fastq
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
@@ -44,7 +44,7 @@ TAATTACAGACCTGAA
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_seq\char`_to\char`_fastq} program is a pseudo FASTQ file.\\
+The output of the \texttt{gto\char`_fastq\char`_from\char`_seq} program is a pseudo FASTQ file.\\
 An example, using the size line as 80 and the read's header as ''SeqToFastq'', for the input, is:
 \begin{lstlisting}
 @SeqToFastq1

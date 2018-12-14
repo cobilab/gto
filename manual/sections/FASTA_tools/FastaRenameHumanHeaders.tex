@@ -1,19 +1,19 @@
-\section{Program gto\char`_rename\char`_human\char`_headers}
-The \texttt{gto\char`_rename\char`_human\char`_headers} changes the headers of FASTA or Multi-FASTA file to simple chrX by order, where X is the number.\\
+\section{Program gto\char`_fasta\char`_rename\char`_human\char`_headers}
+The \texttt{gto\char`_fasta\char`_rename\char`_human\char`_headers} changes the headers of FASTA or Multi-FASTA file to simple chrX by order, where X is the number.\\
 For help type:
 \begin{lstlisting}
-./gto_rename_human_headers -h
+./gto_fasta_rename_human_headers -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_rename\char`_human\char`_headers} program needs two streams for the computation,
+The \texttt{gto\char`_fasta\char`_rename\char`_human\char`_headers} program needs two streams for the computation,
 namely the input and output standard. The input stream is a FASTA or Multi-FASTA file.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./gto_rename_human_headers [options] [[--] args]
-   or: ./gto_rename_human_headers [options]
+Usage: ./gto_fasta_rename_human_headers [options] [[--] args]
+   or: ./gto_fasta_rename_human_headers [options]
 
 It changes the headers of FASTA or Multi-FASTA file to simple chr$1 by order.
 
@@ -23,7 +23,7 @@ Basic options
     < input.fasta         Input FASTA or Multi-FASTA file format (stdin)
     > output.fasta        Output FASTA or Multi-FASTA file format (stdout)
 
-Example: ./gto_rename_human_headers < input.fasta > output.fasta
+Example: ./gto_fasta_rename_human_headers < input.fasta > output.fasta
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
@@ -42,7 +42,7 @@ TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_rename\char`_human\char`_headers} program is a FASTA or Multi-FASTA file.\\
+The output of the \texttt{gto\char`_fasta\char`_rename\char`_human\char`_headers} program is a FASTA or Multi-FASTA file.\\
 An example, for the input, is:
 \begin{lstlisting}
 >chr1

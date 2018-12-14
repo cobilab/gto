@@ -1,19 +1,19 @@
-\section{Program gto\char`_rand\char`_fastq\char`_extra\char`_chars}
-The \texttt{gto\char`_rand\char`_fastq\char`_extra\char`_chars} substitues in the FASTQ files, the DNA sequence the outside ACGT chars by random ACGT symbols.\\
+\section{Program gto\char`_fastq\char`_rand\char`_extra\char`_chars}
+The \texttt{gto\char`_fastq\char`_rand\char`_extra\char`_chars} substitues in the FASTQ files, the DNA sequence the outside ACGT chars by random ACGT symbols.\\
 For help type:
 \begin{lstlisting}
-./gto_rand_fastq_extra_chars -h
+./gto_fastq_rand_extra_chars -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_rand\char`_fastq\char`_extra\char`_chars} program needs two streams for the computation,
+The \texttt{gto\char`_fastq\char`_rand\char`_extra\char`_chars} program needs two streams for the computation,
 namely the input and output standard. The input stream is a FASTQ file.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./gto_rand_fastq_extra_chars [options] [[--] args]
-   or: ./gto_rand_fastq_extra_chars [options]
+Usage: ./gto_fastq_rand_extra_chars [options] [[--] args]
+   or: ./gto_fastq_rand_extra_chars [options]
 
 It substitues in the FASTQ files, the DNA sequence the outside ACGT chars by random ACGT symbols.
 
@@ -23,7 +23,7 @@ Basic options
     < input.fastq         Input FASTQ file format (stdin)
     > output.fastq        Output FASTQ file format (stdout)
 
-Example: ./gto_rand_fastq_extra_chars < input.fastq > output.fastq
+Example: ./gto_fastq_rand_extra_chars < input.fastq > output.fastq
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
@@ -38,7 +38,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_rand\char`_fastq\char`_extra\char`_chars} program is a FASTQ file.\\
+The output of the \texttt{gto\char`_fastq\char`_rand\char`_extra\char`_chars} program is a FASTQ file.\\
 An example, for the input, is:
 \begin{lstlisting}
 @SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72

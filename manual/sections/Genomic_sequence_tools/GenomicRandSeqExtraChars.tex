@@ -1,19 +1,19 @@
-\section{Program gto\char`_rand\char`_seq\char`_extra\char`_chars}
-The \texttt{gto\char`_rand\char`_seq\char`_extra\char`_chars} substitues in the DNA sequence the outside ACGT chars by random ACGT symbols. It works in sequence file formats.\\
+\section{Program gto\char`_genomic\char`_rand\char`_seq\char`_extra\char`_chars}
+The \texttt{gto\char`_genomic\char`_rand\char`_seq\char`_extra\char`_chars} substitues in the DNA sequence the outside ACGT chars by random ACGT symbols. It works in sequence file formats.\\
 For help type:
 \begin{lstlisting}
-./gto_rand_seq_extra_chars -h
+./gto_genomic_rand_seq_extra_chars -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_rand\char`_seq\char`_extra\char`_chars} program needs two streams for the computation,
+The \texttt{gto\char`_genomic\char`_rand\char`_seq\char`_extra\char`_chars} program needs two streams for the computation,
 namely the input and output standard. The input stream is a sequence file.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./gto_rand_seq_extra_chars [options] [[--] args]
-   or: ./gto_rand_seq_extra_chars [options]
+Usage: ./gto_genomic_rand_seq_extra_chars [options] [[--] args]
+   or: ./gto_genomic_rand_seq_extra_chars [options]
 
 It substitues in the DNA sequence the outside ACGT chars by random ACGT symbols.
 It works in sequence file formats
@@ -25,7 +25,7 @@ Basic options
     < input.seq       Input sequence file (stdin)
     > output.seq      Output sequence file (stdout)
 
-Example: ./gto_rand_seq_extra_chars < input.seq > output.seq
+Example: ./gto_genomic_rand_seq_extra_chars < input.seq > output.seq
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
@@ -42,7 +42,7 @@ NNATTACNNNCCTGNN
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_rand\char`_seq\char`_extra\char`_chars} program is a sequence file.\\
+The output of the \texttt{gto\char`_genomic\char`_rand\char`_seq\char`_extra\char`_chars} program is a sequence file.\\
 An example, for the input, is:
 \begin{lstlisting}
 ATAAGACGGCTTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCCC

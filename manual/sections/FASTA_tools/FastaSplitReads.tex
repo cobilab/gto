@@ -1,19 +1,19 @@
-\section{Program gto\char`_split\char`_reads}
-The \texttt{gto\char`_split\char`_reads} splits a Multi-FASTA file to multiple FASTA files.\\
+\section{Program gto\char`_fasta\char`_split\char`_reads}
+The \texttt{gto\char`_fasta\char`_split\char`_reads} splits a Multi-FASTA file to multiple FASTA files.\\
 For help type:
 \begin{lstlisting}
-./gto_split_reads -h
+./gto_fasta_split_reads -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_split\char`_reads} program needs one stream for the computation,
+The \texttt{gto\char`_fasta\char`_split\char`_reads} program needs one stream for the computation,
 namely the input standard. This input stream is a Multi-FASTA file.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./gto_split_reads [options] [[--] args]
-   or: ./gto_split_reads [options]
+Usage: ./gto_fasta_split_reads [options] [[--] args]
+   or: ./gto_fasta_split_reads [options]
 
 It splits a Multi-FASTA file to multiple FASTA files.
 
@@ -25,7 +25,7 @@ Basic options
 Optional options
     -l, --location=<str>  Location to store the files
 
-Example: ./gto_split_reads < input.fasta
+Example: ./gto_fasta_split_reads < input.fasta
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
@@ -44,7 +44,7 @@ TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_split\char`_reads} program is a report summary of the execution, and the files created in the defined location.\\ 
+The output of the \texttt{gto\char`_fasta\char`_split\char`_reads} program is a report summary of the execution, and the files created in the defined location.\\ 
 An example, for the input, is:
 \begin{lstlisting}
 1 : Splitting to file:./out1.fasta

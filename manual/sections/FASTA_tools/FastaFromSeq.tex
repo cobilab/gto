@@ -1,19 +1,19 @@
-\section{Program gto\char`_seq\char`_to\char`_fasta}
-The \texttt{gto\char`_seq\char`_to\char`_fasta} converts a genomic sequence to pseudo FASTA file format.\\
+\section{Program gto\char`_fasta\char`_from\char`_seq}
+The \texttt{gto\char`_fasta\char`_from\char`_seq} converts a genomic sequence to pseudo FASTA file format.\\
 For help type:
 \begin{lstlisting}
-./gto_seq_to_fasta -h
+./gto_fasta_from_seq -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_seq\char`_to\char`_fasta} program needs two streams for the computation,
+The \texttt{gto\char`_fasta\char`_from\char`_seq} program needs two streams for the computation,
 namely the input and output standard. The input stream is a sequence group file.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./gto_seq_to_fasta [options] [[--] args]
-   or: ./gto_seq_to_fasta [options]
+Usage: ./gto_fasta_from_seq [options] [[--] args]
+   or: ./gto_fasta_from_seq [options]
 
 It converts a genomic sequence to pseudo FASTA file format.
 
@@ -27,7 +27,7 @@ Optional options
     -n, --name=<str>      The read's header
     -l, --lineSize=<int>  The maximum of chars for line
 
-Example: ./gto_seq_to_fasta -l <lineSize> -n <name> < input.seq > output.fasta
+Example: ./gto_fasta_from_seq -l <lineSize> -n <name> < input.seq > output.fasta
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
@@ -44,7 +44,7 @@ TAATTACAGACCTGAA
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_seq\char`_to\char`_fasta} program is a pseudo FASTA file.\\
+The output of the \texttt{gto\char`_fasta\char`_from\char`_seq} program is a pseudo FASTA file.\\
 An example, using the size line as 80 and the read's header as ''SeqToFasta'', for the input, is:
 \begin{lstlisting}
 >SeqToFasta

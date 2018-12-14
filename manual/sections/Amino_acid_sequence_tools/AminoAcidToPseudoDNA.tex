@@ -1,20 +1,20 @@
-\section{Program gto\char`_protein\char`_to\char`_pseudo\char`_dna}
+\section{Program gto\char`_amino\char`_acid\char`_to\char`_pseudo\char`_dna}
 
-The \texttt{gto\char`_protein\char`_to\char`_pseudo\char`_dna} converts an amino acid (protein) sequence to a pseudo DNA sequence.\\
+The \texttt{gto\char`_amino\char`_acid\char`_to\char`_pseudo\char`_dna} converts an amino acid (protein) sequence to a pseudo DNA sequence.\\
 For help type:
 \begin{lstlisting}
-./gto_protein_to_pseudo_dna -h
+./gto_amino_acid_to_pseudo_dna -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_protein\char`_to\char`_pseudo\char`_dna} program needs two streams for the computation,
+The \texttt{gto\char`_amino\char`_acid\char`_to\char`_pseudo\char`_dna} program needs two streams for the computation,
 namely the input and output standard. The input stream is an amino acid sequence.
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./gto_protein_to_pseudo_dna [options] [[--] args]
-   or: ./gto_protein_to_pseudo_dna [options]
+Usage: ./gto_amino_acid_to_pseudo_dna [options] [[--] args]
+   or: ./gto_amino_acid_to_pseudo_dna [options]
 
 It converts a protein sequence to a pseudo DNA sequence.
 
@@ -24,7 +24,7 @@ Basic options
     < input.prot      Input amino acid sequence file (stdin)
     > output.dna      Output DNA sequence file (stdout)
 
-Example: ./gto_protein_to_pseudo_dna < input.prot > output.dna
+Example: ./gto_amino_acid_to_pseudo_dna < input.prot > output.dna
 Table:
 Prot	DNA
 A		GCA
@@ -59,7 +59,7 @@ IESKIGKDKFIEQIAIIADAKKYVSALIVPCFDSLEEYAKQLNIKYHDRLELLKNSDILKMFE
 
 \subsection*{Output}
 
-The output of the \texttt{gto\char`_protein\char`_to\char`_pseudo\char`_dna} program is a DNA sequence.\\
+The output of the \texttt{gto\char`_amino\char`_acid\char`_to\char`_pseudo\char`_dna} program is a DNA sequence.\\
 An example, for the input, is:
 \begin{lstlisting}
 ATCCCGTTTCTGCTGAAAAAACAGTTTGCACTGGCAGACAAACTGGTACTGTCTAAACTGCGTCAGCTGCTGGGCGGCCG
