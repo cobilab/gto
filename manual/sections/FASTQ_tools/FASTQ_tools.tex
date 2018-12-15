@@ -9,7 +9,7 @@ Current available tools for FASTQ format analysis and manipulation include:
 
 \item \texttt{gto\char`_fastq\char`_exclude\char`_n}: it discards the FASTQ reads with the minimum number of "N" symbols.
 \item \texttt{gto\char`_fastq\char`_extract\char`_quality\char`_scores}: it extracts all the quality-scores from FASTQ reads.
-\item \texttt{gto\char`_fastq\char`_info}: it analyses the basic informations of FASTQ file format.
+\item \texttt{gto\char`_fastq\char`_info}: it analyses the basic information of FASTQ file format.
 \item \texttt{gto\char`_fastq\char`_maximum\char`_read\char`_size}: it filters the FASTQ reads with the length higher than the value defined.
 
 \item \texttt{gto\char`_fastq\char`_minimum\char`_quality\char`_score}: it discards reads with average quality-score below of the defined.
@@ -29,6 +29,10 @@ Current available tools for FASTQ format analysis and manipulation include:
 
 \item \texttt{gto\char`_fastq\char`_quality\char`_score\char`_info}: it analyses the quality-scores of a FASTQ file.
 
+\item \texttt{gto\char`_fastq\char`_quality\char`_score\char`_min}: it analyses the minimal quality-scores of a FASTQ file.
+
+\item \texttt{gto\char`_fastq\char`_quality\char`_score\char`_max}: it analyses the maximal quality-scores of a FASTQ file.
+
 \end{enumerate}
 
 \input{\FASTQToolsPath/FastqToFasta.tex}
@@ -46,6 +50,8 @@ Current available tools for FASTQ format analysis and manipulation include:
 \input{\FASTQToolsPath/FastqPack.tex}
 \input{\FASTQToolsPath/FastqUnpack.tex}
 \input{\FASTQToolsPath/FastqQualityScoreInfo.tex}
+\input{\FASTQToolsPath/FastqQualityScoreMax.tex}
+\input{\FASTQToolsPath/FastqQualityScoreMin.tex}
 
 
 

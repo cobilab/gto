@@ -19,22 +19,22 @@ int main(int argc, char *argv[])
   int minQS = 255, maxQS = 0, tmp_QS;
   uint64_t nScores = 0, *QS = (uint64_t *) Calloc(65536, sizeof(uint64_t)),
            *QN = (uint64_t *) Calloc(65536, sizeof(uint64_t));
-  int maxs = 80;
+  int maxs = 40;
 
   char *programName = argv[0];
   struct argparse_option options[] = {
         OPT_HELP(),
         OPT_GROUP("Basic options"),
-        OPT_INTEGER('m', "max", &maxs, "The lenght of the maximum window"),
+        OPT_INTEGER('m', "max", &maxs, "The maximum window length (default 40)"),
         OPT_BUFF('<', "input.fastq", "Input FASTQ file format (stdin)"),
-        OPT_BUFF('>', "output.fastq", "Output FASTQ file format (stdout)"),
+        OPT_BUFF('>', "output", "Output read information (stdout)"),
         OPT_END(),
   };
   struct argparse argparse;
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " -m <max> < input.fastq > output.fastq\n"
+  strcat(usage, " -m <max> < input.fastq > output\n"
     "\nOutput example :\n"
     "Total reads     : value\n"
     "Max read length : value\n"

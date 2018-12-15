@@ -9,7 +9,7 @@
 #include "argparse.h"
 
 /*
- * This application analyses the basic informations of FASTQ file format.
+ * This application analyses the basic information of FASTQ file format.
  */
 int main(int argc, char *argv[])
 {
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     "QS range        : value\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
-  argparse_describe(&argparse, "\nIt analyses the basic informations of FASTQ file format.", usage);
+  argparse_describe(&argparse, "\nIt analyses the basic information of FASTQ file format.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
   if(argc != 0)

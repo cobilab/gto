@@ -21,9 +21,9 @@ It analyses the quality-scores of a FASTQ file.
 Basic options
     -m, --max=<int>       The lenght of the maximum window
     < input.fastq         Input FASTQ file format (stdin)
-    > output.fastq        Output FASTQ file format (stdout)
+    > output              Output read information (stdout)
 
-Example: ./gto_fastq_quality_score_info -m <max> < input.fastq > output.fastq
+Example: ./gto_fastq_quality_score_info -m <max> < input.fastq > output
 
 Output example :
 Total reads     : value
@@ -46,7 +46,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fastq\char`_quality\char`_score\char`_info} program iis a set of informations related with the file readed. \\
+The output of the \texttt{gto\char`_fastq\char`_quality\char`_score\char`_info} program is a set of information related to the file read. \\
 Using the max window value as 30, an example for this input, is: 
 \begin{lstlisting}
 Total reads     : 2
