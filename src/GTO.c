@@ -111,6 +111,9 @@ int main(int argc, char *argv[]){
   "      [gto_fastq_quality_score_max]                                       \n"
   "          It analyses the maximal quality-scores of a FASTQ file.         \n"
   "                                                                          \n"
+  "      [gto_fastq_cut]                                                     \n"
+  "          It cuts read sequences in a FASTQ file.                         \n"
+  "                                                                          \n"
   //FASTA_Tools
   "      [gto_fasta_to_seq]                                                  \n"
   "          It converts a FASTA or Multi-FASTA file format to a seq.        \n"

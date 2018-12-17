@@ -1,0 +1,53 @@
+\section{Program gto\char`_fastq\char`_cut}
+The \texttt{gto\char`_fastq\char`_cut} cuts read sequences in a FASTQ file. It requires that the initial and end positions for the cut.\\
+For help type:
+\begin{lstlisting}
+./gto_fastq_cut -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_fastq\char`_cut} program needs program needs two streams for the computation, namely the input and output standard. The input stream is a FASTQ file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_fastq_cut [options] [[--] args]
+   or: ./gto_fastq_cut [options]
+
+It cuts read sequences in a FASTQ file.
+
+    -h, --help            show this help message and exit
+
+Basic options
+    -i, --initial=<int>   Starting position to the cut
+    -e, --end=<int>       Ending position to the cut
+    < input.fastq         Input FASTQ file format (stdin)
+    > output.fastq        Output FASTQ file format (stdout)
+
+Example: ./gto_fastq_cut -i <initial> -e <end> < input.fastq > output.fastq
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGGTTTTCAAATAGA
++SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
+@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+GTTCAGGGATACGACGTTTGTATTTTAAGAATCTGAAGCAGAAGTCGATGATAATACGCGTCGTTTTATCAT
++SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_fastq\char`_cut} program is a FASTQ file cut.\\
+Using the initial value as 10 and the end value as 30, an example for this input, is:
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+CGCTGCCGATGGCGTCAAATC
++
+IIIIIIIIIIIIIIIIIIII9
+@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+ACGACGTTTGTATTTTAAGAA
++
+IIIIIIIIIIIIIIIIIIIII
+\end{lstlisting}

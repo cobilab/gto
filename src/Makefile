@@ -46,7 +46,8 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_lower_bound \
 	          $(BIN)/gto_fastq_quality_score_info \
 	          $(BIN)/gto_fastq_quality_score_min \
-	          $(BIN)/gto_fastq_quality_score_max
+	          $(BIN)/gto_fastq_quality_score_max \
+	          $(BIN)/gto_fastq_cut
 	         
 	          
 
@@ -131,6 +132,8 @@ $(BIN)/gto_fastq_quality_score_min: FastqQualityScoreMin.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_quality_score_min FastqQualityScoreMin.c $(OBJS) $(LIBS)
 $(BIN)/gto_fastq_quality_score_max: FastqQualityScoreMax.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_quality_score_max FastqQualityScoreMax.c $(OBJS) $(LIBS)
+$(BIN)/gto_fastq_cut: FastqCut.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_cut FastqCut.c $(OBJS) $(LIBS)
 
 
 argparse.o: argparse.c argparse.h $(DEPS)
