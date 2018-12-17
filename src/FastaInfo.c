@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
   strcat(usage, " < input.fasta > output\n"
-    "\nOutput example :\n"
+    "\nOutput example:\n"
     "Number of reads      : value\n"  
     "Number of bases      : value\n"
     "MIN of bases in read : value\n"

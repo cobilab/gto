@@ -22,15 +22,15 @@ int main(int argc, char *argv[])
         OPT_HELP(),
         OPT_GROUP("Basic options"),
         OPT_BUFF('<', "input.fastq", "Input FASTQ file format (stdin)"),
-        OPT_BUFF('>', "output", "Output read information (stdout)"),
+        OPT_BUFF('>', "output.fastq", "Output FASTQ file format (stdout)"),
         OPT_END(),
   };
   struct argparse argparse;
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " < input.fastq > output\n"
-    "\nOutput example :\n"
+  strcat(usage, " < input.fastq > output.fastq\n"
+    "\nConsole output example:\n"
     "<FASTQ quality scores>\n"
     "Total reads          : value\n"
     "Total Quality-Scores : value\n");
@@ -59,4 +59,4 @@ int main(int argc, char *argv[])
 
   FreeRead(Read);
   return EXIT_SUCCESS;
-  }
+}

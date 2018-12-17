@@ -1,0 +1,62 @@
+\section{Program gto\char`_fastq\char`_minimum\char`_local\char`_quality\char`_score\char`_reverse}
+The \texttt{gto\char`_fastq\char`_minimum\char`_local\char`_quality\char`_score\char`_reverse} filters the reverse reads, considering the quality score average of a defined window size of bases.\\
+For help type:
+\begin{lstlisting}
+./gto_fastq_minimum_local_quality_score_reverse -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_fastq\char`_minimum\char`_local\char`_quality\char`_score\char`_reverse} program needs program needs two streams for the computation, namely the input and output standard. The input stream is a FASTQ file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_fastq_minimum_local_quality_score_reverse [options] [[--] args]
+   or: ./gto_fastq_minimum_local_quality_score_reverse [options]
+
+It filters the reverse reads, considering the quality score average of a defined 
+window size of bases.
+
+    -h, --help                show this help message and exit
+
+Basic options
+    -k, --windowsize=<int>    The window size of bases (default 5)
+    -w, --minavg=<int>        The minimum average of quality score (default 25)
+    -m, --minqs=<int>         The minimum value of the quality score (default 33)
+    < input.fastq             Input FASTQ file format (stdin)
+    > output.fastq            Output FASTQ file format (stdout)
+
+Example: ./gto_fastq_minimum_local_quality_score_reverse -k <windowsize> -w <minavg> 
+-m <minqs> < input.fastq > output.fastq
+
+Console output example:
+Minimum QS       : value
+<FASTQ output>
+Total reads      : value
+Trimmed reads    : value
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGGTTTTCAAATAGA
++SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
+@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+GTTCAGGGATACGACGTTTGTATTTTAAGAATCTGAAGCAGAAGTCGATGATAATACGCGTCGTTTTATCAT
++SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_fastq\char`_minimum\char`_local\char`_quality\char`_score\char`_reverse} program is a FASTQ file with the reads filtered following a quality score average of a defined window of bases.
+The execution report only appears in the console.\\
+An example using the default values, for the input, is:
+\begin{lstlisting}
+Minimum QS: 33
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGGTTTTCAAATAGA
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
+Total reads    : 2
+Trimmed reads  : 1
+\end{lstlisting}

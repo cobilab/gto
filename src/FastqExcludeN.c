@@ -26,21 +26,21 @@ int main(int argc, char *argv[])
         OPT_GROUP("Basic options"),
         OPT_INTEGER('m', "max", &max_n_read, "The maximum of of \"N\" symbols in the read"),
         OPT_BUFF('<', "input.fastq", "Input FASTQ file format (stdin)"),
-        OPT_BUFF('>', "output", "Output read information (stdout)"),
+        OPT_BUFF('>', "output.fastq", "Output FASTQ file format (stdout)"),
         OPT_END(),
   };
   struct argparse argparse;
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " < input.fastq > output\n"
-    "\nOutput example :\n"
+  strcat(usage, " < input.fastq > output.fastq\n"
+    "\nConsole output example:\n"
     "<FASTQ non-filtered reads>\n"
     "Total reads    : value\n"
     "Filtered reads : value\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
-  argparse_describe(&argparse, "\nIt discards the FASTQ reads with the minimum number of \"N\" symbols."
+  argparse_describe(&argparse, "\nIt discards the FASTQ reads with the minimum number of \"N\" symbols.\n"
     "If present, it will erase the second header (after +).", usage);
   argc = argparse_parse(&argparse, argc, argv);
 

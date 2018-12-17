@@ -70,12 +70,12 @@ int main(int argc, char *argv[])
     ++totalReads;
   }
 
-  fprintf(stderr, "Total reads     : %"PRIu64"\n", totalReads);
-  fprintf(stderr, "Max read length : %"PRIu64"\n", maxSeq);
-  fprintf(stderr, "Min read length : %"PRIu64"\n", minSeq);
-  fprintf(stderr, "Min QS value    : %d\n", minQS);
-  fprintf(stderr, "Max QS value    : %d\n", maxQS);
-  fprintf(stderr, "QS range        : %d\n", maxQS-minQS + 1);
+  fprintf(stdout, "Total reads     : %"PRIu64"\n", totalReads);
+  fprintf(stdout, "Max read length : %"PRIu64"\n", maxSeq);
+  fprintf(stdout, "Min read length : %"PRIu64"\n", minSeq);
+  fprintf(stdout, "Min QS value    : %d\n", minQS);
+  fprintf(stdout, "Max QS value    : %d\n", maxQS);
+  fprintf(stdout, "QS range        : %d\n", maxQS-minQS + 1);
 
   FreeRead(Read);
   return EXIT_SUCCESS;

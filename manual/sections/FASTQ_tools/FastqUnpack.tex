@@ -20,10 +20,12 @@ It unpacks the FASTQ reads packaged using the gto_fastq_pack tool.
     -h, --help            show this help message and exit
 
 Basic options
-    -s, --scores          When active, the application show the scores first
     < input.fastq         Input FASTQ file format (stdin)
     > output.fastq        Output FASTQ file format (stdout)
 
+Optional
+    -s, --scores          When active, the application show the scores first
+    
 Example: ./gto_fastq_unpack -s < input.fastq > output.fastq
 \end{lstlisting}
 An example on such an input file is:

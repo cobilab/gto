@@ -36,9 +36,10 @@ int main(int argc, char *argv[])
   struct argparse_option options[] = {
         OPT_HELP(),
         OPT_GROUP("Basic options"),
-        OPT_BOOLEAN('s', "scores", &scores, "When active, the application show the scores first"),
         OPT_BUFF('<', "input.fastq", "Input FASTQ file format (stdin)"),
         OPT_BUFF('>', "output.fastq", "Output FASTQ file format (stdout)"),
+        OPT_GROUP("Optional"),
+        OPT_BOOLEAN('s', "scores", &scores, "When active, the application show the scores first"),
         OPT_END(),
   };
   struct argparse argparse;

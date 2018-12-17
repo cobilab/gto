@@ -20,11 +20,11 @@ It extracts all the quality-scores from FASTQ reads.
 
 Basic options
     < input.fastq         Input FASTQ file format (stdin)
-    > output              Output read information (stdout)
+    > output.fastq        Output FASTQ file format (stdout)
 
-Example: ./gto_fastq_extract_quality_scores < input.fastq > output
+Example: ./gto_fastq_extract_quality_scores < input.fastq > output.fastq
 
-Output example :
+Console output example:
 <FASTQ quality scores>
 Total reads          : value
 Total Quality-Scores : value
@@ -42,7 +42,8 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fastq\char`_extract\char`_quality\char`_scores} program is a set of all the quality scores from the FASTQ reads, followed by the execution report.\\
+The output of the \texttt{gto\char`_fastq\char`_extract\char`_quality\char`_scores} program is a set of all the quality scores from the FASTQ reads, followed by the execution report.
+The execution report only appears in the console.\\
 An example, for the input, is:
 \begin{lstlisting}
 IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/

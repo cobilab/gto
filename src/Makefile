@@ -21,7 +21,7 @@ PROGS  	 	= $(BIN)/gto \
          	  $(BIN)/gto_fasta_extract \
          	  $(BIN)/gto_fasta_extract_by_read \
               $(BIN)/gto_fasta_info \
-              $(BIN)/gto_fastq_exclude_N \
+              $(BIN)/gto_fastq_exclude_n \
 	          $(BIN)/gto_fastq_extract_quality_scores \
 	          $(BIN)/gto_fastq_info \
 	          $(BIN)/gto_fastq_maximum_read_size \
@@ -47,7 +47,9 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_fastq_quality_score_info \
 	          $(BIN)/gto_fastq_quality_score_min \
 	          $(BIN)/gto_fastq_quality_score_max \
-	          $(BIN)/gto_fastq_cut
+	          $(BIN)/gto_fastq_cut \
+	          $(BIN)/gto_fastq_minimum_local_quality_score_forward \
+	          $(BIN)/gto_fastq_minimum_local_quality_score_reverse
 	         
 	          
 
@@ -80,8 +82,8 @@ $(BIN)/gto_fasta_extract_by_read: FastaExtractByRead.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_extract_by_read FastaExtractByRead.c $(OBJS) $(LIBS)
 $(BIN)/gto_fasta_info: FastaInfo.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_info FastaInfo.c $(OBJS) $(LIBS)
-$(BIN)/gto_fastq_exclude_N: FastqExcludeN.c $(DEPS) $(OBJS)
-	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_exclude_N FastqExcludeN.c $(OBJS) $(LIBS)
+$(BIN)/gto_fastq_exclude_n: FastqExcludeN.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_exclude_n FastqExcludeN.c $(OBJS) $(LIBS)
 $(BIN)/gto_fastq_extract_quality_scores: FastqExtractQS.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_extract_quality_scores FastqExtractQS.c $(OBJS) $(LIBS)
 $(BIN)/gto_fastq_info: FastqInfo.c $(DEPS) $(OBJS)
@@ -134,6 +136,10 @@ $(BIN)/gto_fastq_quality_score_max: FastqQualityScoreMax.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_quality_score_max FastqQualityScoreMax.c $(OBJS) $(LIBS)
 $(BIN)/gto_fastq_cut: FastqCut.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_cut FastqCut.c $(OBJS) $(LIBS)
+$(BIN)/gto_fastq_minimum_local_quality_score_forward: FastqMinimumQualityScoreForward.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_minimum_local_quality_score_forward FastqMinimumQualityScoreForward.c $(OBJS) $(LIBS)
+$(BIN)/gto_fastq_minimum_local_quality_score_reverse: FastqMinimumQualityScoreReverse.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_minimum_local_quality_score_reverse FastqMinimumQualityScoreReverse.c $(OBJS) $(LIBS)
 
 
 argparse.o: argparse.c argparse.h $(DEPS)

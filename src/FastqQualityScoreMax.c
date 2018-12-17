@@ -22,9 +22,10 @@ int main(int argc, char *argv[])
   struct argparse_option options[] = {
         OPT_HELP(),
         OPT_GROUP("Basic options"),
-        OPT_INTEGER('m', "max", &maxs, "The maximum window length (default 40)"),
         OPT_BUFF('<', "input.fastq", "Input FASTQ file format (stdin)"),
         OPT_BUFF('>', "output", "Output read information (stdout)"),
+        OPT_GROUP("Optional"),
+        OPT_INTEGER('m', "max", &maxs, "The maximum window length (default 40)"),
         OPT_END(),
   };
   struct argparse argparse;

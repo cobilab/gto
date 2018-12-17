@@ -15,19 +15,19 @@ The attribution is given according to:
 Usage: ./gto_fastq_exclude_n [options] [[--] args]
    or: ./gto_fastq_exclude_n [options]
 
-It discards the FASTQ reads with the minimum number of ''N'' symbols.If present,
-it will erase the second header (after +).
+It discards the FASTQ reads with the minimum number of "N" symbols. 
+If present, it will erase the second header (after +).
 
     -h, --help            show this help message and exit
 
 Basic options
     -m, --max=<int>       The maximum of of "N" symbols in the read
     < input.fastq         Input FASTQ file format (stdin)
-    > output              Output read information (stdout)
+    > output.fastq        Output FASTQ file format (stdout)
 
-Example: ./gto_fastq_exclude_n < input.fastq > output
+Example: ./gto_fastq_exclude_n < input.fastq > output.fastq
 
-Output example :
+Console output example :
 <FASTQ non-filtered reads>
 Total reads    : value
 Filtered reads : value
@@ -36,16 +36,17 @@ An example on such an input file is:
 \begin{lstlisting}
 @SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
 GNNTGATGGCCGCTGCCGATGGCGNANAATCCCACCAANATACCCTTAACAACTTAAGGGTTNTCAAATAGA
-+SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
++
 IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
 @SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
 NTTCAGGGATACGACGNTTGTATTTTAAGAATCTGNAGCAGAAGTCGATGATAATACGCGNCGTTTTATCAN
-+SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
++
 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fastq\char`_exclude\char`_n} program is a set of all the filtered FASTQ reads, followed by the execution report.\\
+The output of the \texttt{gto\char`_fastq\char`_exclude\char`_n} program is a set of all the filtered FASTQ reads, followed by the execution report.
+The execution report only appears in the console.\\
 Using the max value as 5, an example for this input, is: 
 \begin{lstlisting}
 @SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72

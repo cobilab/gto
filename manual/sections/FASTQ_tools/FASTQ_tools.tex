@@ -35,6 +35,10 @@ Current available tools for FASTQ format analysis and manipulation include:
 
 \item \texttt{gto\char`_fastq\char`_cut}: it cuts read sequences in a FASTQ file. 
 
+\item \texttt{gto\char`_fastq\char`_minimum\char`_local\char`_quality\char`_score\char`_forward}: it filters the reads considering the quality score average of a defined window size of bases.
+
+\item \texttt{gto\char`_fastq\char`_minimum\char`_local\char`_quality\char`_score\char`_reverse}: it filters the reverse reads, considering the average window size score defined by the bases.
+
 \end{enumerate}
 
 \input{\FASTQToolsPath/FastqToFasta.tex}
@@ -55,6 +59,8 @@ Current available tools for FASTQ format analysis and manipulation include:
 \input{\FASTQToolsPath/FastqQualityScoreMax.tex}
 \input{\FASTQToolsPath/FastqQualityScoreMin.tex}
 \input{\FASTQToolsPath/FastqCut.tex}
+\input{\FASTQToolsPath/FastqMinimumQualityScoreForward.tex}
+\input{\FASTQToolsPath/FastqMinimumQualityScoreReverse.tex}
 
 
 

@@ -19,9 +19,11 @@ It analyses the quality-scores of a FASTQ file.
     -h, --help            show this help message and exit
 
 Basic options
-    -m, --max=<int>       The lenght of the maximum window
     < input.fastq         Input FASTQ file format (stdin)
     > output              Output read information (stdout)
+    
+Optional
+    -m, --max=<int>       The lenght of the maximum window
 
 Example: ./gto_fastq_quality_score_info -m <max> < input.fastq > output
 

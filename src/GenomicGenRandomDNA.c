@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
         OPT_HELP(),
         OPT_GROUP("Basic options"),
         OPT_BUFF('>', "output.seq", "Output synthetic DNA sequence (stdout)"),
-        OPT_GROUP("Optional options"),
+        OPT_GROUP("Optional"),
         OPT_INTEGER('s', "seed", &seed, "Starting point to the random generator (Default 0)"),
         OPT_INTEGER('n', "nSymbols", &seqSize, "Number of symbols generated (Default 100)"),
         OPT_STRING('f', "frequency", &frequency, "The frequency of each base. It should be represented in the following format: <fa,fc,fg,ft>."),

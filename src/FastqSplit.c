@@ -70,10 +70,10 @@ int main(int argc, char *argv[])
     ++total;
   }
 
-  fprintf(stderr, "Total reads     : %"PRIu64"\n", total);
-  fprintf(stderr, "Singleton reads : %"PRIu64"\n", singleton);
-  fprintf(stderr, "Forward reads   : %"PRIu64"\n", forward);
-  fprintf(stderr, "Reverse reads   : %"PRIu64"\n", reverse);
+  fprintf(stdout, "Total reads     : %"PRIu64"\n", total);
+  fprintf(stdout, "Singleton reads : %"PRIu64"\n", singleton);
+  fprintf(stdout, "Forward reads   : %"PRIu64"\n", forward);
+  fprintf(stdout, "Reverse reads   : %"PRIu64"\n", reverse);
 
   fclose(F);
   fclose(R);

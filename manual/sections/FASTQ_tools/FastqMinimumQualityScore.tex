@@ -22,11 +22,11 @@ It discards reads with average quality-score below value.
 Basic options
     -m, --min=<int>       The minimum average quality-score (Value 25 or 30 is commonly used)
     < input.fastq         Input FASTQ file format (stdin)
-    > output              Output read information (stdout)
+    > output.fastq        Output FASTQ file format (stdout)
 
-Example: ./gto_fastq_minimum_quality_score < input.fastq > output
+Example: ./gto_fastq_minimum_quality_score -m <min> < input.fastq > output.fastq
 
-Output example :
+Console output example:
 <FASTQ non-filtered reads>
 Total reads    : value
 Filtered reads : value
