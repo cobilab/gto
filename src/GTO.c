@@ -179,6 +179,10 @@ int main(int argc, char *argv[]){
   "          given specific rates of mutations, deletions and                \n" 
   "          additions.                                                      \n"
   "                                                                          \n"
+  "      [gto_genomic_extract]                                               \n"
+  "          It extracts sequences from a sequence file, which the           \n"
+  "          range is defined by the user in the parameters.                 \n"
+  "                                                                          \n"
   //General_Purpose_Tools
   "      [gto_char_to_line]                                                  \n"
   "          It splits a sequence into lines, creating an output             \n"
