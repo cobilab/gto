@@ -1,0 +1,57 @@
+\section{Program gto\char`_sum}
+The \texttt{gto\char`_sum} adds decimal values in file, line by line, splitted by spaces or tabs.\\
+For help type:
+\begin{lstlisting}
+./gto_sum -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_sum} program needs program needs two streams for the computation, namely the input, which is a decimal file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_sum [options] [[--] args]
+   or: ./gto_sum [options]
+
+It adds decimal values in file, line by line, splitted by spaces or tabs.
+
+    -h, --help        show this help message and exit
+
+Basic options
+    < input.num       Input numeric file (stdin)
+    > output.num      Output numeric file (stdout)
+
+Optional
+    -r, --sumrows     When active, the application adds all the values line by line
+    -a, --sumall      When active, the application adds all values
+
+Example: ./gto_sum -a < input.num > output.num
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+0.123	5	5
+3.432
+2.341   3   2
+1.323
+7.538	5
+4.122
+0.242 
+0.654
+5.633	10
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_sum} program is a sum of the elements in the input file.\\
+Executing the application with the provided input and with the flag to add only the elements in each row (-r), the output of this execution is:
+\begin{lstlisting}
+10.123000
+3.432000
+7.341000
+1.323000
+12.538000
+4.122000
+0.242000
+0.654000
+15.633000
+\end{lstlisting}
