@@ -49,7 +49,8 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_fastq_quality_score_max \
 	          $(BIN)/gto_fastq_cut \
 	          $(BIN)/gto_fastq_minimum_local_quality_score_forward \
-	          $(BIN)/gto_fastq_minimum_local_quality_score_reverse
+	          $(BIN)/gto_fastq_minimum_local_quality_score_reverse \
+	          $(BIN)/gto_genomic_dna_mutate
 	         
 	          
 
@@ -140,6 +141,8 @@ $(BIN)/gto_fastq_minimum_local_quality_score_forward: FastqMinimumQualityScoreFo
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_minimum_local_quality_score_forward FastqMinimumQualityScoreForward.c $(OBJS) $(LIBS)
 $(BIN)/gto_fastq_minimum_local_quality_score_reverse: FastqMinimumQualityScoreReverse.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_minimum_local_quality_score_reverse FastqMinimumQualityScoreReverse.c $(OBJS) $(LIBS)
+$(BIN)/gto_genomic_dna_mutate: GenomicDNAMutate.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_genomic_dna_mutate GenomicDNAMutate.c $(OBJS) $(LIBS)
 
 
 argparse.o: argparse.c argparse.h $(DEPS)

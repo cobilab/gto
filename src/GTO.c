@@ -174,6 +174,11 @@ int main(int argc, char *argv[]){
   "          It substitues in the DNA sequence the outside ACGT              \n" 
   "          chars by random ACGT symbols.                                   \n"
   "                                                                          \n"
+  "      [gto_genomic_dna_mutate]                                            \n" 
+  "          It creates a synthetic mutation of a sequence file              \n"
+  "          given specific rates of mutations, deletions and                \n" 
+  "          additions.                                                      \n"
+  "                                                                          \n"
   //General_Purpose_Tools
   "      [gto_char_to_line]                                                  \n"
   "          It splits a sequence into lines, creating an output             \n"
