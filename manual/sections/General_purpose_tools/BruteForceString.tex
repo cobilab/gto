@@ -1,0 +1,42 @@
+\section{Program gto\char`_brute\char`_force\char`_string}
+The \texttt{gto\char`_brute\char`_force\char`_string} generates all combinations, line by line, for an inputted alphabet and specific size.\\
+For help type:
+\begin{lstlisting}
+./gto_brute_force_string -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_brute\char`_force\char`_string} program needs some paramenters for the computation, namely the alphabet and the key size.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_brute_force_string [options] [[--] args]
+   or: ./gto_brute_force_string [options]
+
+It generates all combinations, line by line, for an inputted alphabet and specific size.
+
+    -h, --help            show this help message and exit
+
+Basic options
+    -a, --alphabet=<str>  The input alphabet
+    -s, --size=<int>      The combinations size
+    > output              Output all the combinations (stdout)
+
+Example: ./gto_brute_force_string-a <alphabet> -s <size> > output
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_brute\char`_force\char`_string} program is a set of all possible word combinations with a defined size, using the input alphabet.\\
+Using the alphabet ''abAB'' with the word size of 3, an example of this program, the output is:
+\begin{lstlisting}
+aaa
+aab
+aaA
+aaB
+aba
+...
+BBb
+BBA
+BBB
+\end{lstlisting}

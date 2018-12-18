@@ -13,7 +13,6 @@
  */
 int main(int argc, char *argv[])
 {
-  //uint32_t n;
   uint64_t count = 0, init = 0, end = END;
   char value;
 
