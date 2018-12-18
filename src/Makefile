@@ -52,7 +52,8 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_fastq_minimum_local_quality_score_reverse \
 	          $(BIN)/gto_genomic_dna_mutate \
 	          $(BIN)/gto_genomic_extract \
-	          $(BIN)/gto_brute_force_string
+	          $(BIN)/gto_brute_force_string \
+	          $(BIN)/gto_real_to_binary_with_threshold
 	         
 	          
 
@@ -149,6 +150,9 @@ $(BIN)/gto_genomic_extract: GenomicExtract.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_genomic_extract GenomicExtract.c $(OBJS) $(LIBS)
 $(BIN)/gto_brute_force_string: BruteForceString.c $(DEPS) $(OBJS) 
 	$(CC) $(CFLAGS) -o $(BIN)/gto_brute_force_string BruteForceString.c $(OBJS) $(LIBS)
+$(BIN)/gto_real_to_binary_with_threshold: RealToBinaryWithThreshold.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_real_to_binary_with_threshold RealToBinaryWithThreshold.c $(OBJS) $(LIBS)
+
 
 argparse.o: argparse.c argparse.h $(DEPS)
 	$(CC) -c $(CFLAGS) argparse.c

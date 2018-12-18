@@ -1,0 +1,50 @@
+\section{Program gto\char`_real\char`_to\char`_binary\char`_with\char`_threshold}
+The \texttt{gto\char`_real\char`_to\char`_binary\char`_with\char`_threshold} converts a sequence of real numbers into a binary sequence, given a threshold. The numbers below to the threshold will be 0.\\
+For help type:
+\begin{lstlisting}
+./gto_real_to_binary_with_threshold -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_real\char`_to\char`_binary\char`_with\char`_threshold} program needs program needs two streams for the computation, namely the real sequence as input. These numbers should be splitted by lines.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_real_to_binary_with_threshold [options] [[--] args]
+   or: ./gto_real_to_binary_with_threshold [options]
+
+It converts a sequence of real numbers into a binary sequence given a threshold.
+
+    -h, --help                show this help message and exit
+
+Basic options
+    -t, --threshold=<dbl>     The threshold in real format
+    < input.num               Input numeric file (stdin)
+    > output.bin              Output binary file (stdout)
+
+Example: ./gto_real_to_binary_with_threshold -t <threshold> < input.num > output.bin
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+12.25
+1.2
+5.44
+5.51
+7.97
+2.34
+8.123
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_real\char`_to\char`_binary\char`_with\char`_threshold} program is a binary sequence.\\
+An example, for the input using the threshold of 5.5, is:
+\begin{lstlisting}
+1
+0
+0
+1
+1
+0
+1
+\end{lstlisting}
