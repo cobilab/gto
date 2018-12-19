@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "defs.h"
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[])
+{
   fprintf(stderr, 
   "                                                                          \n"
   "                                                                          \n"
@@ -18,7 +19,7 @@ int main(int argc, char *argv[]){
   "      The Genomics Toolkit.                                               \n"
   "                                                                          \n"
   "AUTHORS                                                                   \n"
-  "      João Almeida        joao.rafael.almeida@ua.pt                       \n"
+  "      João Almeida        j.r.dealmeida@udc.es                            \n"
   "      Diogo Pratas        pratas@ua.pt                                    \n"
   "                                                                          \n"
   "SYNOPSIS                                                                  \n"
@@ -214,6 +215,16 @@ int main(int argc, char *argv[]){
   "          It adds decimal values in file, line by line, splitted          \n"
   "          by spaces or tabs.                                              \n"
   "                                                                          \n"
+  "      [gto_filter]                                                        \n"
+  "          It filters numerical sequences.                                 \n"
+  "                                                                          \n"
+  "      [gto_word_search]                                                   \n"
+  "          It search for a word in a file.                                 \n"
+  "                                                                          \n"
+  "      [gto_permute_by_blocks]                                             \n"
+  "          It permutates by block sequence, FASTA and Multi-FASTA          \n"
+  "          files.                                                          \n"
+  "                                                                          \n"
   "                                                                          \n"
   "COPYRIGHT                                                                 \n"
   "      Copyright (C) 2014-2019, IEETA, University of Aveiro.               \n"
@@ -224,5 +235,4 @@ int main(int argc, char *argv[]){
   "                                                                          \n",
   VERSION, RELEASE);
   return EXIT_SUCCESS;
-  }
-
+}

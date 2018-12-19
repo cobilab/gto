@@ -1,0 +1,45 @@
+\section{Program gto\char`_filter}
+The \texttt{gto\char`_filter} filters numerical sequences.\\
+For help type:
+\begin{lstlisting}
+./gto_filter -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_filter} program needs program needs two streams for the computation, namely the input, which is a decimal file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_filter [options] [[--] args]
+   or: ./gto_filter [options]
+
+It filters numerical sequences.
+
+    -h, --help                show this help message and exit
+
+Basic options
+    < input.num               Input numeric file (stdin)
+    > output.num              Output numeric file (stdout)
+
+Optional
+    -w, --windowsize=<int>    Window size (defaut 0)
+    -d, --drop=<int>          Discard elements (default 0.0)
+    -t, --windowtype=<int>    Window type (0=Hamm, 1=Hann, 2=Black, 3=rec) (default 0 (Hamm))
+    -c, --onecolumn           Read from one column
+    -p, --printone            Print one column
+    -r, --reverse             Reverse mode
+
+Example: ./gto_filter -w <windowsize> -d <drop> -t <windowtype> -c -p -r < input.num > output.num
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+TO DO
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_filter} program is ...\\
+An example, for the input, is:
+\begin{lstlisting}
+TO DO
+\end{lstlisting}

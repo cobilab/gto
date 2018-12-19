@@ -1,0 +1,48 @@
+\section{Program gto\char`_permute\char`_by\char`_blocks}
+The \texttt{gto\char`_permute\char`_by\char`_blocks} permutates by block sequence, FASTA and Multi-FASTA files.\\
+For help type:
+\begin{lstlisting}
+./gto_ -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_permute\char`_by\char`_blocks} program needs program needs two streams for the computation, namely the input and output standard. The input stream is a sequence, FASTA or Multi-FASTA file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_permute_by_blocks [options] [[--] args]
+   or: ./gto_permute_by_blocks [options]
+
+It permutates by block sequence, FASTA and Multi-FASTA files.
+
+    -h, --help            show this help message and exit
+
+Basic options
+    -b, --numbases=<int>  The number of bases in each block
+    -s, --seed=<int>      Starting point to the random generator
+    < input               Input sequence, FASTA or Multi-FASTA file format (stdin)
+    > output              Output sequence, FASTA or Multi-FASTA file format (stdout)
+
+Example: ./gto_permute_by_blocks -b <numbases> -s <seed> < input.fasta > output.fasta
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+>AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
+ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCCC
+GGCCCCACCTAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAA
+GTGGTTTGAGTGGACCTCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGCAGGCCAGTGCC
+GCGAATCCGCGCGCCGGGACAGAATCTCCTGCAAAGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCACCCCCCCAGC
+TAAAACCTCACCCATGAATGCTCGCAACACGCAAGTTTAATTCGCAAGTTAGACCTGAACGGGAGGTGGCCACGCAAGTT
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_permute\char`_by\char`_blocks} program is a sequence, FASTA or Multi-FASTA file permuted following some parameters.\\
+An example, for the input using the base number as 80 (-b), is:
+\begin{lstlisting}
+GGCCCCACCTAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAA
+GTGGTTTGAGTGGACCTCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGCAGGCCAGTGCC
+GCGAATCCGCGCGCCGGGACAGAATCTCCTGCAAAGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCACCCCCCCAGC
+ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCCC
+TAAAACCTCACCCATGAATGCTCGCAACACGCAAGTTTAATTCGCAAGTTAGACCTGAACGGGAGGTGGCCACGCAAGTT
+\end{lstlisting}

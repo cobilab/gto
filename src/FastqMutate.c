@@ -57,24 +57,28 @@ int main(int argc, char *argv[])
   if(seed < 0 || seed > UINT_MAX)
   {
     fprintf(stderr, "ERROR: The seed value most be a unsigned int!\n");
+    argparse_help_cb(&argparse, options);
     exit(1);
   }
 
   if(mutationRate < 0 || mutationRate > 1)
   {
     fprintf(stderr, "ERROR: Mutation rate must be a value between 0 and 1!\n");
+    argparse_help_cb(&argparse, options);
     exit(1);
   }
 
   if(deletionRate < 0 || deletionRate > 1)
   {
     fprintf(stderr, "ERROR: Deletion rate must be a value between 0 and 1!\n");
+    argparse_help_cb(&argparse, options);
     exit(1);
   }
 
   if(insertionRate < 0 || insertionRate > 1)
   {
     fprintf(stderr, "ERROR: Insertion rate must be a value between 0 and 1!\n");
+    argparse_help_cb(&argparse, options);
     exit(1);
   }
 
@@ -82,6 +86,7 @@ int main(int argc, char *argv[])
   if(Parser->type != 2)
   {
     fprintf(stderr, "ERROR: This is not a FASTQ file!\n");
+    argparse_help_cb(&argparse, options);
     exit(1);
   }
 

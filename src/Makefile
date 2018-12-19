@@ -54,7 +54,10 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_genomic_extract \
 	          $(BIN)/gto_brute_force_string \
 	          $(BIN)/gto_real_to_binary_with_threshold \
-	          $(BIN)/gto_sum
+	          $(BIN)/gto_sum \
+	          $(BIN)/gto_filter \
+	          $(BIN)/gto_word_search \
+	          $(BIN)/gto_permute_by_blocks 
 	         
 	          
 
@@ -155,6 +158,12 @@ $(BIN)/gto_real_to_binary_with_threshold: RealToBinaryWithThreshold.c $(DEPS) $(
 	$(CC) $(CFLAGS) -o $(BIN)/gto_real_to_binary_with_threshold RealToBinaryWithThreshold.c $(OBJS) $(LIBS)
 $(BIN)/gto_sum: Sum.c $(DEPS) $(OBJS) 
 	$(CC) $(CFLAGS) -o $(BIN)/gto_sum Sum.c $(OBJS) $(LIBS)
+$(BIN)/gto_filter: Filter.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_filter Filter.c $(OBJS) $(LIBS)
+$(BIN)/gto_word_search: WordSearch.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_word_search WordSearch.c $(OBJS) $(LIBS)
+$(BIN)/gto_permute_by_blocks: PermuteByBlocks.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_permute_by_blocks PermuteByBlocks.c $(OBJS) $(LIBS)
 
 
 argparse.o: argparse.c argparse.h $(DEPS)

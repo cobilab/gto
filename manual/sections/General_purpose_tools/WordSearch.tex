@@ -1,0 +1,49 @@
+\section{Program gto\char`_word\char`_search}
+The \texttt{gto\char`_word\char`_search} search for a word in a file. It is case sensitive.\\
+For help type:
+\begin{lstlisting}
+./gto_word_search -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_word\char`_search} program needs program needs two streams for the computation, namely the input and output standard. The input stream is a text file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_word_search [options] [[--] args]
+   or: ./gto_word_search [options]
+
+Searching for a word in a text file. It is case sensitive.
+
+    -h, --help        show this help message and exit
+
+Basic options
+    -w, --word=<str>  Word to search in the file
+    < input.txt       Input text file (stdin)
+    > output.txt      Output text file (stdout)
+
+Example: ./gto_word_search-w <word> < input.txt > output.txt
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+No guts, no story. Chris Brady
+My life is my message. Mahatma Gandhi
+Screw it, let’s do it. Richard Branson
+Boldness be my friend. William Shakespeare
+Keep going. Be all in. Bryan Hutchinson
+My life is my argument. Albert Schweitzer
+Fight till the last gasp. William Shakespeare
+Leave no stone unturned. Euripides
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_word\char`_search} program is a text file with the matching paragraphs and the location of the word found.\\
+An example, for the input using the word ''Shakespeare'', is:
+\begin{lstlisting}
+Found match in range [ 1536 : 2048 ]
+Boldness be my friend. William Shakespeare
+
+Found match in range [ 3072 : 3584 ]
+Fight till the last gasp. William Shakespeare
+\end{lstlisting}
