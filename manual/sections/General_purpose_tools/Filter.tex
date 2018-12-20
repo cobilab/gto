@@ -1,5 +1,5 @@
 \section{Program gto\char`_filter}
-The \texttt{gto\char`_filter} filters numerical sequences.\\
+The \texttt{gto\char`_filter} filters numerical sequences using a low-pass filter.\\
 For help type:
 \begin{lstlisting}
 ./gto_filter -h
@@ -8,13 +8,13 @@ In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_filter} program needs program needs two streams for the computation, namely the input, which is a decimal file.\\
+The \texttt{gto\char`_filter} program needs two streams for the computation, namely the input and output standard. The input stream is a numeric file.\\
 The attribution is given according to:
 \begin{lstlisting}
 Usage: ./gto_filter [options] [[--] args]
    or: ./gto_filter [options]
 
-It filters numerical sequences.
+It filters numerical sequences using a low-pass filter.
 
     -h, --help                show this help message and exit
 
@@ -34,12 +34,25 @@ Example: ./gto_filter -w <windowsize> -d <drop> -t <windowtype> -c -p -r < input
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
-TO DO
+1   1.77
+5   2.18
+10  2.32
+15  3.15
+20  2.52
+25  4.43
+30  1.23
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_filter} program is ...\\
-An example, for the input, is:
+The output of the \texttt{gto\char`_filter} program is a numeric file, identical of the input.\\
+An example, for the input using a window size of 3, is:
 \begin{lstlisting}
-TO DO
+Got 7 entries from file
+1   2.085
+5   2.256
+10  2.507
+15  2.757
+20  2.905
+25  2.860
+30  2.674
 \end{lstlisting}

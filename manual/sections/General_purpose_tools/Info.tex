@@ -1,0 +1,85 @@
+\section{Program gto\char`_info}
+The \texttt{gto\char`_info} gives the basic properties of the file, namely size, cardinality, distribution percentage of the symbols, among others.\\
+For help type:
+\begin{lstlisting}
+./gto_info -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_info} program needs two streams for the computation,
+namely the input and output standard. The input stream is a file withou any specific format.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_info [options] [[--] args]
+   or: ./gto_info [options]
+
+It gives the basic properties of the file, namely size, cardinality, distribution 
+percentage of the symbols, among others.
+
+    -h, --help    show this help message and exit
+
+Basic options
+    < input       Input file (stdin)
+    > output      Output read information (stdout)
+
+Optional
+    -a, --ascii   When active, the application shows the ASCII codes
+
+Example: ./gto_info < input > output
+
+Output example :
+Number of symbols  : value
+Alphabet size      : value
+Alphabet           : value
+Symbol distribution:
+<Symbol/Code ASCII>  <Symbol count>  <Distribution percentage>
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+>AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
+ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCCC
+GGCCCCACCTAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAA
+GTGGTTTGAGTGGACCTCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGCAGGCCAGTGCC
+GCGAATCCGCGCGCCGGGACAGAATCTCCTGCAAAGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCACCCCCCCAGC
+TAAAACCTCACCCATGAATGCTCGCAACACGCAAGTTTAATTCGCAAGTTAGACCTGAACGGGAGGTGGCCACGCAAGTT
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_info} program is a set of information related to the file read. \\
+An example, for the input, is:
+\begin{lstlisting}
+Number of symbols  : 453
+Alphabet size      : 28
+Alphabet           :|srponmiedcaTRNHGCBA>=6420 \n
+Symbol distribution:
+|  : 	2		0.4415011
+s  : 	3		0.66225166
+r  : 	1		0.22075055
+p  : 	1		0.22075055
+o  : 	2		0.4415011
+n  : 	1		0.22075055
+m  : 	2		0.4415011
+i  : 	1		0.22075055
+e  : 	2		0.4415011
+d  : 	1		0.22075055
+c  : 	3		0.66225166
+a  : 	2		0.4415011
+T  : 	66		14.569536
+R  : 	1		0.22075055
+N  : 	1		0.22075055
+H  : 	1		0.22075055
+G  : 	117		25.827815
+C  : 	131		28.918322
+B  : 	2		0.4415011
+A  : 	89		19.646799
+>  : 	1		0.22075055
+=  : 	2		0.4415011
+6  : 	2		0.4415011
+4  : 	2		0.4415011
+2  : 	2		0.4415011
+0  : 	6		1.3245033
+   : 	4		0.88300221
+\n : 	5		1.1037528
+\end{lstlisting}

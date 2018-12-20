@@ -1,0 +1,44 @@
+\section{Program gto\char`_segment}
+The \texttt{gto\char`_segment} segments a filtered sequence.\\
+For help type:
+\begin{lstlisting}
+./gto_segment -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_segment} program needs two streams for the computation, namely the input and output standard. The input stream is a numeric file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_segment [options] [[--] args]
+   or: ./gto_segment [options]
+
+It segments a filtered sequence.
+
+    -h, --help                show this help message and exit
+
+Basic options
+    -t, --threshold=<dbl>     The segment threshold
+    < input.num               Input numeric file (stdin)
+    > output                  Output the segment file (stdout)
+
+Example: ./gto_segment -t <threshold> < input.num > output
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+1   1.77
+5   2.18
+10  2.32
+15  3.15
+20  2.52
+25  4.43
+30  1.23
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_segment} program is the interval of values ​​below the threshold.\\
+An example, for the input using a thresould of 3, is:
+\begin{lstlisting}
+0:10
+\end{lstlisting}

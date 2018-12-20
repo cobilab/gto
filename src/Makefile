@@ -57,7 +57,10 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_sum \
 	          $(BIN)/gto_filter \
 	          $(BIN)/gto_word_search \
-	          $(BIN)/gto_permute_by_blocks 
+	          $(BIN)/gto_permute_by_blocks \
+	          $(BIN)/gto_fasta_extract_pattern_coords \
+	          $(BIN)/gto_info \
+	          $(BIN)/gto_segment
 	         
 	          
 
@@ -164,6 +167,12 @@ $(BIN)/gto_word_search: WordSearch.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_word_search WordSearch.c $(OBJS) $(LIBS)
 $(BIN)/gto_permute_by_blocks: PermuteByBlocks.c $(DEPS) $(OBJS) 
 	$(CC) $(CFLAGS) -o $(BIN)/gto_permute_by_blocks PermuteByBlocks.c $(OBJS) $(LIBS)
+$(BIN)/gto_fasta_extract_pattern_coords: FastaExtractPatternCoords.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_extract_pattern_coords FastaExtractPatternCoords.c $(OBJS) $(LIBS)
+$(BIN)/gto_info: Info.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_info Info.c $(OBJS) $(LIBS)
+$(BIN)/gto_segment: Segment.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_segment Segment.c $(OBJS) $(LIBS)
 
 
 argparse.o: argparse.c argparse.h $(DEPS)

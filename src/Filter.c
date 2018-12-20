@@ -22,7 +22,7 @@ static double CalcMean(Entry *entries, int nEntries, int n, int M, double *w)
 }
 
 /*
- * This application filters numerical sequences.
+ * This application filters numerical sequences using a low-pass filter.
  */
 int main(int argc, char *argv[]){
   char oneCol, p1, reverse;
@@ -58,7 +58,7 @@ int main(int argc, char *argv[]){
   strcat(usage, " -w <windowsize> -d <drop> -t <windowtype> -c -p -r < input.num > output.num\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
-  argparse_describe(&argparse, "\nIt filters numerical sequences.", usage);
+  argparse_describe(&argparse, "\nIt filters numerical sequences using a low-pass filter.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
   if(argc != 0)
