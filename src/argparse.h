@@ -124,7 +124,7 @@ extern "C"
     #define OPT_STRING(...)  { ARGPARSE_OPT_STRING, __VA_ARGS__ }
     #define OPT_GROUP(h)     { ARGPARSE_OPT_GROUP, 0, NULL, NULL, h, NULL, 0, 0 }
     #define OPT_HELP()       OPT_BOOLEAN('h', "help", NULL,                 \
-                                         "show this help message and exit", \
+                                         "Show this help message and exit", \
                                          argparse_help_cb, 0, 0)
 
     int argparse_init(struct argparse *self, struct argparse_option *options,

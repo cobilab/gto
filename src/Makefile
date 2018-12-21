@@ -60,11 +60,18 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_permute_by_blocks \
 	          $(BIN)/gto_fasta_extract_pattern_coords \
 	          $(BIN)/gto_info \
-	          $(BIN)/gto_segment
+	          $(BIN)/gto_segment \
+	          $(BIN)/gto_fasta_get_unique \
+	          $(BIN)/gto_genomic_period \
+	          $(BIN)/gto_comparative_map \
+	          $(BIN)/gto_fastq_clust_reads
 	         
 	          
 
-OBJS     	= argparse.o buffer.o mem.o misc.o parser.o reads.o
+OBJS     	= argparse.o csmodel.o buffer.o mem.o misc.o parser.o reads.o \
+			  labels.o common.o dna.o fcm.o phash.o 
+
+OBJSCMAP    = common-cmap.o mem-cmap.o msg-cmap.o paint-cmap.o time-cmap.o
 #-----------------------------------------------------------------------------
 all:
 	$(MAKE) progs
@@ -173,6 +180,14 @@ $(BIN)/gto_info: Info.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_info Info.c $(OBJS) $(LIBS)
 $(BIN)/gto_segment: Segment.c $(DEPS) $(OBJS) 
 	$(CC) $(CFLAGS) -o $(BIN)/gto_segment Segment.c $(OBJS) $(LIBS)
+$(BIN)/gto_fasta_get_unique: FastaGetUnique.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_get_unique FastaGetUnique.c $(OBJS) $(LIBS)
+$(BIN)/gto_genomic_period: GenomicPeriod.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_genomic_period GenomicPeriod.c $(OBJS) $(LIBS)
+$(BIN)/gto_comparative_map: ComparativeMap.c $(DEPSCMAP) $(OBJSCMAP)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_comparative_map ComparativeMap.c $(OBJSCMAP) $(LIBS)
+$(BIN)/gto_fastq_clust_reads: FastqClustReads.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_clust_reads FastqClustReads.c $(OBJS) $(LIBS)
 
 
 argparse.o: argparse.c argparse.h $(DEPS)
@@ -187,6 +202,28 @@ reads.o: reads.c reads.h $(DEPS)
 	$(CC) -c $(CFLAGS) reads.c
 parser.o: parser.c parser.h $(DEPS)
 	$(CC) -c $(CFLAGS) parser.c
+labels.o: labels.c labels.h $(DEPS)
+	$(CC) -c $(CFLAGS) labels.c
+dna.o: dna.c dna.h $(DEPS)
+	$(CC) -c $(CFLAGS) dna.c
+fcm.o: fcm.c fcm.h $(DEPS)
+	$(CC) -c $(CFLAGS) fcm.c
+phash.o: phash.c phash.h $(DEPS)
+	$(CC) -c $(CFLAGS) phash.c
+csmodel.o: csmodel.c csmodel.h $(DEPS)
+	$(CC) -c $(CFLAGS) csmodel.c
+
+common-cmap.o: common-cmap.c common-cmap.h $(DEPSCMAP)
+	$(CC) -c $(CFLAGS) common-cmap.c
+mem-cmap.o: mem-cmap.c mem-cmap.h $(DEPSCMAP)
+	$(CC) -c $(CFLAGS) mem-cmap.c
+msg-cmap.o: msg-cmap.c msg-cmap.h $(DEPSCMAP)
+	$(CC) -c $(CFLAGS) msg-cmap.c
+paint-cmap.o: paint-cmap.c paint-cmap.h $(DEPSCMAP)
+	$(CC) -c $(CFLAGS) paint-cmap.c
+time-cmap.o: time-cmap.c time-cmap.h $(DEPSCMAP)
+	$(CC) -c $(CFLAGS) time-cmap.c
+
 
 ##############################################################################
 clean: 
