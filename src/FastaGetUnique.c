@@ -15,7 +15,7 @@
  */
 int main(int argc, char *argv[])
 {
-  char fname[4096];
+  char fname[8000];
   uint64_t nSeq, n, unique;
   uint32_t filtered;
   int sym;
