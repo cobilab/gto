@@ -105,7 +105,7 @@ The GTO provides pipe support for easy integration with the majority of the tool
 
 ## CITE
 Please cite the followings, if you use GTO:
-* J. R. Almeida, D. Pratas. GTO: the genomics toolkit, 2018.
+J. R. Almeida, D. Pratas. GTO: the genomics toolkit, 2018.
 
 ## RELEASES
 [Release](https://github.com/pratas/GTO/releases) 1.1
