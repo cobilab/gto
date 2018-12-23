@@ -23,14 +23,14 @@ The GTO provides pipe support for easy integration with the majority of the tool
 
 ### 1. Amino acid sequence tools
 
-```
+```bash
 1.1 gto_amino_acid_to_group
 1.2 gto_amino_acid_to_pseudo_dna
 ```
 
 ### 2. FASTQ tools
 
-```
+```bash
 2.1 gto_fastq_to_fasta
 2.2 gto_fastq_to_mfasta
 2.3 gto_fastq_exclude_n
@@ -56,7 +56,7 @@ The GTO provides pipe support for easy integration with the majority of the tool
 
 ### 3. FASTA tools
 
-```
+```bash
 3.1 gto_fasta_to_seq
 3.2 gto_fasta_from_seq
 3.3 gto_fasta_extract
@@ -73,7 +73,7 @@ The GTO provides pipe support for easy integration with the majority of the tool
 
 ### 4. Genomic sequence tools
 
-```
+```bash
 4.1 gto_genomic_gen_random_dna
 4.2 gto_genomic_rand_seq_extra_chars
 4.3 gto_genomic_dna_mutate
@@ -83,7 +83,7 @@ The GTO provides pipe support for easy integration with the majority of the tool
 
 ### 5. General purpose tools
 
-```
+```bash
 5.1 gto_char_to_line
 5.2 gto_reverse
 5.3 gto_new_line_on_new_x
