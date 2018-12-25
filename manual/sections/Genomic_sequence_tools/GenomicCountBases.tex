@@ -1,0 +1,59 @@
+\section{Program gto\char`_genomic\char`_count\char`_bases}
+The \texttt{gto\char`_genomic\char`_count\char`_bases} counts the number of bases in sequence, FASTA or FASTQ files.\\
+For help type:
+\begin{lstlisting}
+./gto_genomic_count_bases -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_genomic\char`_count\char`_bases} program needs program needs two streams for the computation, namely the input and output standard. The input stream is a sequence, FASTA or FASTQ file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_genomic_count_bases [options] [[--] args]
+   or: ./gto_genomic_count_bases [options]
+
+It counts the number of bases in sequence, FASTA or FASTQ files.
+
+    -h, --help    Show this help message and exit
+
+Basic options
+    < input       Input sequence, FASTA or FASTQ file format (stdin)
+    > output      Output read information (stdout)
+
+Example: ./gto_genomic_count_bases < input.seq > output
+
+Output example :
+File type        : value
+Number of bases  : value
+Number of a/A    : value
+Number of c/C    : value
+Number of g/G    : value
+Number of t/T    : value
+Number of n/N    : value
+Number of others : value
+\end{lstlisting}
+An example on such an input file is:
+\begin{lstlisting}
+TCTTTACTCGCGCGTTGGAGAAATACAATAGTGCGGCTCTGTCTCCTTATGAAGTCAACAATTTCGCTGGGACTTGCGGC
+TCTTTACTCGCGCGTTGGAGAAATACAATAGTGCGGCTCTGTCTCCTTATGAAGTCAACAATTTCGCTGGGACTTGCGGC
+GACTTCATCGTGGTCTCTGTCATTATGCGCTCCAACGCATAACTTTGCGCCAGAAGATAGATAGAATGGTGTAAGAAACT
+GTAATATATATAATGAACTTCGGCGAGTCTGTGGAGTTTTTGTTGCATTAGAGAGCCAAGAGGTCGGACGTCCTCACGTA
+GCCCGAGACGGGCAGGGCGATGGCGACTGAACGGGCTCCATATCACTTTGAGCTTTTATGCTTTCGACTCCTCCAGGAGC
+TGAACAACCTTGTTCCCGGCAAAGCCCACTGCGTCATGGAGCTCACGGTCTACATTCATGACTGACTAACCGTAAACTGC
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_genomic\char`_count\char`_bases} program is report which describes the number of each base in the file, and the file type.\\
+Using the input above, an output example for this is the following:
+\begin{lstlisting}
+File type        : DNA
+Number of bases  : 480
+Number of a/A    : 114
+Number of c/C    : 116
+Number of g/G    : 120
+Number of t/T    : 130
+Number of n/N    : 0
+Number of others : 0
+\end{lstlisting}

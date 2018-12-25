@@ -64,7 +64,8 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_fasta_get_unique \
 	          $(BIN)/gto_genomic_period \
 	          $(BIN)/gto_comparative_map \
-	          $(BIN)/gto_fastq_clust_reads
+	          $(BIN)/gto_fastq_clust_reads \
+	          $(BIN)/gto_genomic_count_bases
 	         
 	          
 
@@ -188,6 +189,8 @@ $(BIN)/gto_comparative_map: ComparativeMap.c $(DEPSCMAP) $(OBJSCMAP)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_comparative_map ComparativeMap.c $(OBJSCMAP) $(LIBS)
 $(BIN)/gto_fastq_clust_reads: FastqClustReads.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_clust_reads FastqClustReads.c $(OBJS) $(LIBS)
+$(BIN)/gto_genomic_count_bases: GenomicCountBases.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_genomic_count_bases GenomicCountBases.c $(OBJS) $(LIBS)
 
 
 argparse.o: argparse.c argparse.h $(DEPS)

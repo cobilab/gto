@@ -199,6 +199,10 @@ int main(int argc, char *argv[])
   "          It calculates the best order depth of a sequence, using         \n"
   "          FCMs.                                                           \n"
   "                                                                          \n"
+  "      [gto_genomic_count_bases]                                           \n"
+  "          It counts the number of bases in sequence, FASTA or             \n"
+  "          FASTQ files.                                                    \n"
+  "                                                                          \n"
   //General_Purpose_Tools
   "      [gto_char_to_line]                                                  \n"
   "          It splits a sequence into lines, creating an output             \n"
