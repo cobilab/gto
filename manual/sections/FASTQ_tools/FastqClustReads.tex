@@ -12,7 +12,21 @@ The \texttt{gto\char`_fastq\char`_clust\char`_reads} program needs two streams f
 namely the input and output standard. The input stream is a FASTQ file. The program sorts the FASTQ reads accoring to the lexicographic order of the genomic sequences.\\
 The attribution is given according to:
 \begin{lstlisting}
-TODO
+Usage: ./gto_fastq_clust_reads [options] [[--] args]
+   or: ./gto_fastq_clust_reads [options]
+
+It agroups reads and creates an index file.
+It cluster reads in therms of Seq k-mer Lexicographical order
+
+
+    -h, --help            Show this help message and exit
+
+Basic options
+    -c, --ctx=<int>       
+    < input.fastq         Input FASTQ file format (stdin)
+    > output.fastq        Output FASTQ file format (stdout)
+
+Example: ./gto_fastq_clust_reads -c <ctx> < input.fastq > output.fastq
 \end{lstlisting}
 An example on such an input file is:
 \begin{lstlisting}
