@@ -10,7 +10,7 @@ alt="GTO" height="74" border="0" /></p>
 ## INSTALL
 Get GTO and make the project, using:
 ```bash
-git clone https://github.com/pratas/GTO.git
+git clone https://github.com/bioinformatics-ua/gto.git
 cd GTO/src/
 make
 ```
@@ -21,65 +21,66 @@ the `bin/` directory.
 
 The GTO provides pipe support for easy integration with the majority of the tools. These include programs to shuffle, transform, simulate, compress, vizualize, among others. The GTO includes the following tools, divided by genomic data format type.
 
-### 1. Amino acid sequence tools
+### 1. FASTQ tools
 
 ```bash
-1.1 gto_amino_acid_to_group
-1.2 gto_amino_acid_to_pseudo_dna
+1.1 gto_fastq_to_fasta
+1.2 gto_fastq_to_mfasta
+1.3 gto_fastq_exclude_n
+1.4 gto_fastq_extract_quality_scores
+1.5 gto_fastq_info
+1.6 gto_fastq_maximum_read_size
+1.7 gto_fastq_minimum_quality_score
+1.8 gto_fastq_minimum_read_size
+1.9 gto_fastq_rand_extra_chars
+1.10 gto_fastq_from_seq
+1.11 gto_fastq_mutate
+1.12 gto_fastq_split
+1.13 gto_fastq_pack
+1.14 gto_fastq_unpack
+1.15 gto_fastq_quality_score_info
+1.16 gto_fastq_quality_score_max
+1.17 gto_fastq_quality_score_min
+1.18 gto_fastq_cut
+1.19 gto_fastq_minimum_local_quality_score_forward
+1.20 gto_fastq_minimum_local_quality_score_reverse
+1.21 gto_fastq_clust_reads
 ```
 
-### 2. FASTQ tools
+### 2. FASTA tools
 
 ```bash
-2.1 gto_fastq_to_fasta
-2.2 gto_fastq_to_mfasta
-2.3 gto_fastq_exclude_n
-2.4 gto_fastq_extract_quality_scores
-2.5 gto_fastq_info
-2.6 gto_fastq_maximum_read_size
-2.7 gto_fastq_minimum_quality_score
-2.8 gto_fastq_minimum_read_size
-2.9 gto_fastq_rand_extra_chars
-2.10 gto_fastq_from_seq
-2.11 gto_fastq_mutate
-2.12 gto_fastq_split
-2.13 gto_fastq_pack
-2.14 gto_fastq_unpack
-2.15 gto_fastq_quality_score_info
-2.16 gto_fastq_quality_score_max
-2.17 gto_fastq_quality_score_min
-2.18 gto_fastq_cut
-2.19 gto_fastq_minimum_local_quality_score_forward
-2.20 gto_fastq_minimum_local_quality_score_reverse
-2.21 gto_fastq_clust_reads
+2.1 gto_fasta_to_seq
+2.2 gto_fasta_from_seq
+2.3 gto_fasta_extract
+2.4 gto_fasta_extract_by_read
+2.5 gto_fasta_info
+2.6 gto_fasta_mutate
+2.7 gto_fasta_rand_extra_chars
+2.8 gto_fasta_extract_read_by_pattern
+2.9 gto_fasta_find_n_pos
+2.10 gto_fasta_split_reads
+2.11 gto_fasta_rename_human_headers
+2.12 gto_fasta_extract_pattern_coords
 ```
 
-### 3. FASTA tools
+### 3. Genomic sequence tools
 
 ```bash
-3.1 gto_fasta_to_seq
-3.2 gto_fasta_from_seq
-3.3 gto_fasta_extract
-3.4 gto_fasta_extract_by_read
-3.5 gto_fasta_info
-3.6 gto_fasta_mutate
-3.7 gto_fasta_rand_extra_chars
-3.8 gto_fasta_extract_read_by_pattern
-3.9 gto_fasta_find_n_pos
-3.10 gto_fasta_split_reads
-3.11 gto_fasta_rename_human_headers
-3.12 gto_fasta_extract_pattern_coords
+3.1 gto_genomic_gen_random_dna
+3.2 gto_genomic_rand_seq_extra_chars
+3.3 gto_genomic_dna_mutate
+3.4 gto_genomic_extract
+3.5 gto_genomic_period
 ```
 
-### 4. Genomic sequence tools
+### 4. Amino acid sequence tools
 
 ```bash
-4.1 gto_genomic_gen_random_dna
-4.2 gto_genomic_rand_seq_extra_chars
-4.3 gto_genomic_dna_mutate
-4.4 gto_genomic_extract
-4.5 gto_genomic_period
+4.1 gto_amino_acid_to_group
+4.2 gto_amino_acid_to_pseudo_dna
 ```
+
 
 ### 5. General purpose tools
 
