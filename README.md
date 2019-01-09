@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/pratas/GTO.svg?branch=master)](https://travis-ci.org/pratas/GTO)
+[![Build Status](https://travis-ci.org/bioinformatics-ua/gto.svg?branch=master)](https://travis-ci.org/pratas/GTO)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/53c822299f6841fbb7680d065be5b796)](https://www.codacy.com/app/pratas/GTO?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pratas/GTO&amp;utm_campaign=Badge_Grade)
 [![License: MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
@@ -108,12 +108,9 @@ The GTO provides pipe support for easy integration with the majority of the tool
 Please cite the followings, if you use GTO:
 J. R. Almeida, D. Pratas. GTO: the genomics toolkit, 2018.
 
-## RELEASES
-[Release](https://github.com/pratas/GTO/releases) 1.1
-
 ## ISSUES
 Please let us know if there is any
-[issues](https://github.com/pratas/GTO/issues).
+[issues](https://github.com/bioinformatics-ua/gto/issues).
 
 ## LICENSE
 GTO is under MIT license. For more information, click
