@@ -11,7 +11,7 @@ alt="GTO" height="74" border="0" /></p>
 Get GTO and make the project, using:
 ```bash
 git clone https://github.com/bioinformatics-ua/gto.git
-cd GTO/src/
+cd gto/src/
 make
 ```
 Note, an already compiled version of GTO is available for 64 bit Linux OS in
