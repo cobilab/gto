@@ -25,7 +25,7 @@ static double CalcMean(Entry *entries, int nEntries, int n, int M, double *w)
  * This application filters numerical sequences using a low-pass filter.
  */
 int main(int argc, char *argv[]){
-  char oneCol, p1, reverse;
+  int oneCol, p1, reverse;
   int n, k, nEntries, position, M, drop, wType;
   double value, *w;
   Entry *entries = NULL;
