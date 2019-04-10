@@ -64,8 +64,9 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_fasta_get_unique \
 	          $(BIN)/gto_genomic_period \
 	          $(BIN)/gto_comparative_map \
-	          $(BIN)/gto_fastq_clust_reads \
-	          $(BIN)/gto_genomic_count_bases
+	          $(BIN)/gto_genomic_count_bases \
+	          $(BIN)/gto_max \
+	          $(BIN)/gto_min 
 	         
 	          
 
@@ -187,10 +188,12 @@ $(BIN)/gto_genomic_period: GenomicPeriod.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_genomic_period GenomicPeriod.c $(OBJS) $(LIBS)
 $(BIN)/gto_comparative_map: ComparativeMap.c $(DEPSCMAP) $(OBJSCMAP)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_comparative_map ComparativeMap.c $(OBJSCMAP) $(LIBS)
-$(BIN)/gto_fastq_clust_reads: FastqClustReads.c $(DEPS) $(OBJS)
-	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_clust_reads FastqClustReads.c $(OBJS) $(LIBS)
 $(BIN)/gto_genomic_count_bases: GenomicCountBases.c $(DEPS) $(OBJS) 
 	$(CC) $(CFLAGS) -o $(BIN)/gto_genomic_count_bases GenomicCountBases.c $(OBJS) $(LIBS)
+$(BIN)/gto_max: Max.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_max Max.c $(OBJS) $(LIBS)
+$(BIN)/gto_min: Min.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_min Min.c $(OBJS) $(LIBS)
 
 
 argparse.o: argparse.c argparse.h $(DEPS)
