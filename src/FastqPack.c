@@ -12,7 +12,7 @@ void PrintStream(uint8_t *b, uint32_t n, uint8_t terminator)
 {
   int k;
   for(k = 0 ; k < n ; ++k)
-    if(b[k] == '\n' /* && terminator == 0*/) 
+    if(b[k] == '\n' || k == (n-1)) 
       putchar(127);
     else 
       putchar(b[k]);
