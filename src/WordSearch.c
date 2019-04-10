@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, "-w <word> < input.txt > output.txt\n");
+  strcat(usage, " -w <word> < input.txt > output.txt\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
   argparse_describe(&argparse, "\nSearching for a word in a text file. It is case sensitive.", usage);

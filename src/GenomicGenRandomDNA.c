@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " > output.seq\n");
+  strcat(usage, " -s <seed> -n <nsybomls> -f <fa,fc,fg,ft> > output.seq\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
   argparse_describe(&argparse, "\nIt generates a synthetic DNA.", usage);

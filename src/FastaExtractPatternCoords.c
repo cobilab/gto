@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
         OPT_HELP(),
         OPT_GROUP("Basic options"),
         OPT_STRING('p', "pattern", &pattern, "Pattern to search in the file header"),
-        OPT_BUFF('<', "input.fasta", "Input Multi-FASTA file format (stdin)"),
+        OPT_BUFF('<', "input.mfasta", "Input Multi-FASTA file format (stdin)"),
         OPT_BUFF('>', "output.coords", "Output coordinates (stdout)"),
         OPT_END(),
   };
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " -p <pattern> < input.fasta > output.coords\n");
+  strcat(usage, " -p <pattern> < input.mfasta > output.coords\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
   argparse_describe(&argparse, "\nIt extracts the header and coordinates from a Multi-FASTA file format given a pattern/motif in the sequence.", usage);

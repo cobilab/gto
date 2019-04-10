@@ -18,15 +18,15 @@ int main(int argc, char *argv[])
         OPT_HELP(),
         OPT_GROUP("Basic options"),
         OPT_INTEGER('u', "upperbound", &upperbound, "The upper bound value"),
-        OPT_BUFF('<', "input", "Input numeric file (stdin)"),
-        OPT_BUFF('>', "output", "Output numeric file (stdout)"),
+        OPT_BUFF('<', "input.num", "Input numeric file (stdin)"),
+        OPT_BUFF('>', "output.num", "Output numeric file (stdout)"),
         OPT_END(),
   };
   struct argparse argparse;
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " -u <upperbound> < input > output\n");
+  strcat(usage, " -u <upperbound> < input.num > output.num\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
   argparse_describe(&argparse, "\nIt sets an upper bound in a file with a value per line.", usage);

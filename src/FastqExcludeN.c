@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " < input.fastq > output.fastq\n"
+  strcat(usage, " -m <max> < input.fastq > output.fastq\n"
     "\nConsole output example:\n"
     "<FASTQ non-filtered reads>\n"
     "Total reads    : value\n"

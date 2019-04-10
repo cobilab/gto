@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " -s <seed> -e <edit rate> -d <deletion rate> -i <insertion rate> -a < input.fasta > output.fasta\n");
+  strcat(usage, " -s <seed> -e <edit rate> -d <deletion rate> -i <insertion rate> -a < input.mfasta > output.mfasta\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
   argparse_describe(&argparse, "\nCreates a synthetic mutation of a FASTA file given specific rates of editions, deletions and additions", usage);

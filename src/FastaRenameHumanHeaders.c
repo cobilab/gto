@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " < input.fasta > output.fasta\n");
+  strcat(usage, " < input.mfasta > output.mfasta\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
   argparse_describe(&argparse, "\nIt changes the headers of FASTA or Multi-FASTA file to simple chr$1 by order.", usage);

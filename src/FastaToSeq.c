@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " < input.fasta > output.seq\n");
+  strcat(usage, " < input.mfasta > output.seq\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
   argparse_describe(&argparse, "\nIt converts a FASTA or Multi-FASTA file format to a seq.", usage);

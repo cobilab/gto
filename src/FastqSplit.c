@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " -t <output_forward.fastq> -r <output_reverse.fastq> < input.fastq > output\n"
+  strcat(usage, " -f <output_forward.fastq> -r <output_reverse.fastq> < input.fastq > output\n"
     "\nOutput example :\n"
     "Total reads      : value\n"  
     "Singleton reads  : value\n"

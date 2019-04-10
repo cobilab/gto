@@ -27,15 +27,15 @@ int main(int argc, char *argv[])
         OPT_HELP(),
         OPT_GROUP("Basic options"),
         OPT_STRING('p', "pattern", &pattern, "Pattern to search in the file header"),
-        OPT_BUFF('<', "input.fasta", "Input Multi-FASTA file format (stdin)"),
-        OPT_BUFF('>', "output.fasta", "Output Multi-FASTA file format (stdout)"),
+        OPT_BUFF('<', "input.mfasta", "Input Multi-FASTA file format (stdin)"),
+        OPT_BUFF('>', "output.mfasta", "Output Multi-FASTA file format (stdout)"),
         OPT_END(),
   };
   struct argparse argparse;
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " -p <pattern> < input.fasta > output.fasta\n");
+  strcat(usage, " -p <pattern> < input.mfasta > output.mfasta\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
   argparse_describe(&argparse, "\nIt extracts reads from a Multi-FASTA file format given a pattern in the header (ID).", usage);

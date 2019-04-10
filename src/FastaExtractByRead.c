@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " -i <init> -e <end> < input.fasta > output.fasta\n");
+  strcat(usage, " -i <init> -e <end> < input.mfasta > output.mfasta\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
   argparse_describe(&argparse, "\nIt extracts sequences from each read in a FASTA or Multi-FASTA file (splited by \\n)", usage);

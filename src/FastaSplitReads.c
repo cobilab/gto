@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
   struct argparse_option options[] = {
         OPT_HELP(),
         OPT_GROUP("Basic options"),
-        OPT_BUFF('<', "input.fasta", "Input Multi-FASTA file format (stdin)"),
+        OPT_BUFF('<', "input.mfasta", "Input Multi-FASTA file format (stdin)"),
         OPT_GROUP("Optional options"),
         OPT_STRING('l', "location", &location, "Location to store the files"),
         OPT_END(),
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " < input.fasta\n");
+  strcat(usage, " < input.mfasta\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
   argparse_describe(&argparse, 

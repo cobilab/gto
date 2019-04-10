@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
         OPT_HELP(),
         OPT_GROUP("Basic options"),
         OPT_BUFF('<', "input.fastq", "Input FASTQ file format (stdin)"),
-        OPT_BUFF('>', "output.fastq", "Output FASTQ file format (stdout)"),
+        OPT_BUFF('>', "output.fastqpack", "Output packaged FASTQ file format (stdout)"),
         OPT_GROUP("Optional"),
         OPT_BOOLEAN('s', "scores", &scores, "When active, the application show the scores first"),
         OPT_END(),
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " -s < input.fastq > output.fastq\n");
+  strcat(usage, " -s < input.fastq > output.fastqpack\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
   argparse_describe(&argparse, "\nIt packages each FASTQ read in a single line.", usage);
