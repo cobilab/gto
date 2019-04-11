@@ -6,7 +6,7 @@
 #include "argparse.h"
 
 /*
- * This application computes the max value in each row between two files
+ * This application computes the maximum value in each row between two files
  */
 int MaxFile(const char *fn1, const char *fn2)
 {	
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
   strcat(usage, " -f input1.num -s input2.num > output.num\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
-  argparse_describe(&argparse, "\nIt computes the max value in each row between two files.", usage);
+  argparse_describe(&argparse, "\nIt computes the maximum value in each row between two files.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
   if(argc != 0)

@@ -160,3 +160,6 @@ cd ..
 cd gto_word_search
 sh runExample.sh
 cd ..
+cd gto_max
+sh runExample.sh
+cd ..
