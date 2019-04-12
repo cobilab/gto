@@ -163,3 +163,6 @@ cd ..
 cd gto_max
 sh runExample.sh
 cd ..
+cd gto_min
+sh runExample.sh
+cd ..

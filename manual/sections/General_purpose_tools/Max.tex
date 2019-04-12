@@ -1,0 +1,67 @@
+\section{Program gto\char`_max}
+The \texttt{gto\char`_max} computes the maximum value in each row between two files.\\
+For help type:
+\begin{lstlisting}
+./gto_max -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_max} program needs program needs two streams for the computation, namely the input, which are two decimal files.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_max [options] [[--] args]
+   or: ./gto_max [options]
+
+It computes the maximum value in each row between two files.
+
+    -h, --help                Show this help message and exit
+
+Basic options
+    -f, --first_file=<str>    File to compute the max
+    -s, --second_file=<str>   The second file to do the max computation
+    > output.num              Output numeric file (stdout)
+
+Example: ./gto_max -f input1.num -s input2.num > output.num
+\end{lstlisting}
+An example of such an input files are:\\
+File 1:
+\begin{lstlisting}
+0.123
+3.432
+2.341
+1.323
+7.538
+4.122
+0.242
+0.654
+5.633
+\end{lstlisting}
+File 2:
+\begin{lstlisting}
+2.123
+5.312
+2.355
+0.124
+1.785
+3.521
+0.532
+7.324
+2.312
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_max} program is the numeric file with the maximum value for each row between both input files.\\
+Executing the application with the provided input, the output of this execution is:
+\begin{lstlisting}
+2.123000
+5.312000
+2.355000
+1.323000
+7.538000
+4.122000
+0.532000
+7.324000
+5.633000
+\end{lstlisting}
