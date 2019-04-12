@@ -166,10 +166,10 @@ cd ..
 cd gto_min
 sh runExample.sh
 cd ..
-cd gto_ac
+cd gto_amino_acid_compressor
 sh runExample.sh
 cd ..
-cd gto_xs
+cd gto_fastq_xs
 sh runExample.sh
 cd ..
 cd gto_geco

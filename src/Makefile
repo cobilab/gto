@@ -206,15 +206,15 @@ geco:
 xs:
 	git clone https://github.com/pratas/xs.git
 	cd xs && make
-	mv xs/XS $(BIN)/gto_xs
+	mv xs/XS $(BIN)/gto_fastq_xs
 	rm -rf xs
 
 ac:
 	git clone https://github.com/pratas/ac.git
 	mv ac/src/Makefile.linux ac/src/Makefile
 	cd ac/src/ && make
-	mv ac/src/AC $(BIN)/gto_ac
-	mv ac/src/AD $(BIN)/gto_ad
+	mv ac/src/AC $(BIN)/gto_amino_acid_compressor
+	mv ac/src/AD $(BIN)/gto_amino_acid_decompressor
 	rm -rf ac
 
 externalProgs: 
