@@ -1,0 +1,64 @@
+\section{Program gto\char`_ac}
+The \texttt{gto\char`_ac} is a new lossless compressor to compress efficiently amino acid sequences (proteins). It uses a cooperation between multiple context and substitutional tolerant context models. The cooperation between models is balanced with weights that benefit the models with better performance according to a forgetting function specific for each model.\\
+For help type:
+\begin{lstlisting}
+./gto_ac -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_ac} program needs a file with amino acid sequences to compress.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: AC [OPTION]... -r [FILE]  [FILE]:[...]                          
+Compression of amino acid sequences.                                   
+                                                                       
+Non-mandatory arguments:                                               
+                                                                       
+  -h                     give this help,                               
+  -s                     show AC compression levels,                   
+  -v                     verbose mode (more information),              
+  -V                     display version number,                       
+  -f                     force overwrite of output,                    
+  -l <level>             level of compression [1;7] (lazy -tm setup),  
+  -t <threshold>         threshold frequency to discard from alphabet,
+  -e                     it creates a file with the extension ".iae" 
+                         with the respective information content.      
+                                                                       
+  -rm <c>:<d>:<g>/<m>:<e>:<a>  reference model (-rm 1:10:0.9/0:0:0),   
+  -rm <c>:<d>:<g>/<m>:<e>:<a>  reference model (-rm 5:90:0.9/1:50:0.8),
+  ...                                                                  
+  -tm <c>:<d>:<g>/<m>:<e>:<a>  target model (-tm 1:1:0.8/0:0:0),       
+  -tm <c>:<d>:<g>/<m>:<e>:<a>  target model (-tm 7:100:0.9/2:10:0.85), 
+  ...                                                                  
+                         target and reference templates use <c> for    
+                         context-order size, <d> for alpha (1/<d>), <g>
+                         for gamma (decayment forgetting factor) [0;1),
+                         <m> to the maximum sets the allowed mutations,
+                         on the context without being discarded (for   
+                         deep contexts), under the estimator <e>, using
+                         <a> for gamma (decayment forgetting factor)   
+                         [0;1) (tolerant model),                       
+                                                                       
+  -r <FILE>              reference file ("-rm" are loaded here),     
+                                                                       
+Mandatory arguments:                                                   
+                                                                       
+  <FILE>:<...>:<...>     file to compress (last argument). For more    
+                         files use splitting ":" characters.         
+                                                                       
+Example:                                                               
+                                                                       
+  [Compress]   ./AC -v -tm 1:1:0.8/0:0:0 -tm 5:20:0.9/3:20:0.9 seq.txt 
+  [Decompress] ./AD -v seq.txt.co  
+\end{lstlisting}
+In the following example, it will be downloaded nine amino acid sequences and compress and decompress one of the smallest (HI). Finally, it compares if the uncompressed sequence is equal to the original.
+\begin{lstlisting}
+wget http://sweet.ua.pt/pratas/datasets/AminoAcidsCorpus.zip
+unzip AminoAcidsCorpus.zip
+cp AminoAcidsCorpus/HI .
+./gto_ac -v -l 2 HI
+./gto_ad -v HI.co
+cmp HI HI.de
+\end{lstlisting}

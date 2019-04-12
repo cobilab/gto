@@ -214,6 +214,7 @@ ac:
 	mv ac/src/Makefile.linux ac/src/Makefile
 	cd ac/src/ && make
 	mv ac/src/AC $(BIN)/gto_ac
+	mv ac/src/AD $(BIN)/gto_ad
 	rm -rf ac
 
 externalProgs: 

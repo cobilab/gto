@@ -166,3 +166,9 @@ cd ..
 cd gto_min
 sh runExample.sh
 cd ..
+cd gto_ac
+sh runExample.sh
+cd ..
+cd gto_xs
+sh runExample.sh
+cd ..
