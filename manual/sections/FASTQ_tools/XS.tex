@@ -1,0 +1,94 @@
+\section{Program gto\char`_xs}
+The \texttt{gto\char`_xs} is a skilled FASTQ read simulation tool, flexible, portable (does not need a reference sequence) and tunable in terms of sequence complexity. XS handles Ion Torrent, Roche-454, Illumina and ABI-SOLiD simulation sequencing types. It has several running modes, depending on the time and memory available, and is aimed at testing computing infrastructures, namely cloud computing of large-scale projects, and testing FASTQ compression algorithms. Moreover, XS offers the possibility of simulating the three main FASTQ components individually (headers, DNA sequences and quality-scores). Quality-scores can be simulated using uniform and Gaussian distributions.\\
+For help type:
+\begin{lstlisting}
+./gto_xs -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_xs} program needs program needs a FASTQ file to compute.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: XS   [OPTION]... [FILE] 
+
+System options:
+ -h                       give this help
+ -v                       verbose mode
+
+Main FASTQ options:
+ -t  <sequencingType>     type: 1=Roche-454, 2=Illumina, 3=ABI SOLiD, 4=Ion Torrent
+ -hf <headerFormat>       header format: 1=Length appendix, 2=Pair End
+ -i  n=<instrumentName>   the unique instrument name (use n= before name)
+ -o                       use the same header in third line of the read
+ -ls <lineSize>           static line (bases/quality scores) size
+ -ld <minSize>:<maxSize>  dynamic line (bases/quality scores) size
+ -n  <numberOfReads>      number of reads per file
+
+DNA options:
+ -f  <A>,<C>,<G>,<T>,<N>  symbols frequency
+ -rn <numberOfRepeats>    repeats: number (default: 0)
+ -ri <repeatsMinSize>     repeats: minimum size
+ -ra <repeatsMaxSize>     repeats: maximum size
+ -rm <mutationRate>       repeats: mutation frequency
+ -rr                      repeats: use reverse complement repeats
+
+Quality scores options:
+ -qt <assignmentType>     quality scores distribution: 1=uniform, 2=gaussian
+ -qf <statsFile>          load file: mean, standard deviation (when: -qt 2)
+ -qc <template>           custom template ascii alphabet
+
+Filtering options:
+ -eh                      excludes the use of headers from output
+ -eo                      excludes the use of optional headers (+) from output
+ -ed                      excludes the use of DNA bases from output
+ -edb                     excludes '\n' when DNA bases line size is reached
+ -es                      excludes the use of quality scores from output
+
+Stochastic options:
+ -s  <seed>               generation seed
+
+<genFile>                 simulated output file
+
+Common usage:
+ ./XS -v -t 1 -i n=MySeq -ld 30:80 -n 20000 -qt=1 -qc 33,36,39:43 File
+ ./XS -v -ls 100 -n 10000 -eh -eo -es -edb -f 0.3,0.2,0.2,0.3,0.0 -rn 50 -ri 300 -ra 3000 -rm 0.1 File
+\end{lstlisting}
+An example of such an input file is:
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=60
+GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGG
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIII
+@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+GTTCAGGGATACGACGTTTGTATTTTAAGAATCTGAAGCAGAAGTCGATGATAATACGCGTCGTTTTATCAT
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_xs} program is a FASTQ file\\
+Using the input above using the common usage with 5 reads (-n 5), an output example for this is the following:
+\begin{lstlisting}
+@output.fastq.598 LQGQLWH01D5WVZ length=62
+TTCNTNCCAGGTAAAGAGAACATNCCGNCGCACTACTCGTAAGACTTGCTGGNCGAGAAAGG
++
+)(+!*!$')($(()+'))$$()'!)!$!!$*+)+''('!)))!+!)(!+!*$!'$*)**++!
+@output.fastq.1510 LQGQLWH01A7LJI length=57
+CTAGACTACTCGAGCACTAGGCTCGCGTNTACCANGGGGNCTGCGNGTTGGCNCGGT
++
+)+(*(+$*)+!*)!'!!(!(!!(*'$!+!(()$'!!+*+!!))!*!')***+!$+''
+@output.fastq.2153 LQGQLWH01CHBQJ length=33
+ACTTTTTGCTCAAGCAGGGTTGCCTAGCAANAC
++
+*)++!+$''')*)**!+)$(*((*)$!'!+!!*
+@output.fastq.3251 LQGQLWH01C8OY4 length=75
+TCTTTCCTTCNCGNCCNAATTCCCCATAANAACTTAAAATCNCNNGCTGCGCGTGATCAACAATATTAATACTCC
++
+!*''+*'!''!+!!!*!'!+(++)*(*($!!*((')$*!$(!'!!'+)$+*!$*!**!'()$!*'+'*'+!!+'(
+@output.fastq.3934 LQGQLWH01AQDXM length=36
+GGTAACNNGGAATTCTTCCAATTANCCNTGTCCGGC
++
+$+)'!'!!)+)+!''**$$*!!')!+)!)*()!))$
+\end{lstlisting}
