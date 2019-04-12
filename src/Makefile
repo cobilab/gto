@@ -76,7 +76,7 @@ OBJS     	= argparse.o csmodel.o buffer.o mem.o misc.o parser.o reads.o \
 OBJSCMAP    = common-cmap.o mem-cmap.o msg-cmap.o paint-cmap.o time-cmap.o
 #-----------------------------------------------------------------------------
 all:
-	$(MAKE) progs
+	$(MAKE) progs externalProgs
 progs: $(PROGS)
 $(BIN)/gto: GTO.c $(DEPS) $(OBJS) 
 	$(CC) $(CFLAGS) -o $(BIN)/gto GTO.c $(OBJS) $(LIBS)
@@ -195,6 +195,29 @@ $(BIN)/gto_max: Max.c $(DEPS) $(OBJS)
 $(BIN)/gto_min: Min.c $(DEPS) $(OBJS) 
 	$(CC) $(CFLAGS) -o $(BIN)/gto_min Min.c $(OBJS) $(LIBS)
 
+geco:
+	git clone https://github.com/pratas/geco2.git
+	mv geco2/src/Makefile.linux geco2/src/Makefile 
+	cd geco2/src && make
+	mv geco2/src/GeCo2 $(BIN)/gto_geco
+	mv geco2/src/GeDe2 $(BIN)/gto_gede
+	rm -rf geco2
+
+xs:
+	git clone https://github.com/pratas/xs.git
+	cd xs && make
+	mv xs/XS $(BIN)/gto_xs
+	rm -rf xs
+
+ac:
+	git clone https://github.com/pratas/ac.git
+	mv ac/src/Makefile.linux ac/src/Makefile
+	cd ac/src/ && make
+	mv ac/src/AC $(BIN)/gto_ac
+	rm -rf ac
+
+externalProgs: 
+	make geco xs ac
 
 argparse.o: argparse.c argparse.h $(DEPS)
 	$(CC) -c $(CFLAGS) argparse.c
