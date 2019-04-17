@@ -8,7 +8,15 @@ alt="GTO" height="74" border="0" /></p>
 <p align="center"><b>The genomics toolkit</b></p>
 
 ## INSTALL
-Get GTO and make the project, using:
+
+### 1.1 Automatic installation with [Conda](https://conda.io/miniconda) ###
+
+```
+conda install -c cobilab gto --yes
+```
+
+### 1.2 Manual installation ###
+
 ```bash
 git clone https://github.com/bioinformatics-ua/gto.git
 cd gto/src/
