@@ -16,6 +16,8 @@
 #   => IDB.fa.gz  (INVERTEBRATE)
 #   => VMDB.fa.gz (VERTEBRATE MAMMALIAN)
 #   => VODB.fa.gz (VERTEBRATE OTHER)
+#   => MTDB.fa.gz (MITOCHONDRIAL)
+#   => PLDB.fa.gz (PLASTID)
 # 
 # ==============================================================================
 # NUMBER OF THREADS USED FOR DOWNLOAD
@@ -34,6 +36,8 @@ BUILD_PLANT=1;
 BUILD_INVER=1;
 BUILD_VER_MAM=1;
 BUILD_VER_OTH=1;
+BUILD_MITO=1;
+BUILD_PLAST=1;
 #
 # ==============================================================================
 # VIRAL DB
@@ -222,6 +226,28 @@ if [[ "$BUILD_VER_OTH" -eq "1" ]];
   mv GB_DB_VER_OTH/*_rna_from_genomic.fna.gz GB_DB_VER_OTH_RNA/
   rm -f VODB.fa.gz;
   zcat GB_DB_VER_OTH/*.fna.gz | gzip -9 > VODB.fa.gz
+  fi
+#
+# ==============================================================================
+# MITOCHONDRIAL DB
+#
+if [[ "$BUILD_MITO" -eq "1" ]];
+  then
+  rm -f mitochondrion.1.1.genomic.fna.gz mitochondrion.2.1.genomic.fna.gz;
+  wget ftp://ftp.ncbi.nlm.nih.gov/refseq/release/mitochondrion/mitochondrion.1.1.genomic.fna.gz
+  wget ftp://ftp.ncbi.nlm.nih.gov/refseq/release/mitochondrion/mitochondrion.2.1.genomic.fna.gz
+  zcat mitochondrion.1.1.genomic.fna.gz mitochondrion.2.1.genomic.fna.gz | gzip -9 > MTDB.fa.gz
+  fi
+#
+# ==============================================================================
+# PLASTID DB
+#
+if [[ "$BUILD_PLAST" -eq "1" ]];
+  then
+  rm -f plastid.1.1.genomic.fna.gz plastid.2.1.genomic.fna.gz
+  wget ftp://ftp.ncbi.nlm.nih.gov/refseq/release/plastid/plastid.1.1.genomic.fna.gz
+  wget ftp://ftp.ncbi.nlm.nih.gov/refseq/release/plastid/plastid.2.1.genomic.fna.gz
+  zcat plastid.1.1.genomic.fna.gz plastid.2.1.genomic.fna.gz | gzip -9 > PLDB.fa.gz
   fi
 #
 # ==============================================================================
