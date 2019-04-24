@@ -27,22 +27,118 @@ THREADS=8;
 # ==============================================================================
 # ONLY FLAGS WITH '1' WILL BE PROCESSED 
 #
-BUILD_VIRAL=1;
-BUILD_BACTERIA=1;
-BUILD_ARCHAEA=1;
-BUILD_PROTOZOA=1;
-BUILD_FUNGI=1;
-BUILD_PLANT=1;
-BUILD_INVER=1;
-BUILD_VER_MAM=1;
-BUILD_VER_OTH=1;
-BUILD_MITO=1;
-BUILD_PLAST=1;
+BUILD_VIRAL=0;
+BUILD_BACTERIA=0;
+BUILD_ARCHAEA=0;
+BUILD_PROTOZOA=0;
+BUILD_FUNGI=0;
+BUILD_PLANT=0;
+BUILD_INVER=0;
+BUILD_VER_MAM=0;
+BUILD_VER_OTH=0;
+BUILD_MITO=0;
+BUILD_PLAST=0;
+SHOW_HELP=1;
+
+for i in "$@"
+do
+  case $i in
+    -h|--help)
+      SHOW_HELP=1;
+      shift
+    ;;
+    -vi|--build-viral)
+      BUILD_VIRAL=1;
+      SHOW_HELP=0;
+      shift
+    ;;
+    -ba|--build-bacteria)
+      BUILD_BACTERIA=1;
+      SHOW_HELP=0;
+      shift
+    ;;
+    -ar|--build-archaea)
+      BUILD_ARCHAEA=1;
+      SHOW_HELP=0;
+      shift
+    ;;
+    -pr|--build-protozoa)
+      BUILD_PROTOZOA=1;
+      SHOW_HELP=0;
+      shift
+    ;;
+    -fu|--build-fungi)
+      BUILD_FUNGI=1;
+      SHOW_HELP=0;
+      shift
+    ;;
+    -pl|--build-plant)
+      BUILD_PLANT=1;
+      SHOW_HELP=0;
+      shift
+    ;;
+    -in|--build-inver)
+      BUILD_INVER=1;
+      SHOW_HELP=0;
+      shift
+    ;;
+    -vm|--build-ver-mam)
+      BUILD_VER_MAM=1;
+      SHOW_HELP=0;
+      shift
+    ;;
+    -vo|--build-ver-oth)
+      BUILD_VER_OTH=1;
+      SHOW_HELP=0;
+      shift
+    ;;
+    -mi|--build-mito)
+      BUILD_MITO=1;
+      SHOW_HELP=0;
+      shift
+    ;;
+    -ps|--build-plast)
+      BUILD_PLAST=1;
+      SHOW_HELP=0;
+      shift
+    ;;
+    *) # unknown option
+    echo "Invalid arg "$1
+    ;;
+  esac
+done
+#
+# ==============================================================================
+# HELP
+#
+if [ "$SHOW_HELP" -eq "1" ];
+  then
+    echo "Usage: BUILD_DB.sh [options]"
+    echo ""
+    echo "It downloads and compresses the complete genomic sequences form the"
+    echo "NCBI database that are labelled as 'Complete genome' or 'Chromosome'."
+    echo ""
+    echo "    -h,  --help             Show this help message and exit"
+    echo "    -vi, --build-viral      Downloads and builds the viral database"
+    echo "    -ba, --build-bacteria   Downloads and builds the bacteria database"
+    echo "    -ar, --build-archaea    Downloads and builds the archaea database"
+    echo "    -pr, --build-protozoa   Downloads and builds the protozoa database"
+    echo "    -fu, --build-fungi      Downloads and builds the fungi database"
+    echo "    -pl, --build-plant      Downloads and builds the plant database"
+    echo "    -in, --build-inver      Downloads and builds the invertebrate database"
+    echo "    -vm, --build-ver-mam    Downloads and builds the vertebrate mammalian database"
+    echo "    -vo, --build-ver-oth    Downloads and builds the vertebrate other database"
+    echo "    -mi, --build-mito       Downloads and builds the mitochondrion database"
+    echo "    -ps, --build-plast      Downloads and builds the plastid database"
+    echo ""
+    echo "Example: BUILD_DB.sh -vi -ba "
+    exit 1
+  fi
 #
 # ==============================================================================
 # VIRAL DB
 #
-if [[ "$BUILD_VIRAL" -eq "1" ]];
+if [ "$BUILD_VIRAL" -eq "1" ];
   then
   rm -f assembly_summary.txt;
   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/viral/assembly_summary.txt
@@ -63,7 +159,7 @@ if [[ "$BUILD_VIRAL" -eq "1" ]];
 # ==============================================================================
 # BACTERIA DB
 #
-if [[ "$BUILD_BACTERIA" -eq "1" ]];
+if [ "$BUILD_BACTERIA" -eq "1" ];
   then
   rm -f assembly_summary.txt;
   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/bacteria/assembly_summary.txt
@@ -84,7 +180,7 @@ if [[ "$BUILD_BACTERIA" -eq "1" ]];
 # ==============================================================================
 # ARCHAEA DB
 #
-if [[ "$BUILD_ARCHAEA" -eq "1" ]];
+if [ "$BUILD_ARCHAEA" -eq "1" ];
   then
   rm -f assembly_summary.txt;
   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/archaea/assembly_summary.txt
@@ -105,7 +201,7 @@ if [[ "$BUILD_ARCHAEA" -eq "1" ]];
 # ==============================================================================
 # PROTOZOA DB
 #
-if [[ "$BUILD_PROTOZOA" -eq "1" ]];
+if [ "$BUILD_PROTOZOA" -eq "1" ];
   then
   rm -f assembly_summary.txt;
   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/protozoa/assembly_summary.txt
@@ -126,7 +222,7 @@ if [[ "$BUILD_PROTOZOA" -eq "1" ]];
 # ==============================================================================
 # FUNGI DB
 #
-if [[ "$BUILD_FUNGI" -eq "1" ]];
+if [ "$BUILD_FUNGI" -eq "1" ];
   then
   rm -f assembly_summary.txt;
   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/fungi/assembly_summary.txt
@@ -147,7 +243,7 @@ if [[ "$BUILD_FUNGI" -eq "1" ]];
 # ==============================================================================
 # PLANT DB
 #
-if [[ "$BUILD_PLANT" -eq "1" ]];
+if [ "$BUILD_PLANT" -eq "1" ];
   then
   rm -f assembly_summary.txt;
   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/fungi/assembly_summary.txt
@@ -168,7 +264,7 @@ if [[ "$BUILD_PLANT" -eq "1" ]];
 # ==============================================================================
 # INVERTEBRATE DB
 #
-if [[ "$BUILD_INVER" -eq "1" ]];
+if [ "$BUILD_INVER" -eq "1" ];
   then
   rm -f assembly_summary.txt;
   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/invertebrate/assembly_summary.txt
@@ -189,7 +285,7 @@ if [[ "$BUILD_INVER" -eq "1" ]];
 # ==============================================================================
 # VERTEBRATE MAMMALIAN DB
 #
-if [[ "$BUILD_VER_MAM" -eq "1" ]];
+if [ "$BUILD_VER_MAM" -eq "1" ];
   then
   rm -f assembly_summary.txt;
   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/vertebrate_mammalian/assembly_summary.txt
@@ -210,7 +306,7 @@ if [[ "$BUILD_VER_MAM" -eq "1" ]];
 # ==============================================================================
 # VERTEBRATE OTHER DB
 #
-if [[ "$BUILD_VER_OTH" -eq "1" ]];
+if [ "$BUILD_VER_OTH" -eq "1" ];
   then
   rm -f assembly_summary.txt;
   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/vertebrate_other/assembly_summary.txt
@@ -231,7 +327,7 @@ if [[ "$BUILD_VER_OTH" -eq "1" ]];
 # ==============================================================================
 # MITOCHONDRIAL DB
 #
-if [[ "$BUILD_MITO" -eq "1" ]];
+if [ "$BUILD_MITO" -eq "1" ];
   then
   rm -f mitochondrion.1.1.genomic.fna.gz mitochondrion.2.1.genomic.fna.gz;
   wget ftp://ftp.ncbi.nlm.nih.gov/refseq/release/mitochondrion/mitochondrion.1.1.genomic.fna.gz
@@ -242,7 +338,7 @@ if [[ "$BUILD_MITO" -eq "1" ]];
 # ==============================================================================
 # PLASTID DB
 #
-if [[ "$BUILD_PLAST" -eq "1" ]];
+if [ "$BUILD_PLAST" -eq "1" ];
   then
   rm -f plastid.1.1.genomic.fna.gz plastid.2.1.genomic.fna.gz
   wget ftp://ftp.ncbi.nlm.nih.gov/refseq/release/plastid/plastid.1.1.genomic.fna.gz
