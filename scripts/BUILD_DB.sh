@@ -18,6 +18,8 @@
 #   => VODB.fa.gz (VERTEBRATE OTHER)
 #   => MTDB.fa.gz (MITOCHONDRIAL)
 #   => PLDB.fa.gz (PLASTID)
+#
+#   => ALLDB.fa.gz (ALL THE DATABASES)
 # 
 # ==============================================================================
 # NUMBER OF THREADS USED FOR DOWNLOAD
@@ -38,6 +40,7 @@ BUILD_VER_MAM=0;
 BUILD_VER_OTH=0;
 BUILD_MITO=0;
 BUILD_PLAST=0;
+BUILD_ALL=0;
 SHOW_HELP=1;
 
 for i in "$@"
@@ -102,6 +105,22 @@ do
       SHOW_HELP=0;
       shift
     ;;
+    -all|--build-all)
+      BUILD_VIRAL=1;
+      BUILD_BACTERIA=1;
+      BUILD_ARCHAEA=1;
+      BUILD_PROTOZOA=1;
+      BUILD_FUNGI=1;
+      BUILD_PLANT=1;
+      BUILD_INVER=1;
+      BUILD_VER_MAM=1;
+      BUILD_VER_OTH=1;
+      BUILD_MITO=1;
+      BUILD_PLAST=1;
+      BUILD_ALL=1;
+      SHOW_HELP=0;
+      shift
+    ;;
     *) # unknown option
     echo "Invalid arg "$1
     ;;
@@ -118,18 +137,19 @@ if [ "$SHOW_HELP" -eq "1" ];
     echo "It downloads and compresses the complete genomic sequences form the"
     echo "NCBI database that are labelled as 'Complete genome' or 'Chromosome'."
     echo ""
-    echo "    -h,  --help             Show this help message and exit"
-    echo "    -vi, --build-viral      Downloads and builds the viral database"
-    echo "    -ba, --build-bacteria   Downloads and builds the bacteria database"
-    echo "    -ar, --build-archaea    Downloads and builds the archaea database"
-    echo "    -pr, --build-protozoa   Downloads and builds the protozoa database"
-    echo "    -fu, --build-fungi      Downloads and builds the fungi database"
-    echo "    -pl, --build-plant      Downloads and builds the plant database"
-    echo "    -in, --build-inver      Downloads and builds the invertebrate database"
-    echo "    -vm, --build-ver-mam    Downloads and builds the vertebrate mammalian database"
-    echo "    -vo, --build-ver-oth    Downloads and builds the vertebrate other database"
-    echo "    -mi, --build-mito       Downloads and builds the mitochondrion database"
-    echo "    -ps, --build-plast      Downloads and builds the plastid database"
+    echo "    -h,   --help             Show this help message and exit"
+    echo "    -vi,  --build-viral      Downloads and builds the viral database"
+    echo "    -ba,  --build-bacteria   Downloads and builds the bacteria database"
+    echo "    -ar,  --build-archaea    Downloads and builds the archaea database"
+    echo "    -pr,  --build-protozoa   Downloads and builds the protozoa database"
+    echo "    -fu,  --build-fungi      Downloads and builds the fungi database"
+    echo "    -pl,  --build-plant      Downloads and builds the plant database"
+    echo "    -in,  --build-inver      Downloads and builds the invertebrate database"
+    echo "    -vm,  --build-ver-mam    Downloads and builds the vertebrate mammalian database"
+    echo "    -vo,  --build-ver-oth    Downloads and builds the vertebrate other database"
+    echo "    -mi,  --build-mito       Downloads and builds the mitochondrion database"
+    echo "    -ps,  --build-plast      Downloads and builds the plastid database"
+    echo "    -all, --build-all        Downloads and builds all the databases"
     echo ""
     echo "Example: BUILD_DB.sh -vi -ba "
     exit 1
@@ -344,6 +364,14 @@ if [ "$BUILD_PLAST" -eq "1" ];
   wget ftp://ftp.ncbi.nlm.nih.gov/refseq/release/plastid/plastid.1.1.genomic.fna.gz
   wget ftp://ftp.ncbi.nlm.nih.gov/refseq/release/plastid/plastid.2.1.genomic.fna.gz
   zcat plastid.1.1.genomic.fna.gz plastid.2.1.genomic.fna.gz | gzip -9 > PLDB.fa.gz
+  fi
+#
+# ==============================================================================
+# ALL DB
+#
+if [ "$BUILD_ALL" -eq "1" ];
+  then
+  zcat VDB.fa.gz BDB.fa.gz ADB.fa.gz PDB.fa.gz FDB.fa.gz TDB.fa.gz IDB.fa.gz VMDB.fa.gz VODB.fa.gz MTDB.fa.gz PLDB.fa.gz | gzip -9 > ALLDB.fa.gz
   fi
 #
 # ==============================================================================
