@@ -66,7 +66,8 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_comparative_map \
 	          $(BIN)/gto_genomic_count_bases \
 	          $(BIN)/gto_max \
-	          $(BIN)/gto_min 
+	          $(BIN)/gto_min \
+	          $(BIN)/gto_build_dbs 
 	         
 	          
 
@@ -194,6 +195,8 @@ $(BIN)/gto_max: Max.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_max Max.c $(OBJS) $(LIBS)
 $(BIN)/gto_min: Min.c $(DEPS) $(OBJS) 
 	$(CC) $(CFLAGS) -o $(BIN)/gto_min Min.c $(OBJS) $(LIBS)
+$(BIN)/gto_build_dbs: BuildDB.c $(DEPS) $(OBJS) 
+	$(CC) $(CFLAGS) -o $(BIN)/gto_build_dbs BuildDB.c $(OBJS) $(LIBS)
 
 geco:
 	git clone https://github.com/pratas/geco2.git
