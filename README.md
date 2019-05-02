@@ -112,6 +112,11 @@ The GTO provides pipe support for easy integration with the majority of the tool
 5.17 gto_gede
 ``` 
 
+### 6. Scripts
+```bash
+6.1 gto_build_dbs.sh
+```
+
 ## CITE
 Please cite the followings, if you use GTO:
 J. R. Almeida, D. Pratas. GTO: the genomics toolkit, 2018.
