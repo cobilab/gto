@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 {
   uint32_t streamSize, index, headerIndex = 0;
   uint8_t  value, header = 1, write = 0;
+  int invert = 0;
   uint8_t  *hName = (uint8_t *) Calloc(MAX_HEADER+1, sizeof(uint8_t));
   const char *pattern = NULL;
   BUF *Buffer;
@@ -27,6 +28,7 @@ int main(int argc, char *argv[])
         OPT_HELP(),
         OPT_GROUP("Basic options"),
         OPT_STRING('p', "pattern", &pattern, "Pattern to search in the file header"),
+        OPT_BOOLEAN('i', "invert", &invert, "When active, the application extract the reads that do not match with the pattern"),
         OPT_BUFF('<', "input.mfasta", "Input Multi-FASTA file format (stdin)"),
         OPT_BUFF('>', "output.mfasta", "Output Multi-FASTA file format (stdout)"),
         OPT_END(),
@@ -80,7 +82,13 @@ int main(int argc, char *argv[])
         {
           header = 0; 
           hName[headerIndex+1] = '\0';
-          if(strcasestr((char *) hName,(char *) pattern) != NULL)
+          if(strcasestr((char *) hName,(char *) pattern) != NULL && invert == 0)
+          {
+            fprintf(stdout, "%s\n", hName);
+            write = 1;
+          }
+          //else invert active, show the non-matching
+          if(strcasestr((char *) hName,(char *) pattern) == NULL && invert == 1)
           {
             fprintf(stdout, "%s\n", hName);
             write = 1;
