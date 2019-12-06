@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     "If present, it will erase the second header (after +).", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
 
   if(min_read_size <= 0 || min_read_size > UINT_MAX)

@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt permutates by block sequence, FASTA and Multi-FASTA files.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
 
   if(numBases <= 0 || numBases > UINT_MAX)

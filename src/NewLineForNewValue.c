@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt splits different rows with a new empty row.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
 
   while(fscanf(stdin, "%lf %lf %lf\n", &x, &y, &z) == 3)

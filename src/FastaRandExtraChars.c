@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     "file formats\n", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
 
   FileType(Parser, stdin);

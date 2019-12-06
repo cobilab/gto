@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt extracts all the quality-scores from FASTQ reads.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
   
   while(GetRead(stdin, Read))

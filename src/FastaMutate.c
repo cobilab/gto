@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nCreates a synthetic mutation of a FASTA file given specific rates of editions, deletions and additions", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
 
   if(useACGTN == 1)

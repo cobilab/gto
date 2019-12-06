@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt extracts unique reads from Multi-FASTA files.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
 
   FileType(Parser, stdin);

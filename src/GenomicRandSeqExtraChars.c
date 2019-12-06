@@ -46,7 +46,7 @@ int main(int argc, char *argv[]){
     "ACGT chars by random ACGT symbols.\nIt works in sequence file formats\n", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
 
   Buffer = CreateBuffer(BUF_SIZE);

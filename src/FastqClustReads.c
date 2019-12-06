@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
     "It cluster reads in therms of Seq k-mer Lexicographical order\n", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
 
   if(ctx < MIN_CMORDER || ctx > MAX_CMORDER)

@@ -41,7 +41,7 @@ int main(int argc, char *argv[]){
   argparse_describe(&argparse, "\nIt converts a genomic sequence to pseudo FASTQ file format.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
 
   if(lineSize <= 0 || lineSize > UINT_MAX)

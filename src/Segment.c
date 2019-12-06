@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt segments a filtered sequence.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
 
   if(threshold == UINT_MAX)

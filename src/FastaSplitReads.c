@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     "\nIt splits a Multi-FASTA file to multiple FASTA files.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
 
   Buffer = CreateBuffer(BUF_SIZE);
