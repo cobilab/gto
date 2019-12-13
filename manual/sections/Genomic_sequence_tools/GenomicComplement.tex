@@ -1,0 +1,51 @@
+\section{Program gto\char`_genomic\char`_complement}
+The \texttt{gto\char`_genomic\char`_complement} complements in the DNA sequence. It works in sequence file formats.\\
+For help type:
+\begin{lstlisting}
+./gto_genomic_complement -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_genomic\char`_complement}  program needs two paramenters, which defines the begin and the end of the extraction, and two streams for the computation, namely the input and output standard. The input stream is a sequence file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_genomic_complement [options] [[--] args]
+   or: ./gto_genomic_complement [options]
+
+It complements in the DNA sequence.
+It works in sequence file formats
+
+
+    -h, --help        Show this help message and exit
+
+Basic options
+    < input.seq       Input sequence file (stdin)
+    > output.seq      Output sequence file (stdout)
+
+Example: ./gto_genomic_complement < input.seq > output.seq
+\end{lstlisting}
+An example of such an input file is:
+\begin{lstlisting}
+TCTTTACTCGCGCGTTGGAGAAATACAATAGTGCGGCTCTGTCTCCTTATGAAGTCAACAATTTCGCTGGGACTTGCGG
+CTCTTTACTCGCGCGTTGGAGAAATACAATAGTGCGGCTCTGTCTCCTTATGAAGTCAACAATTTCGCTGGGACTTGCG
+GCGACTTCATCGTGGTCTCTGTCATTATGCGCTCCAACGCATAACTTTGCGCCAGAAGATAGATAGAATGGTGTAAGAA
+ACTGTAATATATATAATGAACTTCGGCGAGTCTGTGGAGTTTTTGTTGCATTAGAGAGCCAAGAGGTCGGACGTCCTCA
+CGTAGCCCGAGACGGGCAGGGCGATGGCGACTGAACGGGCTCCATATCACTTTGAGCTTTTATGCTTTCGACTCCTCCA
+GGAGCTGAACAACCTTGTTCCCGGCAAAGCCCACTGCGTCATGGAGCTCACGGTCTACATTCATGACTGACTAACCGTA
+AACTGC
+\end{lstlisting}
+
+\subsection*{Output}
+The output of the \texttt{gto\char`_genomic\char`_complement} program is a group sequence.\\
+Using the input above, an output example for this is the following:
+\begin{lstlisting}
+AGAAATGAGCGCGCAACCTCTTTATGTTATCACGCCGAGACAGAGGAATACTTCAGTTGTTAAAGCGACCCTGAACGCC
+GAGAAATGAGCGCGCAACCTCTTTATGTTATCACGCCGAGACAGAGGAATACTTCAGTTGTTAAAGCGACCCTGAACGC
+CGCTGAAGTAGCACCAGAGACAGTAATACGCGAGGTTGCGTATTGAAACGCGGTCTTCTATCTATCTTACCACATTCTT
+TGACATTATATATATTACTTGAAGCCGCTCAGACACCTCAAAAACAACGTAATCTCTCGGTTCTCCAGCCTGCAGGAGT
+GCATCGGGCTCTGCCCGTCCCGCTACCGCTGACTTGCCCGAGGTATAGTGAAACTCGAAAATACGAAAGCTGAGGAGGT
+CCTCGACTTGTTGGAACAAGGGCCGTTTCGGGTGACGCAGTACCTCGAGTGCCAGATGTAAGTACTGACTGATTGGCAT
+TTGACG
+\end{lstlisting}

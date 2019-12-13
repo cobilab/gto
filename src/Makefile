@@ -68,7 +68,8 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_max \
 	          $(BIN)/gto_min \
          	  $(BIN)/gto_fastq_complement \
-         	  $(BIN)/gto_fasta_complement
+         	  $(BIN)/gto_fasta_complement \
+         	  $(BIN)/gto_genomic_complement
 	         
 	          
 
@@ -200,6 +201,8 @@ $(BIN)/gto_fastq_complement: FastqComplement.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_complement FastqComplement.c $(OBJS) $(LIBS)
 $(BIN)/gto_fasta_complement: FastaComplement.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_complement FastaComplement.c $(OBJS) $(LIBS)
+$(BIN)/gto_genomic_complement: GenomicComplement.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_genomic_complement GenomicComplement.c $(OBJS) $(LIBS)
 
 geco:
 	git clone https://github.com/pratas/geco2.git

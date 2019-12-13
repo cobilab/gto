@@ -178,3 +178,9 @@ cd ..
 cd gto_fastq_complement
 sh runExample.sh
 cd ..
+cd gto_fasta_complement
+sh runExample.sh
+cd ..
+cd gto_genomic_complement
+sh runExample.sh
+cd ..
