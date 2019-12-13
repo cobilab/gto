@@ -54,6 +54,7 @@ The GTO provides pipe support for easy integration with the majority of the tool
 1.20 gto_fastq_minimum_local_quality_score_reverse
 1.21 gto_xs
 1.22 gto_fastq_clust_reads
+1.23 gto_fastq_complement
 ```
 
 ### 2. FASTA tools

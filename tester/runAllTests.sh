@@ -175,3 +175,6 @@ cd ..
 cd gto_geco
 sh runExample.sh
 cd ..
+cd gto_fastq_complement
+sh runExample.sh
+cd ..
