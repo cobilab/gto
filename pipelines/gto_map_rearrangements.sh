@@ -84,7 +84,7 @@ if [[ "$RUN_COMPARISON" -eq "1" ]];
   #
   # REVERSE PROFILES
   #
-  ./GeCo2 -v $PARAM_R -e -r SEQ1 SEQ2
+  gto_geco -v $PARAM_R -e -r SEQ1 SEQ2
   gto_upper_bound -u 2 < SEQ2.iae > SEQ_2_UB
   gto_filter -d 0 -w $WINDOW_SIZE -c < SEQ_2_UB > PROFILE_N2
   gto_segment -t 1.2 < PROFILE_N2 > $2.positions
@@ -98,7 +98,7 @@ if [[ "$RUN_COMPARISON" -eq "1" ]];
     #
     gto_genomic_extract -i $I_POS -e $E_POS < SEQ2 > REGION.g
     #
-    ./GeCo2 -v $PARAM_R -e -r REGION.g SEQ1
+    gto_geco -v $PARAM_R -e -r REGION.g SEQ1
     gto_upper_bound -u 2 < SEQ1.iae > SEQ1-UB
     gto_filter -d 0 -w $WINDOW_SIZE -c < SEQ1-UB > PROFILE-SEQ1-$I_POS-$E_POS
     gto_segment -t 1.2 < PROFILE-SEQ1-$I_POS-$E_POS > tmp-positions.csv
