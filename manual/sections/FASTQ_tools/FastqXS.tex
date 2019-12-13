@@ -2,7 +2,7 @@
 The \texttt{gto\char`_fastq\char`_xs} is a skilled FASTQ read simulation tool, flexible, portable (does not need a reference sequence) and tunable in terms of sequence complexity. XS handles Ion Torrent, Roche-454, Illumina and ABI-SOLiD simulation sequencing types. It has several running modes, depending on the time and memory available, and is aimed at testing computing infrastructures, namely cloud computing of large-scale projects, and testing FASTQ compression algorithms. Moreover, XS offers the possibility of simulating the three main FASTQ components individually (headers, DNA sequences and quality-scores). Quality-scores can be simulated using uniform and Gaussian distributions.\\
 For help type:
 \begin{lstlisting}
-./gto_xs -h
+./gto_fastq_xs -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
@@ -11,7 +11,7 @@ In the following subsections, we explain the input and output paramters.
 The \texttt{gto\char`_fastq\char`_xs} program needs program needs a FASTQ file to compute.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: XS   [OPTION]... [FILE] 
+Usage: ./gto_fastq_xs   [OPTION]... [FILE] 
 
 System options:
  -h                       give this help

@@ -214,7 +214,7 @@ $(BIN)/gto_fasta_reverse: FastaReverse.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_reverse FastaReverse.c $(OBJS) $(LIBS)
 
 geco:
-	git clone https://github.com/pratas/geco2.git
+	git clone https://github.com/cobilab/geco2.git
 	mv geco2/src/Makefile.linux geco2/src/Makefile 
 	cd geco2/src && make
 	cp geco2/src/GeCo2 $(BIN)/gto_geco
@@ -230,15 +230,21 @@ xs:
 	rm -rf xs
 
 ac:
-	git clone https://github.com/pratas/ac.git
+	git clone https://github.com/cobilab/ac.git
 	mv ac/src/Makefile.linux ac/src/Makefile
 	cd ac/src/ && make
 	mv ac/src/AC $(BIN)/gto_amino_acid_compressor
 	mv ac/src/AD $(BIN)/gto_amino_acid_decompressor
 	rm -rf ac
 
+falcon:
+	git clone https://github.com/cobilab/falcon.git
+	cd falcon/src/ && cmake . && make
+	cp falcon/src/FALCON $(BIN)/gto_fastq_falcon
+	rm -rf falcon
+
 externalProgs: 
-	make geco xs ac
+	make geco xs ac falcon
 
 argparse.o: argparse.c argparse.h $(DEPS)
 	$(CC) -c $(CFLAGS) argparse.c
