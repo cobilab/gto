@@ -8,7 +8,7 @@
 #include "argparse.h"
 
 /*
- * This application reverses the order of a sequence file
+ * This application reverses the ACGT bases order for each read in a sequence file
  */
 int main(int argc, char *argv[])
 {
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
   strcat(usage, " < input.seq > output.seq\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
-  argparse_describe(&argparse, "\nIt reverses the order of a sequence file.", usage);
+  argparse_describe(&argparse, "\nIt reverses the ACGT bases order for each read in a sequence file.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
   if(argc != 0 || ftell(stdin))

@@ -37,7 +37,7 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_fastq_rand_extra_chars \
 	          $(BIN)/gto_genomic_rand_seq_extra_chars \
 	          $(BIN)/gto_fasta_rename_human_headers \
-              $(BIN)/gto_reverse \
+              $(BIN)/gto_genomic_reverse \
 	          $(BIN)/gto_fasta_split_reads \
 	          $(BIN)/gto_fastq_split \
 	          $(BIN)/gto_fastq_pack \
@@ -70,7 +70,8 @@ PROGS  	 	= $(BIN)/gto \
          	  $(BIN)/gto_fastq_complement \
          	  $(BIN)/gto_fasta_complement \
          	  $(BIN)/gto_genomic_complement \
-         	  $(BIN)/gto_fastq_reverse 
+         	  $(BIN)/gto_fastq_reverse  \
+         	  $(BIN)/gto_fasta_reverse 
 	         
 	          
 
@@ -138,8 +139,8 @@ $(BIN)/gto_genomic_rand_seq_extra_chars: GenomicRandSeqExtraChars.c $(DEPS) $(OB
 	$(CC) $(CFLAGS) -o $(BIN)/gto_genomic_rand_seq_extra_chars GenomicRandSeqExtraChars.c $(OBJS) $(LIBS)
 $(BIN)/gto_fasta_rename_human_headers: FastaRenameHumanHeaders.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_rename_human_headers FastaRenameHumanHeaders.c $(OBJS) $(LIBS)
-$(BIN)/gto_reverse: Reverse.c $(DEPS) $(OBJS)
-	$(CC) $(CFLAGS) -o $(BIN)/gto_reverse Reverse.c $(OBJS) $(LIBS)
+$(BIN)/gto_genomic_reverse: Reverse.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_genomic_reverse Reverse.c $(OBJS) $(LIBS)
 $(BIN)/gto_fasta_split_reads: FastaSplitReads.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_split_reads FastaSplitReads.c $(OBJS) $(LIBS)	
 $(BIN)/gto_fastq_split: FastqSplit.c $(DEPS) $(OBJS)
@@ -206,6 +207,8 @@ $(BIN)/gto_genomic_complement: GenomicComplement.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_genomic_complement GenomicComplement.c $(OBJS) $(LIBS)
 $(BIN)/gto_fastq_reverse: FastqReverse.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_reverse FastqReverse.c $(OBJS) $(LIBS)
+$(BIN)/gto_fasta_reverse: FastaReverse.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_reverse FastaReverse.c $(OBJS) $(LIBS)
 
 geco:
 	git clone https://github.com/pratas/geco2.git

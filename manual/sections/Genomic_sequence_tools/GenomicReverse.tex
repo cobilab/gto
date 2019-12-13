@@ -1,20 +1,20 @@
-\section{Program gto\char`_reverse}
-The \texttt{gto\char`_reverse} reverses the order of a sequence file.\\
+\section{Program gto\char`_genomic\char`_reverse}
+The \texttt{gto\char`_genomic\char`_reverse} reverses the ACGT bases order for each read in a sequence file.\\
 For help type:
 \begin{lstlisting}
-./gto_reverse -h
+./gto_genomic_reverse -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_reverse} program needs two streams for the computation, namely the input and output standard. The input stream is a sequence file.\\
+The \texttt{gto\char`_genomic\char`_reverse} program needs two streams for the computation, namely the input and output standard. The input stream is a sequence file.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./gto_reverse [options] [[--] args]
-   or: ./gto_reverse [options]
+Usage: ./gto_genomic_reverse [options] [[--] args]
+   or: ./gto_genomic_reverse [options]
 
-It reverses the order of a sequence file.
+It reverses the ACGT bases order for each read in a sequence file.
 
     -h, --help        show this help message and exit
 
@@ -22,7 +22,7 @@ Basic options
     < input.seq       Input sequence file (stdin)
     > output.seq      Output sequence file (stdout)
 
-Example: ./gto_reverse < input.seq > output.seq
+Example: ./gto_genomic_reverse < input.seq > output.seq
 \end{lstlisting}
 An example of such an input file is:
 \begin{lstlisting}
@@ -39,7 +39,7 @@ TAATTACAGACCTGAA
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_reverse} program is a group sequence.\\
+The output of the \texttt{gto\char`_genomic\char`_reverse} program is a group sequence.\\
 Using the input above, an output example for this is the following:
 \begin{lstlisting}
 AAGTCCAGACATTAATTTGAACGCACTCGTAAGTACCCACTCCAAAATAAACGTCCTCCTCTTCCAGAAGGTCTTCTTCA

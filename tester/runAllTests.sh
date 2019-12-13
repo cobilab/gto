@@ -145,7 +145,7 @@ cd ..
 cd gto_real_to_binary_with_threshold
 sh runExample.sh
 cd ..
-cd gto_reverse
+cd gto_genomic_reverse
 sh runExample.sh
 cd ..
 cd gto_segment
@@ -182,5 +182,11 @@ cd gto_fasta_complement
 sh runExample.sh
 cd ..
 cd gto_genomic_complement
+sh runExample.sh
+cd ..
+cd gto_fastq_reverse
+sh runExample.sh
+cd ..
+cd gto_fasta_reverse
 sh runExample.sh
 cd ..
