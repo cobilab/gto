@@ -38,6 +38,7 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_genomic_rand_seq_extra_chars \
 	          $(BIN)/gto_fasta_rename_human_headers \
               $(BIN)/gto_genomic_reverse \
+              $(BIN)/gto_reverse \
 	          $(BIN)/gto_fasta_split_reads \
 	          $(BIN)/gto_fastq_split \
 	          $(BIN)/gto_fastq_pack \
@@ -141,6 +142,8 @@ $(BIN)/gto_fasta_rename_human_headers: FastaRenameHumanHeaders.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_rename_human_headers FastaRenameHumanHeaders.c $(OBJS) $(LIBS)
 $(BIN)/gto_genomic_reverse: Reverse.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_genomic_reverse Reverse.c $(OBJS) $(LIBS)
+$(BIN)/gto_reverse: Reverse.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_reverse Reverse.c $(OBJS) $(LIBS) 
 $(BIN)/gto_fasta_split_reads: FastaSplitReads.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_split_reads FastaSplitReads.c $(OBJS) $(LIBS)	
 $(BIN)/gto_fastq_split: FastqSplit.c $(DEPS) $(OBJS)
