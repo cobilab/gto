@@ -240,11 +240,25 @@ ac:
 falcon:
 	git clone https://github.com/cobilab/falcon.git
 	cd falcon/src/ && cmake . && make
-	cp falcon/src/FALCON $(BIN)/gto_fastq_falcon
+	mv falcon/src/FALCON $(BIN)/gto_fastq_falcon
 	rm -rf falcon
 
+chester:
+	git clone https://github.com/cobilab/chester.git
+	cd chester/src/ && cmake . && make
+	cp chester/src/CHESTER-map $(BIN)/gto_fasta_variation_map 
+	cp chester/src/CHESTER-filter $(BIN)/gto_fasta_variation_filter
+	cp chester/src/CHESTER-visual $(BIN)/gto_fasta_variation_visual
+	cp chester/src/CHESTER-map $(BIN)/gto_fastq_variation_map 
+	cp chester/src/CHESTER-filter $(BIN)/gto_fastq_variation_filter
+	cp chester/src/CHESTER-visual $(BIN)/gto_fastq_variation_visual
+	cp chester/src/CHESTER-map $(BIN)/gto_genomic_variation_map 
+	cp chester/src/CHESTER-filter $(BIN)/gto_genomic_variation_filter
+	cp chester/src/CHESTER-visual $(BIN)/gto_genomic_variation_visual
+	rm -rf chester
+
 externalProgs: 
-	make geco xs ac falcon
+	make geco xs ac falcon chester
 
 argparse.o: argparse.c argparse.h $(DEPS)
 	$(CC) -c $(CFLAGS) argparse.c

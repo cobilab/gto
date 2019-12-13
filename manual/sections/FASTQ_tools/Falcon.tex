@@ -3,7 +3,7 @@ The \texttt{gto\char`_fastq\char`_falcon} is an ultra-fast method to infer metag
 gto\char`_fastq\char`_falcon is efficient to detect the presence and authenticate a given species in the FASTQ reads. The core of the method is based on relative data compression. gto\char`_fastq\char`_falcon uses variable multi-threading, without multiplying the memory for each thread, being able to run efficiently in a common laptop.\\
 For help type:
 \begin{lstlisting}
-./gto\char`_fastq\char`_falcon -h
+./gto_fastq_falcon -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
@@ -13,13 +13,13 @@ The \texttt{gto\char`_fastq\char`_falcon} program needs program needs a FASTQ fi
 The attribution is given according to:
 \begin{lstlisting}
 NAME                                                                     
-      gto\char`_fastq\char`_falcon v3.1: a tool to infer metagenomic composition.            
+      gto_fastq_falcon v3.1: a tool to infer metagenomic composition.            
                                                                          
 SYNOPSIS                                                                 
-      gto\char`_fastq\char`_falcon [OPTION]... [FILE1]:[FILE2]:... [FILE]                      
+      gto_fastq_falcon [OPTION]... [FILE1]:[FILE2]:... [FILE]                      
                                                                          
 SAMPLE                                                                   
-      gto\char`_fastq\char`_falcon -v -F -l 47 -Z -y pro.com reads1.fq:reads2.fq DB.fa         
+      gto_fastq_falcon -v -F -l 47 -Z -y pro.com reads1.fq:reads2.fq DB.fa         
                                                                          
 DESCRIPTION                                                              
       It infers metagenomic sample composition of sequenced reads.       
