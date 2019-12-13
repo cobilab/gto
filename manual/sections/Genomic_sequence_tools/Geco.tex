@@ -1,23 +1,23 @@
-\section{Program gto\char`_geco}
-The \texttt{gto\char`_geco} is able to provide additional compression gains over several top specific tools, while as an analysis tool, it is able to determine absolute measures, namely for many distance computations, and local measures, such as the information content contained in each element, providing a way to quantify and locate specific genomic events.\\
+\section{Program gto\char`_genomic\char`_compressor}
+The \texttt{gto\char`_genomic\char`_compressor} is able to provide additional compression gains over several top specific tools, while as an analysis tool, it is able to determine absolute measures, namely for many distance computations, and local measures, such as the information content contained in each element, providing a way to quantify and locate specific genomic events.\\
 For help type:
 \begin{lstlisting}
-./gto_geco -h
+./gto_genomic_compressor -h
 \end{lstlisting}
 In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_geco} program needs a sequence to compress.\\
+The \texttt{gto\char`_genomic\char`_compressor} program needs a sequence to compress.\\
 The attribution is given according to:
 \begin{lstlisting}
 SYNOPSIS                                                                
-      ./gto_geco [OPTION]... -r [FILE] [FILE]:[FILE]:[FILE]:[...]          
+      ./gto_genomic_compressor [OPTION]... -r [FILE] [FILE]:[FILE]:[FILE]:[...]          
                                                                         
 SAMPLE                                                                  
-      Run Compression         :  ./gto_geco -v -l 3 sequence.txt           
-      Run Decompression       :  ./gto_gede -v sequence.txt.co             
-      Run Information Profile :  ./gto_geco -v -l 3 -e sequence.txt        
+      Run Compression         :  ./gto_genomic_compressor -v -l 3 sequence.txt           
+      Run Decompression       :  ./gto_genomic_decompressor -v sequence.txt.co             
+      Run Information Profile :  ./gto_genomic_compressor -v -l 3 -e sequence.txt        
                                                                         
 DESCRIPTION                                                             
       Compress and decompress genomic sequences for storage purposes.   
@@ -131,7 +131,7 @@ In the following example, it will be downloaded seventeen DNA sequences, and com
 wget http://sweet.ua.pt/pratas/datasets/DNACorpus.zip
 unzip DNACorpus.zip
 cp DNACorpus/BuEb .
-../../bin/gto_geco -v -l 2 BuEb
-../../bin/gto_gede -v BuEb.co 
+../../bin/gto_genomic_compressor -v -l 2 BuEb
+../../bin/gto_genomic_decompressor -v BuEb.co 
 cmp BuEb BuEb.de -l
 \end{lstlisting}

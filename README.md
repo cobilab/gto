@@ -55,6 +55,11 @@ The GTO provides pipe support for easy integration with the majority of the tool
 1.21 gto_xs
 1.22 gto_fastq_clust_reads
 1.23 gto_fastq_complement
+1.24 gto_fastq_reverse
+1.25 gto_fastq_variation_map
+1.26 gto_fastq_variation_filter
+1.27 gto_fastq_variation_visual
+1.28 gto_falcon
 ```
 
 ### 2. FASTA tools
@@ -72,6 +77,11 @@ The GTO provides pipe support for easy integration with the majority of the tool
 2.10 gto_fasta_split_reads
 2.11 gto_fasta_rename_human_headers
 2.12 gto_fasta_extract_pattern_coords
+2.13 gto_fasta_complement
+2.14 gto_fasta_reverse
+2.15 gto_fasta_variation_map
+2.16 gto_fasta_variation_filter
+2.17 gto_fasta_variation_visual
 ```
 
 ### 3. Genomic sequence tools
@@ -83,7 +93,12 @@ The GTO provides pipe support for easy integration with the majority of the tool
 3.4 gto_genomic_extract
 3.5 gto_genomic_period
 3.6 gto_genomic_count_bases
-3.7 gto_geco
+3.7 gto_genomic_compressor (also under the alias gto_geco)
+3.8 gto_genomic_complement
+3.9 gto_genomic_reverse
+3.10 gto_genomic_variation_map
+3.11 gto_genomic_variation_filter
+3.12 gto_genomic_variation_visual
 ```
 
 ### 4. Amino acid sequence tools
@@ -99,21 +114,20 @@ The GTO provides pipe support for easy integration with the majority of the tool
 
 ```bash
 5.1 gto_char_to_line
-5.2 gto_reverse
-5.3 gto_new_line_on_new_x
-5.4 gto_upper_bound
-5.5 gto_lower_bound
-5.6 gto_brute_force_string
-5.7 gto_real_to_binary_with_threshold
-5.8 gto_sum
-5.9 gto_filter
-5.10 gto_word_search
-5.11 gto_permute_by_blocks
-5.12 gto_info
-5.13 gto_segment
-5.14 gto_comparative_map
-5.15 gto_max
-5.16 gto_min
+5.2 gto_new_line_on_new_x
+5.3 gto_upper_bound
+5.4 gto_lower_bound
+5.5 gto_brute_force_string
+5.6 gto_real_to_binary_with_threshold
+5.7 gto_sum
+5.8 gto_filter
+5.9 gto_word_search
+5.10 gto_permute_by_blocks
+5.11 gto_info
+5.12 gto_segment
+5.13 gto_comparative_map
+5.14 gto_max
+5.15 gto_min
 ``` 
 
 ### 6. Scripts

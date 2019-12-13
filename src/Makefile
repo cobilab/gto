@@ -214,8 +214,10 @@ geco:
 	git clone https://github.com/pratas/geco2.git
 	mv geco2/src/Makefile.linux geco2/src/Makefile 
 	cd geco2/src && make
-	mv geco2/src/GeCo2 $(BIN)/gto_geco
-	mv geco2/src/GeDe2 $(BIN)/gto_gede
+	cp geco2/src/GeCo2 $(BIN)/gto_geco
+	cp geco2/src/GeDe2 $(BIN)/gto_gede
+	mv geco2/src/GeCo2 $(BIN)/gto_genomic_compressor
+	mv geco2/src/GeDe2 $(BIN)/gto_genomic_decompressor
 	rm -rf geco2
 
 xs:
