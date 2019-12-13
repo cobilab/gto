@@ -1,5 +1,5 @@
 \section{Program gto\char`_genomic\char`_complement}
-The \texttt{gto\char`_genomic\char`_complement} complements in the DNA sequence. It works in sequence file formats.\\
+The \texttt{gto\char`_genomic\char`_complement} replaces the ACGT bases with their complements in a DNA sequence. It works in sequence file formats.\\
 For help type:
 \begin{lstlisting}
 ./gto_genomic_complement -h
@@ -14,7 +14,7 @@ The attribution is given according to:
 Usage: ./gto_genomic_complement [options] [[--] args]
    or: ./gto_genomic_complement [options]
 
-It complements in the DNA sequence.
+It replaces the ACGT bases with their complements in a DNA sequence.
 It works in sequence file formats
 
 
@@ -38,7 +38,7 @@ AACTGC
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_genomic\char`_complement} program is a group sequence.\\
+The output of the \texttt{gto\char`_genomic\char`_complement} program is a group sequence with the ACGT base complements.\\
 Using the input above, an output example for this is the following:
 \begin{lstlisting}
 AGAAATGAGCGCGCAACCTCTTTATGTTATCACGCCGAGACAGAGGAATACTTCAGTTGTTAAAGCGACCCTGAACGCC

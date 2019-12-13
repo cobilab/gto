@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
   strcat(usage, " < input.seq > output.seq\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
-  argparse_describe(&argparse, "\nIt complements in the DNA sequence.\nIt works in sequence file formats.\n", usage);
+  argparse_describe(&argparse, "\nIt replaces the ACGT bases with their complements in a DNA sequence.\nIt works in sequence file formats.\n", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
   if(argc != 0 || ftell(stdin))

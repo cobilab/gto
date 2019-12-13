@@ -1,5 +1,5 @@
 \section{Program gto\char`_fasta\char`_complement}
-The \texttt{gto\char`_fasta\char`_complement} complements the DNA sequence the in FASTA file format. It works both in FASTA and Multi-FASTA file formats.\\
+The \texttt{gto\char`_fasta\char`_complement} replaces the ACGT bases with their complements in FASTA or Multi-FASTA file format.\\
 For help type:
 \begin{lstlisting}
 ./gto_fasta_complement -h
@@ -14,8 +14,7 @@ The attribution is given according to:
 Usage: ./gto_fasta_complement [options] [[--] args]
    or: ./gto_fasta_complement [options]
 
-It complements the DNA sequence the in FASTA file format.
-It works both in FASTA and Multi-FASTA file formats
+It replaces the ACGT bases with their complements in FASTA or Multi-FASTA file format.
 
 
     -h, --help            Show this help message and exit
@@ -43,7 +42,7 @@ CAAATAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fasta\char`_complement} program is FASTA or Multi-FASTA file wiht the extracted sequences.\\
+The output of the \texttt{gto\char`_fasta\char`_complement} program is FASTA or Multi-FASTA file with the ACGT base complements.\\
 Using the input above, an output example for this is the following:
 \begin{lstlisting}
 >AB000264 |acc=AB000264|descr=Homo sapiens mRNA 

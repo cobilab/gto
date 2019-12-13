@@ -21,8 +21,7 @@ static uint8_t FindComplement(uint8_t value)
 }
 
 /* 
- * This application complements the DNA sequence the in FASTA file format.
- * It works both in FASTA and Multi-FASTA file formats.
+ * This application replaces the ACGT bases with their complements in FASTA or Multi-FASTA file format.
  */
 int main(int argc, char *argv[])
 {
@@ -46,9 +45,7 @@ int main(int argc, char *argv[])
   strcat(usage, " < input.mfasta > output.mfasta\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
-  argparse_describe(&argparse, "\nIt complements the DNA sequence the in FASTA file format.\n"
-    "It works both in FASTA and Multi-FASTA " 
-    "file formats\n", usage);
+  argparse_describe(&argparse, "\nIt replaces the ACGT bases with their complements in FASTA or Multi-FASTA file format.\n", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
   if(argc != 0 || ftell(stdin))

@@ -21,7 +21,7 @@ static uint8_t FindComplement(uint8_t value)
 }
 
 /*
- * This application produces a FASTQ file with the ACGT base complements in FASTQ file format.
+ * This application replaces the ACGT bases with their complements in a FASTQ file format.
  */
 int main(int argc, char *argv[])
 {
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
   strcat(usage, " < input.fastq > output.fastq\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
-  argparse_describe(&argparse, "\nIt produces a FASTQ file with the ACGT base complements in a FASTQ file.", usage);
+  argparse_describe(&argparse, "\nIt replaces the ACGT bases with their complements in a FASTQ file format.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
   if(argc != 0 || ftell(stdin))
