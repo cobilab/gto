@@ -252,7 +252,7 @@ ac:
 falcon:
 	git clone https://github.com/cobilab/falcon.git
 	cd falcon/src/ && cmake . && make
-	mv falcon/src/FALCON $(BIN)/gto_fastq_falcon
+	mv falcon/src/FALCON $(BIN)/gto_fastq_metagenomics
 	rm -rf falcon
 
 chester:
