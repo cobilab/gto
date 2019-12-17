@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt counts the number of bases in sequence, FASTA or FASTQ files.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0 || ftell(stdin))
+  if(argc != 0)
     argparse_help_cb(&argparse, options);
 
   PARSER   *Parser = CreateParser();

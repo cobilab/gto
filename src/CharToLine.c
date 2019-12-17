@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt splits a sequence into lines, creating an output sequence which has a char for each line.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0 || ftell(stdin))
+  if(argc != 0)
     argparse_help_cb(&argparse, options);
 
   	while((character = fgetc(stdin)) != EOF)

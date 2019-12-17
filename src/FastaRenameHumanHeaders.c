@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt changes the headers of FASTA or Multi-FASTA file to simple chr$1 by order.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0 || ftell(stdin))
+  if(argc != 0)
     argparse_help_cb(&argparse, options);
 
   Buffer = CreateBuffer(BUF_SIZE);

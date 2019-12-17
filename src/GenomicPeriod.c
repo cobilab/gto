@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
                             "It only works \"ACGT\", while the rest will be discarded.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0 || ftell(stdin))
+  if(argc != 0)
     argparse_help_cb(&argparse, options);
 
   // SEQUENCE

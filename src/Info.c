@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
                                 "distribution percentage of the symbols, among others.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0 || ftell(stdin))
+  if(argc != 0)
     argparse_help_cb(&argparse, options);
 
   while((streamSize = fread(buf, 1, BUFFER_SIZE, stdin)))

@@ -34,7 +34,7 @@ int main(int argc, char *argv[]){
   argparse_describe(&argparse, "\nIt converts amino acid sequences to DNA sequences.\n", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0 || ftell(stdin))
+  if(argc != 0)
     argparse_help_cb(&argparse, options);
 
   Buffer = CreateBuffer(BUF_SIZE);

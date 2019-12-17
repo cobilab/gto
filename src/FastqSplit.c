@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     "\nIt writes by default singleton reads as forward stands.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0 || ftell(stdin))
+  if(argc != 0)
     argparse_help_cb(&argparse, options);
 
   FILE *F = Fopen(output_forward, "w");
