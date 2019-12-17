@@ -1,0 +1,41 @@
+\section{Program gto\char`_amino\char`_acid\char`_to\char`_seq}
+The \texttt{gto\char`_amino\char`_acid\char`_to\char`_seq} converts amino acid sequences to DNA sequences.\\
+For help type:
+\begin{lstlisting}
+./gto_amino_acid_to_seq -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_amino\char`_acid\char`_to\char`_seq} program needs two streams for the computation, namely the input and output standard. The input stream is an amino acid sequence.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_amino_acid_to_seq [options] [[--] args]
+   or: ./gto_amino_acid_to_seq [options]
+
+It converts amino acid sequences to DNA sequences.
+
+
+    -h, --help        Show this help message and exit
+
+Basic options
+    < input.prot      Input amino acid sequence file (stdin)
+    > output.seq      Output sequence file (stdout)
+
+Example: ./gto_amino_acid_to_seq < input.prot > output.seq
+\end{lstlisting}
+An example of such an input file is:
+\begin{lstlisting}
+IPFLLKKQFALADKLVLSKLRQLLGGRIKMMPCGGAKLEPAIGLFFHAIGINIKLGYGMTETTATVSCWHDFQFNPNSI
+GTLMPKAEVKIGENNEILVRGGMVMKGYYKKPEETAQAFTEDGFLKTGDAGEFDEQGNLFITDRIKELMKTSNGKYIAP
+QYIESKIGKDKFIEQIAIIADAKKYVSALIVPCFDSLEEYAKQLNIKYHDRLELLKNSDILKMFE
+\end{lstlisting}
+
+\subsection*{Output}
+
+The output of the \texttt{gto\char`_amino\char`_acid\char`_to\char`_seq} program is a DNA sequence.\\
+Using the input above, an output example for this is the following:
+\begin{lstlisting}
+TO DO
+\end{lstlisting}

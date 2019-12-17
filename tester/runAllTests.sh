@@ -190,3 +190,15 @@ cd ..
 cd gto_fasta_reverse
 sh runExample.sh
 cd ..
+cd gto_amino_acid_from_fasta
+sh runExample.sh
+cd ..
+cd gto_amino_acid_from_fastq
+sh runExample.sh
+cd ..
+cd gto_amino_acid_from_seq
+sh runExample.sh
+cd ..
+cd gto_amino_acid_to_seq
+sh runExample.sh
+cd ..
