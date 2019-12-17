@@ -112,7 +112,6 @@ The GTO provides pipe support for easy integration with the majority of the tool
 4.5 gto_amino_acid_from_fastq
 4.6 gto_amino_acid_from_fasta
 4.7 gto_amino_acid_from_seq
-4.8 gto_amino_acid_to_seq
 ```
 
 

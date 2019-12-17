@@ -1,8 +1,8 @@
 \chapter{FASTQ tools}
 \label{fastq}
-The toolkit has a set of tools dedicated to manipulating FASTQ files. Some of these tools allow the conversion to/from different formats, i. e., there are tools design to convert a FASTQ file into a sequence or a FASTA file, or receive some of these file types and convert to FASTQ.
+The toolkit has a set of tools dedicated to manipulating FASTQ files. Some of these tools allow the data conversion to/from different formats, i. e., there are tools designed to convert a FASTQ file into a sequence or a FASTA/Multi-FASTA format, or converting DNA in some of those formats to FASTQ.
 
-There are also tools for data manipulation in this format, which are designed to exclude 'N', remove low quality scored reads, following different metrics and randomize some DNA sequences. Succeeding the manipulation, it is possible also to perform analyses over these files, simulations and mutations. The current available tools for FASTQ format analysis and manipulation include:
+There are also tools for data manipulation in this format, which are designed to exclude 'N', remove low quality scored reads, following different metrics and randomize DNA sequences. Succeeding the manipulation, it is also possible to perform analyses over these files, simulations and mutations. The current available tools for FASTQ format analysis and manipulation include:
 \begin{enumerate}
 
 \item \texttt{gto\char`_fastq\char`_to\char`_fasta}: it converts a FASTQ file format to a pseudo FASTA file.
@@ -53,11 +53,11 @@ There are also tools for data manipulation in this format, which are designed to
 
 \item \texttt{gto\char`_fastq\char`_reverse}: it reverses the ACGT bases order for each read in a FASTQ file format.
 
-\item \texttt{gto\char`_fastq\char`_variation\char`_map}: it ... to do 
+\item \texttt{gto\char`_fastq\char`_variation\char`_map}: it identifies the variation that occours in the sequences relative to the reads or a set of reads.
 
-\item \texttt{gto\char`_fastq\char`_variation\char`_filter}: it ... to do 
+\item \texttt{gto\char`_fastq\char`_variation\char`_filter}: it filters and segments the regions of singularity from the output of \texttt{gto\char`_fastq\char`_variation\char`_map}.
 
-\item \texttt{gto\char`_fastq\char`_variation\char`_visual}: it ... to do 
+\item \texttt{gto\char`_fastq\char`_variation\char`_visual}: it depites the regions of singularity using the output from \texttt{gto\char`_fastq\char`_variation\char`_filter} into an SVG image.
 
 \item \texttt{gto\char`_fastq\char`_falcon}: it measures similarity between any FASTQ file, independently from the size, against any multi-FASTA database.
 

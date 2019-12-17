@@ -75,8 +75,8 @@ PROGS  	 	= $(BIN)/gto \
          	  $(BIN)/gto_fasta_reverse \
          	  $(BIN)/gto_amino_acid_from_fasta \
          	  $(BIN)/gto_amino_acid_from_fastq \
-         	  $(BIN)/gto_amino_acid_from_seq \
-         	  $(BIN)/gto_amino_acid_to_seq 
+         	  $(BIN)/gto_amino_acid_from_seq 
+         	  #$(BIN)/gto_amino_acid_to_seq 
 	         
 	          
 
@@ -222,8 +222,8 @@ $(BIN)/gto_amino_acid_from_fastq: AminoAcidFromFastq.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_amino_acid_from_fastq AminoAcidFromFastq.c $(OBJS) $(LIBS)
 $(BIN)/gto_amino_acid_from_seq: AminoAcidFromSeq.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_amino_acid_from_seq AminoAcidFromSeq.c $(OBJS) $(LIBS)
-$(BIN)/gto_amino_acid_to_seq: AminoAcidToSeq.c $(DEPS) $(OBJS)
-	$(CC) $(CFLAGS) -o $(BIN)/gto_amino_acid_to_seq AminoAcidToSeq.c $(OBJS) $(LIBS)
+#$(BIN)/gto_amino_acid_to_seq: AminoAcidToSeq.c $(DEPS) $(OBJS)
+#	$(CC) $(CFLAGS) -o $(BIN)/gto_amino_acid_to_seq AminoAcidToSeq.c $(OBJS) $(LIBS)
 
 geco:
 	git clone https://github.com/cobilab/geco2.git

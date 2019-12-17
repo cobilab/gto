@@ -202,3 +202,12 @@ cd ..
 cd gto_amino_acid_to_seq
 sh runExample.sh
 cd ..
+cd gto_fastq_variation_map
+sh runExample.sh
+cd ..
+cd gto_fastq_variation_filter
+sh runExample.sh
+cd ..
+cd gto_fastq_variation_visual
+sh runExample.sh
+cd ..

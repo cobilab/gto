@@ -20,7 +20,7 @@ Another relevant subject is genomic data simulation. Read simulations tools are 
 
 Although a large number of tools are available for analysing, compressing, and simulation, these tools are specialised in only a specific task. Besides, in many cases the output of one tool cannot be used directly as input for another tool, e.g. the output of a simulation tool cannot always be used directly as input for an analysis tool. Thus, unique software that includes several specialised tools is necessary.
 
-In this document, we describe \texttt{GTO}, a complete toolkit for genomics, namely for FASTQ/A formats and sequences (DNA, amino acids, text), with many complementary tools. The toolkit is for Unix-based systems, built for ultra-fast computations. \texttt{GTO} supports pipes for easy integration with the sub-programs belonging to \texttt{GTO} as well as external tools. \texttt{GTO} works as \textit{LEGOs}, since it allows the construction of multiple pipelines with many combinations.
+In this document, we describe \texttt{GTO}, a complete toolkit for genomics and proteomics, namely for FASTQ, FASTA and SEQ formats, with many complementary tools. The toolkit is for Unix-based systems, built for ultra-fast computations. \texttt{GTO} supports pipes for easy integration with the sub-programs belonging to \texttt{GTO} as well as external tools. \texttt{GTO} works as \textit{LEGOs}, since it allows the construction of multiple pipelines with many combinations.
 
 \texttt{GTO} includes tools for information display, randomisation, edition, conversion, extraction, search, calculation, compression, simulation and visualisation. \texttt{GTO} is prepared to deal with very large datasets, typically in the scale of Gigabytes or Terabytes (but not limited).
 The complete toolkit is an optimised command-line version, using the prefix ``\texttt{gto}\_'' followed by the suffix with the respective name of the program. \texttt{GTO} is implemented in \texttt{C} language and it is available, under the MIT license, at:
@@ -42,20 +42,20 @@ conda install -c cobilab gto --yes
 
 
 \section{Testing}
-The examples provided in this document are available in the repository. Therefore, each example can be easily reproduced, which it will also test and validate each tool. It is possible to access the demo files for each tool or run all the tests, as follows:
+The examples provided in this document are available in the repository. Therefore, each example can be easily reproduced, which it will also test and validate each tool. To replicate those tests, it can be done in two different ways: 
 \begin{itemize}
-	\item Run one test for a specific tool:
+	\item Running one test for a specific tool:
 \begin{lstlisting}
 cd gto/tester/gto_{tool}
 sh runExample.sh
 \end{lstlisting}
-\item Run the tests for all the tools:
+\item Running the batch of tests for all the tools:
 \begin{lstlisting}
 cd gto/tester/
 sh runAllTests.sh
 \end{lstlisting}
 \end{itemize}
-Some of this tests require internet connection to download external files and it will create new files.
+Some of these tests require internet connection to download external files and it will create new files.
 
 \section{License}
 
