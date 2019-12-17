@@ -1,5 +1,5 @@
 \section{Program gto\char`_fastq\char`_falcon}
-The \texttt{gto\char`_fastq\char`_falcon} is an ultra-fast method to infer metagenomic composition of sequenced reads. gto\char`_fastq\char`_falcon measures similarity between any FASTQ file (or FASTA), independently from the size, against any multi-FASTA database, such as the entire set of complete genomes from the NCBI. gto\char`_fastq\char`_falcon supports single reads, paired-end reads, and compositions of both. It has been tested in many plataforms, such as Illumina MySeq, HiSeq, Novaseq, IonTorrent.\\
+The \texttt{gto\char`_fastq\char`_falcon} is an ultra-fast method to infer metagenomic composition of sequenced reads relative to a database. gto\char`_fastq\char`_falcon measures similarity between any FASTQ file (or FASTA), independently from the size, against any multi-FASTA database, such as the entire set of complete genomes from the NCBI. gto\char`_fastq\char`_falcon supports single reads, paired-end reads, and compositions of both. It has been tested in many plataforms, such as Illumina MySeq, HiSeq, Novaseq, IonTorrent.\\
 gto\char`_fastq\char`_falcon is efficient to detect the presence and authenticate a given species in the FASTQ reads. The core of the method is based on relative data compression. gto\char`_fastq\char`_falcon uses variable multi-threading, without multiplying the memory for each thread, being able to run efficiently in a common laptop.\\
 For help type:
 \begin{lstlisting}
@@ -60,12 +60,11 @@ COPYRIGHT
 \end{lstlisting}
 An example of such an input file is:
 \begin{lstlisting}
-TO DO
+gto_fastq_falcon -v -F -l 47 -x top.csv reads1.fq:reads2.fq DB.fa 
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fastq\char`_falcon} program is a FASTQ file\\
-TO DO
+The output of the \texttt{gto\char`_fastq\char`_falcon} program is a CSV file (top.csv) with the highest probability of being contained in the samples:
 \begin{lstlisting}
 TO DO
 \end{lstlisting}
