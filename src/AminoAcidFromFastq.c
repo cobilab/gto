@@ -82,7 +82,7 @@ char TranslateCodon(char *codon)
  */
 int main(int argc, char *argv[])
 {
-  uint32_t streamSize, index;
+  uint32_t streamSize, index, frame=1;
   uint8_t  value, line = 0;
   BUF *Buffer;
 
@@ -92,6 +92,8 @@ int main(int argc, char *argv[])
         OPT_GROUP("Basic options"),
         OPT_BUFF('<', "input.fastq", "Input FASTQ file format (stdin)"),
         OPT_BUFF('>', "output.prot", "Output amino acid sequence file (stdout)"),
+        OPT_GROUP("Optional"),
+        OPT_INTEGER('f', "frame", &frame, "Translation codon frame (1, 2 or 3)"),
         OPT_END(),
   };
   struct argparse argparse;
@@ -107,11 +109,19 @@ int main(int argc, char *argv[])
   if(argc != 0 || ftell(stdin))
     argparse_help_cb(&argparse, options);
 
+  if(frame < 1 || frame > 3)
+  {
+    fprintf(stderr, "\nERROR: The codon frame value most be 1, 2 or 3!\n");
+    argparse_help_cb(&argparse, options);
+    exit(1);
+  }
+
   Buffer = CreateBuffer(BUF_SIZE);
 
   uint8_t i = 0;
   char codon[4];
   codon[3] = '\0';
+  int32_t tempFrame = frame;
 
   while((streamSize = fread(Buffer->buf, 1, Buffer->size, stdin)))
     for(index = 0 ; index < streamSize ; ++index)
@@ -123,9 +133,17 @@ int main(int argc, char *argv[])
           if(value == '\n') line = 1;
           break;
         case 1: 
-          if(value == '\n') line = 2;
-	        
-	  switch(value){
+          if(value == '\n') 
+          {
+            line = 2;
+            break;
+          }
+
+          if (--tempFrame > 0)
+            continue;
+
+      	  switch(value)
+          {
             case 'U': case 'u': case 't':
             value = 'T';
             break;
@@ -138,23 +156,22 @@ int main(int argc, char *argv[])
             case 'a':
             value = 'A';
             break;
-            default:
-	    value = 'A';
-            }
+          }
 
-         codon[i] = value;
- 
-         if(++i == 3){
-           fprintf(stdout, "%c", TranslateCodon(codon));
-           i = 0;
-           }
-
+          codon[i] = value;
+          if(++i == 3)
+          {
+            fprintf(stdout, "%c", TranslateCodon(codon));
+            i = 0;
+          }
           break;
         case 2:
           if(value == '\n') line = 3;
           break;
         case 3:
           if(value == '\n') line = 0;
+          i = 0;
+          tempFrame = frame;
           break;
       } 
     }

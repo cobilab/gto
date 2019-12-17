@@ -11,10 +11,10 @@ In the following subsections, we explain the input and output paramters.
 The \texttt{gto\char`_amino\char`_acid\char`_from\char`_fastq} program needs two streams for the computation, namely the input and output standard. The input stream is a FASTQ file.\\
 The attribution is given according to:
 \begin{lstlisting}
-Usage: ./gto_amino_acid_from_fastq [options] [[--] args]
-   or: ./gto_amino_acid_from_fastq [options]
+Usage: ../../bin/gto_amino_acid_from_fastq [options] [[--] args]
+   or: ../../bin/gto_amino_acid_from_fastq [options]
 
-It converts DNA sequences in the FASTQ file format to an amino acid sequence.
+It converts FASTQ file format to an amino acid sequence (translation).
 
     -h, --help            Show this help message and exit
 
@@ -22,7 +22,10 @@ Basic options
     < input.fastq         Input FASTQ file format (stdin)
     > output.prot         Output amino acid sequence file (stdout)
 
-Example: ./gto_amino_acid_from_fastq < input.fastq > output.prot
+Optional
+    -f, --frame=<int>     Translation codon frame (1, 2 or 3)
+
+Example: ../../bin/gto_amino_acid_from_fastq < input.fastq > output.prot
 \end{lstlisting}
 An example of such an input file is:
 \begin{lstlisting}
@@ -41,5 +44,5 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
 The output of the \texttt{gto\char`_amino\char`_acid\char`_from\char`_fastq} program is an amino acid sequence.\\
 Using the input above, an output example for this is the following:
 \begin{lstlisting}
-TO DO
+G-WPLPMASNPTKLPLTT-GFSNRVQGYDVCILRI-SRSR--YASFYH
 \end{lstlisting}

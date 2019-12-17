@@ -29,13 +29,17 @@ http://bioinformatics.ua.pt/gto
 \end{lstlisting}
 
 \section{Installation}
-
-For \texttt{GTO} installation, run:
+To install \texttt{GTO} through the GitHub repository:
 \begin{lstlisting}
-git clone https://github.com/bioinformatics-ua/gto.git
+git clone https://github.com/cobilab/gto.git
 cd gto/src/
 make
 \end{lstlisting}
+Or by installing them directly using the Cobilab channel from Conda:
+\begin{lstlisting}
+conda install -c cobilab gto --yes
+\end{lstlisting}
+
 
 \section{Testing}
 The examples provided in this document are available in the repository. Therefore, each example can be easily reproduced, which it will also test and validate each tool. It is possible to access the demo files for each tool or run all the tests, as follows:
