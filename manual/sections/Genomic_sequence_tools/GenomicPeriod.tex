@@ -1,15 +1,15 @@
 \section{Program gto\char`_genomic\char`_period}
-The \texttt{gto\char`_genomic\char`_period} calculates the best order depth of a sequence, using FCMs. It only works "ACGT", while the rest will be discarded.\\
+The \texttt{gto\char`_genomic\char`_period} calculates the best order depth of a sequence, using FCMs. It only works with "ACGT" and the rest will be discarded.\\
 This application has a dependency to represent the results. It requires the Gnuplot to show the execution result.\\
 For help type:
 \begin{lstlisting}
 ./gto_genomic_period -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_genomic\char`_period} program needs program needs two streams for the computation, namely the input and output standard. The input stream is a sequence file.\\
+The \texttt{gto\char`_genomic\char`_period} program needs two streams for the computation, namely the input and output standard. The input stream is a sequence file.\\
 The attribution is given according to:
 \begin{lstlisting}
 Usage: ./gto_genomic_period [options] [[--] args]
@@ -37,8 +37,8 @@ TGAACAACCTTGTTCCCGGCAAAGCCCACTGCGTCATGGAGCTCACGGTCTACATTCATGACTGACTAACCGTAAACTGC
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_genomic\char`_period} program is a execution report, followed by the plot with this information.\\
-Using the input above, an report example for this is the following:
+The output of the \texttt{gto\char`_genomic\char`_period} program is a execution report, followed by the plot with the information.\\
+Using the input above, an report example of this is:
 \begin{lstlisting}
 Running order: 1 ... Done!
 Running order: 2 ... Done!
@@ -82,7 +82,7 @@ Running order: 20 ... Done!
 20	1.754
 \end{lstlisting}
 
-In the Figure~\ref{fig:gtoGenomicPeriod} is represented the plot for the execution above.
+Figure~\ref{fig:gtoGenomicPeriod} displays the plot of the execution above.
 
  \begin{figure}[!h]
   \centering

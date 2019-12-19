@@ -1,0 +1,55 @@
+\section{Program gto\char`_amino\char`_acid\char`_from\char`_fasta}
+The \texttt{gto\char`_amino\char`_acid\char`_from\char`_fasta} converts DNA sequences in FASTA or Multi-FASTA file format to an amino acid sequence.\\
+For help type:
+\begin{lstlisting}
+./gto_amino_acid_from_fasta -h
+\end{lstlisting}
+In the following subsections, we explain the input and output parameters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_amino\char`_acid\char`_from\char`_fasta} program needs two streams for the computation, namely the input and output standard. The input stream is a FASTA or Multi-FASTA file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ../../bin/gto_amino_acid_from_fasta [options] [[--] args]
+   or: ../../bin/gto_amino_acid_from_fasta [options]
+
+It converts FASTA or Multi-FASTA file format to an amino acid sequence (translation).
+
+    -h, --help            Show this help message and exit
+
+Basic options
+    < input.mfasta        Input FASTA or Multi-FASTA file format (stdin)
+    > output.prot         Output amino acid sequence file (stdout)
+
+Optional
+    -f, --frame=<int>     Translation codon frame (1, 2 or 3)
+
+Example: ../../bin/gto_amino_acid_from_fasta < input.mfasta > output.prot
+\end{lstlisting}
+An example of such an input file is:
+\begin{lstlisting}
+>AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
+ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCC
+CGGCCCCACCTAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGG
+AAGTGGTTTGAGTGGACCTCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGCAGGCCAGT
+GCCGCGAATCCGCGCGCCGGGACAGAATCTCCTGCAAAGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCACCCCCC
+CAGCTAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+>AB000263 |acc=AB000263|descr=Homo sapiens mRNA 
+ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCCCCTGGAGGG
+TGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGCCTCCTGACTTTCCTCGCT
+TGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGG
+AAGGCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTG
+CAAATAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+\end{lstlisting}
+
+\subsection*{Output}
+
+The output of the \texttt{gto\char`_amino\char`_acid\char`_from\char`_fasta} program is an amino acid sequence.\\
+Using the input above, an output example of this is:
+\begin{lstlisting}
+TRRPPAAAALRGHGPGGSTAALLPLSPAPPKEKQPPDFPRLGRDSEHMQEAAGSGLSGPPGPS-ERKLGRWPGGRKQAS
+AANPRAGTESPAKPCRNFFWKTFSTPPAKTSPMNAHASLITDLTRCHCPPASCCCCSPGPRPPLPCPWRVAPPAETASI
+CRKRQE-GKAAS-LSSLGGLSGPPRPVPGPS-ERKLGRWPGGRKAHPPSNPRAGTECPAGTSSGRPSPPANKTSPMNAH
+ASLITDL
+\end{lstlisting}

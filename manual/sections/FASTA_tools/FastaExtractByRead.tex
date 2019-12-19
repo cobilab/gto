@@ -1,14 +1,14 @@
 \section{Program gto\char`_fasta\char`_extract\char`_by\char`_read}
-The \texttt{gto\char`_fasta\char`_extract\char`_by\char`_read} extracts sequences from a FASTA or Multi-FASTA file, which the range is defined by the user in the parameters.\\
+The \texttt{gto\char`_fasta\char`_extract\char`_by\char`_read} extracts sequences from a FASTA or Multi-FASTA file, whose range is defined by the user in the parameters.\\
 For help type:
 \begin{lstlisting}
 ./gto_fasta_extract_by_read -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_fasta\char`_extract\char`_by\char`_read} program needs two paramenters, which defines the begin and the end of the extraction, and two streams for the computation, namely the input and output standard. The input stream is a FASTA or Multi-FASTA file.\\
+The \texttt{gto\char`_fasta\char`_extract\char`_by\char`_read} program needs two parameters, which defines the beginning and the end of the extraction, and two streams for the computation, namely the input and output standard. The input stream is a FASTA or Multi-FASTA file.\\
 The attribution is given according to:
 \begin{lstlisting}
 Usage: ./gto_fasta_extract_by_read [options] [[--] args]
@@ -43,8 +43,8 @@ TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fasta\char`_extract\char`_by\char`_read} program is FASTA or Multi-FASTA file wiht the extracted sequences.\\
-Using the input above with the value 0 as the extraction starting point and the 50 as the ending, an output example for this is the following:
+The output of the \texttt{gto\char`_fasta\char`_extract\char`_by\char`_read} program is a FASTA or Multi-FASTA file with the extracted sequences.\\
+Using the input above with value 0 as the extraction starting point and value 50 as the ending, an output example of this is:
 \begin{lstlisting}
 >AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
 ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGG

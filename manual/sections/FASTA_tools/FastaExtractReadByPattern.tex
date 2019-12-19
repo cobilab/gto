@@ -1,10 +1,10 @@
 \section{Program gto\char`_fasta\char`_extract\char`_read\char`_by\char`_pattern}
-The \texttt{gto\char`_fasta\char`_extract\char`_read\char`_by\char`_pattern} extracts reads from a Multi-FASTA file format given a pattern in the header. Also, this pattern is case insensitive. \\
+The \texttt{gto\char`_fasta\char`_extract\char`_read\char`_by\char`_pattern} extracts reads from a Multi-FASTA file format given a pattern in the header. This pattern is case insensitive. \\
 For help type:
 \begin{lstlisting}
 ./gto_fasta_extract_read_by_pattern -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
@@ -43,7 +43,7 @@ TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
 
 \subsection*{Output}
 The output of the \texttt{gto\char`_fasta\char`_extract\char`_read\char`_by\char`_pattern} program is a Multi-FASTA file.\\
-Using the input above with the pattern value as ''264'', an output example for this is the following:
+Using the input above with the pattern value ''264'', an output example of this is:
 \begin{lstlisting}
 >AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
 ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCCC

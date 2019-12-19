@@ -1,10 +1,10 @@
 \section{Program gto\char`_amino\char`_acid\char`_compressor}
-The \texttt{gto\char`_amino\char`_acid\char`_compressor} is a new lossless compressor to compress efficiently amino acid sequences (proteins). It uses a cooperation between multiple context and substitutional tolerant context models. The cooperation between models is balanced with weights that benefit the models with better performance according to a forgetting function specific for each model.\\
+The \texttt{gto\char`_amino\char`_acid\char`_compressor} is a new lossless compressor to compress efficiently amino acid sequences (proteins). It uses cooperation between multiple contexts and substitutional tolerant context models. The cooperation between models is balanced with weights that benefit the models with better performance according to a forgetting function specific for each model.\\
 For help type:
 \begin{lstlisting}
 ./gto_amino_acid_compressor -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
@@ -53,7 +53,7 @@ Example:
   [Compress]   ./gto_amino_acid_compressor -v -tm 1:1:0.8/0:0:0 -tm 5:20:0.9/3:20:0.9 seq.txt 
   [Decompress] ./gto_amino_acid_decompressor -v seq.txt.co  
 \end{lstlisting}
-In the following example, it will be downloaded nine amino acid sequences and compress and decompress one of the smallest (HI). Finally, it compares if the uncompressed sequence is equal to the original.
+In the following example, nine amino acid sequences are downloaded and one of the smallest (HI) is compressed and decompressed. Finally, the uncompressed sequence is compared with the original one to verify that they are the same.
 \begin{lstlisting}
 wget http://sweet.ua.pt/pratas/datasets/AminoAcidsCorpus.zip
 unzip AminoAcidsCorpus.zip

@@ -1,41 +1,41 @@
 \chapter{FASTA tools}
 \label{fasta}
-The FASTA tool subset has similar goals to the FASTQ tools. With these tools, it is possible convert data from different formats to the FASTA and multi-FASTA files, or the opposite. In these tools, there are also features to extract and filter reads based on patterns, which can solve specific problems in genomic analytic workflows. The currently available FASTA tools, for analysis and manipulation, are:
+The FASTA tool subset has a similar purpose as the FASTQ tools. With these tools, data from different formats can be converted to FASTA and multi-FASTA files and the other way around. Furthermore, these tools have features to extract and filter reads based on patterns, which can solve specific problems in genomic analytic workflows. Currently, FASTA tools, for analysis and manipulation, available, are:
 \begin{enumerate}
 
-\item \texttt{gto\char`_fasta\char`_to\char`_seq}: it converts a FASTA or Multi-FASTA file format to a seq.
+\item \texttt{gto\char`_fasta\char`_to\char`_seq}: to convert a FASTA or Multi-FASTA file format to a seq.
 
-\item \texttt{gto\char`_fasta\char`_from\char`_seq}: it converts a genomic sequence to pseudo FASTA file format.
+\item \texttt{gto\char`_fasta\char`_from\char`_seq}: to convert a genomic sequence to a pseudo-FASTA file format.
 
-\item \texttt{gto\char`_fasta\char`_extract}: it extracts sequences from a FASTA file, which the range is defined by the user in the parameters.
+\item \texttt{gto\char`_fasta\char`_extract}: to extract sequences from a FASTA file, whose range is defined by the user in the parameters.
 
-\item \texttt{gto\char`_fasta\char`_extract\char`_by\char`_read}: it extracts sequences from each read in a Multi-FASTA file (splited by \textbackslash n), which the range is defined by the user in the parameters.
+\item \texttt{gto\char`_fasta\char`_extract\char`_by\char`_read}: to extract sequences from each read in a Multi-FASTA file (splitting by \textbackslash n), whose range is defined by the user in the parameters.
 
-\item \texttt{gto\char`_fasta\char`_info}: it shows the readed information of a FASTA or Multi-FASTA file format.
+\item \texttt{gto\char`_fasta\char`_info}: to show the read information of a FASTA or Multi-FASTA file format.
 
-\item \texttt{gto\char`_fasta\char`_mutate}: it reates a synthetic mutation of a fasta file given specific rates of editions, deletions and additions.
+\item \texttt{gto\char`_fasta\char`_mutate}: to create a synthetic mutation of a FASTA file given specific rates of editions, deletions and additions.
 
-\item \texttt{gto\char`_fasta\char`_rand\char`_extra\char`_chars}: it substitues in the DNA sequence the outside ACGT chars by random ACGT symbols.
+\item \texttt{gto\char`_fasta\char`_rand\char`_extra\char`_chars}: to substitute in the DNA sequence the outside ACGT chars by random ACGT symbols.
 
-\item \texttt{gto\char`_fasta\char`_extract\char`_read\char`_by\char`_pattern}: it extracts reads from a Multi-FASTA file format given a pattern in the header.
+\item \texttt{gto\char`_fasta\char`_extract\char`_read\char`_by\char`_pattern}: to extract reads from a Multi-FASTA file format given a pattern in the header.
 
-\item \texttt{gto\char`_fasta\char`_find\char`_n\char`_pos}: it reports the ''N'' regions in a sequence or FASTA (seq) file.
+\item \texttt{gto\char`_fasta\char`_find\char`_n\char`_pos}: to report the ''N'' regions in a sequence or FASTA (seq) file.
 
-\item \texttt{gto\char`_fasta\char`_split\char`_reads}: it splits a Multi-FASTA file to multiple FASTA files.
+\item \texttt{gto\char`_fasta\char`_split\char`_reads}: to split a Multi-FASTA file to multiple FASTA files.
 
-\item \texttt{gto\char`_fasta\char`_rename\char`_human\char`_headers}: it changes the headers of FASTA or Multi-FASTA file to simple chrX by order, where X is the number.
+\item \texttt{gto\char`_fasta\char`_rename\char`_human\char`_headers}: to change the header of a FASTA or Multi-FASTA file to simple chrX by order, where X is the number.
 
-\item \texttt{gto\char`_fasta\char`_extract\char`_pattern\char`_coords}: it extracts the header and coordinates from a Multi-FASTA file format given a pattern/motif in the sequence.
+\item \texttt{gto\char`_fasta\char`_extract\char`_pattern\char`_coords}: to extract the header and coordinates from a Multi-FASTA file format given a pattern/motif in the sequence.
 
-\item \texttt{gto\char`_fasta\char`_complement}: it replaces the ACGT bases with their complements in FASTA or Multi-FASTA file format.
+\item \texttt{gto\char`_fasta\char`_complement}: to replace the ACGT bases with their complements in a FASTA or Multi-FASTA file format.
 
-\item \texttt{gto\char`_fasta\char`_reverse}: it reverses the order of a FASTA or Multi-FASTA file format.
+\item \texttt{gto\char`_fasta\char`_reverse}: to reverses the order of a FASTA or Multi-FASTA file format.
 
-\item \texttt{gto\char`_fasta\char`_variation\char`_map}: this tool is an alias to gto\char`_fastq\char`_variation\char`_map tool. Please check the documentation of this tool in the in the section of FASTQ tools. 
+\item \texttt{gto\char`_fasta\char`_variation\char`_map}: this tool is an alias to gto\char`_fastq\char`_variation\char`_map tool. Please check the documentation of this tool in the in the FASTQ tools section. 
 
-\item \texttt{gto\char`_fasta\char`_variation\char`_filter}: this tool is an alias to gto\char`_fastq\char`_variation\char`_filter tool. Please check the documentation of this tool in the in the section of FASTQ tools. 
+\item \texttt{gto\char`_fasta\char`_variation\char`_filter}: this tool is an alias to gto\char`_fastq\char`_variation\char`_filter tool. Please check the documentation of this tool in the FASTQ tools section. 
 
-\item \texttt{gto\char`_fasta\char`_variation\char`_visual}: this tool is an alias to gto\char`_fastq\char`_variation\char`_visual tool. Please check the documentation of this tool in the in the section of FASTQ tools. 
+\item \texttt{gto\char`_fasta\char`_variation\char`_visual}: this tool is an alias to gto\char`_fastq\char`_variation\char`_visual tool. Please check the documentation of this tool in the FASTQ tools section. 
 
 \end{enumerate}
 

@@ -1,37 +1,37 @@
 \chapter{General purpose tools}
 \label{seq}
-The toolkit also has a set of tools with a more general-purpose, which were not designed to work with a specific data format. Instead, it was developed as an auxiliary component to help the construction of pipelines combining all the described subsets. This contains tools for char manipulations, such as reversing, segmentation and permutation, for manipulating numerical scores, such sum, filter, calculate the min and the max of a numeric matrix mainly originated from the tools' outputs. The current available tools for general purposes are:
+The toolkit has also a set of tools with a more general-purpose, which were not designed to work with a specific data format. Instead, this set of tools was developed as an auxiliary component to help in the construction of pipelines combining all the subsets described. This set contains tools for char manipulations, such as reversing, segmentation and permutation; for manipulating numerical scores, such sum, filter, min and max calculation of a numeric matrix mainly originated from the tools' outputs. Currently, the tools available for general purposes are:
 \begin{enumerate}
 
-\item \texttt{gto\char`_char\char`_to\char`_line}: it splits a sequence into lines, creating an output sequence which has a char for each line.
+\item \texttt{gto\char`_char\char`_to\char`_line}: to split a sequence into lines, creating an output sequence which has a char in each line.
 
-\item \texttt{gto\char`_new\char`_line\char`_on\char`_new\char`_x}: it splits different rows with a new empty row.
+\item \texttt{gto\char`_new\char`_line\char`_on\char`_new\char`_x}: to split different rows with a new empty line separating rows with different values.
 
-\item \texttt{gto\char`_upper\char`_bound}: it sets an upper bound in a file with a value per line.
+\item \texttt{gto\char`_upper\char`_bound}: to set an upper bound in a file with one numerical value per line.
 
-\item \texttt{gto\char`_lower\char`_bound}: it sets an lower bound in a file with a value per line.
+\item \texttt{gto\char`_lower\char`_bound}: to set a lower bound in a file with one numerical value per line.
 
-\item \texttt{gto\char`_brute\char`_force\char`_string}: it generates all combinations, line by line, for an inputted alphabet and specific size.
+\item \texttt{gto\char`_brute\char`_force\char`_string}: to generate all combinations, line by line, for an inputted alphabet and specific size.
 
-\item \texttt{gto\char`_real\char`_to\char`_binary\char`_with\char`_threshold}: it converts a sequence of real numbers into a binary sequence, given a threshold.
+\item \texttt{gto\char`_real\char`_to\char`_binary\char`_with\char`_threshold}: to convert a sequence of real numbers into a binary sequence, given a threshold.
 
-\item \texttt{gto\char`_sum}: it adds decimal values in file, line by line, splitted by spaces or tabs.
+\item \texttt{gto\char`_sum}: to add decimal values from a file, line by line, split by spaces or tabs.
 
-\item \texttt{gto\char`_filter}: it filters numerical sequences.
+\item \texttt{gto\char`_filter}: to filters numerical sequences.
 
-\item \texttt{gto\char`_word\char`_search}: it search for a word in a file.
+\item \texttt{gto\char`_word\char`_search}: to search for a word in a file.
 
-\item \texttt{gto\char`_permute\char`_by\char`_blocks}: it permutates by block sequence, FASTA and Multi-FASTA files. 
+\item \texttt{gto\char`_permute\char`_by\char`_blocks}: to permute by block sequence, FASTA and Multi-FASTA files. 
 
-\item \texttt{gto\char`_info}: it gives the basic properties of the file, namely size, cardinality, distribution percentage of the symbols, among others.
+\item \texttt{gto\char`_info}: to obtain the basic properties of a file, namely size, cardinality, distribution percentage of the symbols, among others.
 
-\item \texttt{gto\char`_segment}: it segments a filtered sequence.
+\item \texttt{gto\char`_segment}: to segment a filtered sequence.
 
-\item \texttt{gto\char`_comparative\char`_map}: it creates a visualization for comparative maps.
+\item \texttt{gto\char`_comparative\char`_map}: to create a visualization for comparative maps.
 
-\item \texttt{gto\char`_max}: it computes the maximum value in each row between two files.
+\item \texttt{gto\char`_max}: to compute the maximum value in each row between two files.
 
-\item \texttt{gto\char`_min}: it computes the minimum value in each row between two files.
+\item \texttt{gto\char`_min}: to compute the minimum value in each row between two files.
 
 \end{enumerate}
 

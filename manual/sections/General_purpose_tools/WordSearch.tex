@@ -1,14 +1,14 @@
 \section{Program gto\char`_word\char`_search}
-The \texttt{gto\char`_word\char`_search} search for a word in a file. It is case sensitive.\\
+The \texttt{gto\char`_word\char`_search} searches for a word in a file. It is case sensitive.\\
 For help type:
 \begin{lstlisting}
 ./gto_word_search -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_word\char`_search} program needs program needs two streams for the computation, namely the input and output standard. The input stream is a text file.\\
+The \texttt{gto\char`_word\char`_search} program needs two streams for the computation, namely the input and output standard. The input stream is a text file.\\
 The attribution is given according to:
 \begin{lstlisting}
 Usage: ./gto_word_search [options] [[--] args]
@@ -38,8 +38,8 @@ Leave no stone unturned. Euripides
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_word\char`_search} program is a text file with the matching paragraphs and the location of the word found.\\
-Using the input above with the word ''Shakespeare'', an output example for this is the following:
+The output of the \texttt{gto\char`_word\char`_search} program is a text file with the matching paragraphs and the location of the word.\\
+Using the input above with the word ''Shakespeare'', an output example of this is:
 \begin{lstlisting}
 Found match in range [ 1536 : 2048 ]
 Boldness be my friend. William Shakespeare

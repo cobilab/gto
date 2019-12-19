@@ -1,14 +1,14 @@
 \section{Program gto\char`_fasta\char`_mutate}
-The \texttt{gto\char`_fasta\char`_mutate} creates a synthetic mutation of a FASTA file given specific rates of editions, deletions and additions. All these paramenters are defined by the user, and their are optional.\\
+The \texttt{gto\char`_fasta\char`_mutate} creates a synthetic mutation of a FASTA file given specific rates of editions, deletions and additions. All these parameters are defined by the user, and are optional.\\
 For help type:
 \begin{lstlisting}
 ./gto_fasta_mutate -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_fasta\char`_mutate} program needs two streams for the computation, namely the input and output standard. However, optional settings can be supplied too, such as the starting point to the random generator, and the edition, deletion and insertion rates. Also, the user can choose to use the ACGTN alphabet in the synthetic mutation. The input stream is a FASTA or Multi-FASTA File.\\
+The \texttt{gto\char`_fasta\char`_mutate} program needs two streams for the computation, namely the input and output standard. However, optional settings can be supplied too, such as the starting point to the random generator, and the edition, deletion and insertion rates. The user can also choose to use the ACGTN alphabet in the synthetic mutation. The input stream is a FASTA or Multi-FASTA file.\\
 The attribution is given according to:
 \begin{lstlisting}
 Usage: ./gto_fasta_mutate [options] [[--] args]
@@ -50,8 +50,8 @@ TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fasta\char`_mutate} program is a FASTA or Multi-FASTA file whith the synthetic mutation of input file.\\
-Using the input above with the seed value as 1 and the edition rate as 0.5, an output example for this is the following:
+The output of the \texttt{gto\char`_fasta\char`_mutate} program is a FASTA or Multi-FASTA file with the synthetic mutation of the input file.\\
+Using the input above with 1 as seed value and value 0.5 as edition rate, an output example of this is:
 \begin{lstlisting}
 >AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
 ACGCAACGNATTCCTGCTGATCATANTGTNCCGCNCCCCNGCGACGGGGNCTCNCNNGCACACATNGTACCATTGTCCAC

@@ -1,5 +1,5 @@
 \section{Program gto\char`_fastq\char`_variation\char`_map}
-The \texttt{gto\char`_fastq\char`_variation\char`_map} is TO DO\\
+The \texttt{gto\char`_fastq\char`_variation\char`_map} identifies the variation that occurs in the sequences corresponding to reads or a set of reads.\\
 For help type:
 \begin{lstlisting}
 ./gto_fastq_variation_map -h
@@ -8,7 +8,7 @@ In the following subsections, we explain the input and output paramters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_fastq\char`_variation\char`_map} program needs program needs a FASTQ file to compute.\\
+The \texttt{gto\char`_fastq\char`_variation\char`_map} program needs FASTQ, FASTA or SEQ files to be used as reference and target files.\\
 The attribution is given according to:
 \begin{lstlisting}
 Usage: ./gto_fastq_variation_map <OPTIONS>... [FILE]:<...> [FILE]:<...>
@@ -29,14 +29,37 @@ The reference files may be FASTA, FASTQ or DNA SEQ,
 while the target files may be FASTA OR DNA SEQ.          
 Report bugs to <{pratas,raquelsilva,ap,pjf}@ua.pt>.
 \end{lstlisting}
-An example of such an input file is:
+An example of a reference file (Multi-FASTA format) is:
 \begin{lstlisting}
-TO DO
+>AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
+ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCC
+CGGCCCCACCTAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGG
+AAGTGGTTTGAGTGGACCTCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGCAGGCCAGT
+GCCGCGAATCCGCGCGCCGGGACAGAATCTCCTGCAAAGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCACCCCCC
+CAGCTAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+>AB000263 |acc=AB000263|descr=Homo sapiens mRNA 
+ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCCCCTGGAGGG
+TGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGCCTCCTGACTTTCCTCGCT
+TGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGG
+AAGGCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTG
+CAAATAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+\end{lstlisting}
+An example for the target file (FASTQ format) is:
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=60
+GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGG
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIII
+@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+GTTCAGGGATACGACGTTTGTATTTTAAGAATCTGAAGCAGAAGTCGATGATAATACGCGTCGTTTTATCAT
++
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fastq\char`_variation\char`_map} program is a \\
-TO DO
+The output of the \texttt{gto\char`_fastq\char`_variation\char`_map} program is a text file identifying the correspondent regions.\\
+Using the inputs above, an output example of this is:
 \begin{lstlisting}
-TO DO
+1111111111111111111111111111100000000000000000000000000000001111111111111111111
+11111111110000000000000000000000000000000000000000000
 \end{lstlisting}

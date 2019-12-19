@@ -1,0 +1,48 @@
+\section{Program gto\char`_amino\char`_acid\char`_from\char`_fastq}
+The \texttt{gto\char`_amino\char`_acid\char`_from\char`_fastq} converts DNA sequences in the FASTQ file format to an amino acid sequence.\\
+For help type:
+\begin{lstlisting}
+./gto_amino_acid_from_fastq -h
+\end{lstlisting}
+In the following subsections, we explain the input and output parameters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_amino\char`_acid\char`_from\char`_fastq} program needs two streams for the computation, namely the input and output standard. The input stream is a FASTQ file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ../../bin/gto_amino_acid_from_fastq [options] [[--] args]
+   or: ../../bin/gto_amino_acid_from_fastq [options]
+
+It converts FASTQ file format to an amino acid sequence (translation).
+
+    -h, --help            Show this help message and exit
+
+Basic options
+    < input.fastq         Input FASTQ file format (stdin)
+    > output.prot         Output amino acid sequence file (stdout)
+
+Optional
+    -f, --frame=<int>     Translation codon frame (1, 2 or 3)
+
+Example: ../../bin/gto_amino_acid_from_fastq < input.fastq > output.prot
+\end{lstlisting}
+An example of such an input file is:
+\begin{lstlisting}
+@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGGTTTTCAAATAGA
++SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/
+@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+GTTCAGGGATACGACGTTTGTATTTTAAGAATCTGAAGCAGAAGTCGATGATAATACGCGTCGTTTTATCAT
++SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
+\end{lstlisting}
+
+\subsection*{Output}
+
+The output of the \texttt{gto\char`_amino\char`_acid\char`_from\char`_fastq} program is an amino acid sequence.\\
+Using the input above, an output example of this is:
+\begin{lstlisting}
+G-WPLPMASNPTKLPLTT-GFSNRVQGYDVCILRI-SRSR--YASFYH
+\end{lstlisting}

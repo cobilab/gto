@@ -1,14 +1,14 @@
 \section{Program gto\char`_fastq\char`_clust\char`_reads}
-The \texttt{gto\char`_fastq\char`_clust\char`_reads} agroups reads and creates an index file. It cluster reads in therms of Seq k-mer Lexicographical order.\\
+The \texttt{gto\char`_fastq\char`_clust\char`_reads} groups reads and creates an index file. It clusters reads in terms of Seq k-mer Lexicographical order.\\
 For help type:
 \begin{lstlisting}
 ./gto_fastq_clust_reads -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_fastq\char`_clust\char`_reads} program needs two streams for the computation, namely the input and output standard. The input stream is a FASTQ file. The program sorts the FASTQ reads accoring to the lexicographic order of the genomic sequences.\\
+The \texttt{gto\char`_fastq\char`_clust\char`_reads} program needs two streams for the computation, namely the input and output standard. The input stream is a FASTQ file. The program sorts the FASTQ reads according to the lexicographic order of the genomic sequences.\\
 The attribution is given according to:
 \begin{lstlisting}
 Usage: ./gto_fastq_clust_reads [options] [[--] args]
@@ -48,8 +48,8 @@ II77777LPMMMPPMMMMIIIIIIIIIIIIII777777777BBBBBBBBDDDDDIIIIII
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fastq\char`_clust\char`_reads} program is a FASTQ file with clustered reads in therms of the genomic sequence k-mer Lexicographical order.
-An example, for the output, is:
+The output of the \texttt{gto\char`_fastq\char`_clust\char`_reads} program is a FASTQ file with clustered reads in terms of the genomic sequence k-mer Lexicographical order.
+An example of the output is:
 \begin{lstlisting}
 @SRR001661.3 071112_SLXA-EAS1_s_7:5:1:821:328
 AACGCGTATTCGGAGCTTCTTCGTTGGGTACGTGCGCCTATTATGCGGCGCGATTGCTAT
