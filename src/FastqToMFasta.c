@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     "It extracts the sequence and adds each header in a Multi-FASTA format.\n", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0 || ftell(stdin))
+  if(argc != 0)
     argparse_help_cb(&argparse, options);
 
   Buffer = CreateBuffer(BUF_SIZE);

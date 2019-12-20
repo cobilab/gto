@@ -71,8 +71,12 @@ PROGS  	 	= $(BIN)/gto \
          	  $(BIN)/gto_fastq_complement \
          	  $(BIN)/gto_fasta_complement \
          	  $(BIN)/gto_genomic_complement \
-         	  $(BIN)/gto_fastq_reverse  \
-         	  $(BIN)/gto_fasta_reverse 
+         	  $(BIN)/gto_fastq_reverse \
+         	  $(BIN)/gto_fasta_reverse \
+         	  $(BIN)/gto_amino_acid_from_fasta \
+         	  $(BIN)/gto_amino_acid_from_fastq \
+         	  $(BIN)/gto_amino_acid_from_seq 
+         	  #$(BIN)/gto_amino_acid_to_seq 
 	         
 	          
 
@@ -212,6 +216,14 @@ $(BIN)/gto_fastq_reverse: FastqReverse.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fastq_reverse FastqReverse.c $(OBJS) $(LIBS)
 $(BIN)/gto_fasta_reverse: FastaReverse.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_reverse FastaReverse.c $(OBJS) $(LIBS)
+$(BIN)/gto_amino_acid_from_fasta: AminoAcidFromFasta.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_amino_acid_from_fasta AminoAcidFromFasta.c $(OBJS) $(LIBS)
+$(BIN)/gto_amino_acid_from_fastq: AminoAcidFromFastq.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_amino_acid_from_fastq AminoAcidFromFastq.c $(OBJS) $(LIBS)
+$(BIN)/gto_amino_acid_from_seq: AminoAcidFromSeq.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_amino_acid_from_seq AminoAcidFromSeq.c $(OBJS) $(LIBS)
+#$(BIN)/gto_amino_acid_to_seq: AminoAcidToSeq.c $(DEPS) $(OBJS)
+#	$(CC) $(CFLAGS) -o $(BIN)/gto_amino_acid_to_seq AminoAcidToSeq.c $(OBJS) $(LIBS)
 
 geco:
 	git clone https://github.com/cobilab/geco2.git
@@ -240,7 +252,7 @@ ac:
 falcon:
 	git clone https://github.com/cobilab/falcon.git
 	cd falcon/src/ && cmake . && make
-	mv falcon/src/FALCON $(BIN)/gto_fastq_falcon
+	mv falcon/src/FALCON $(BIN)/gto_fastq_metagenomics
 	rm -rf falcon
 
 chester:

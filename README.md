@@ -59,7 +59,7 @@ The GTO provides pipe support for easy integration with the majority of the tool
 1.25 gto_fastq_variation_map
 1.26 gto_fastq_variation_filter
 1.27 gto_fastq_variation_visual
-1.28 gto_fastq_falcon
+1.28 gto_fastq_metagenomics
 ```
 
 ### 2. FASTA tools
@@ -94,11 +94,12 @@ The GTO provides pipe support for easy integration with the majority of the tool
 3.5 gto_genomic_period
 3.6 gto_genomic_count_bases
 3.7 gto_genomic_compressor (also under the alias gto_geco)
-3.8 gto_genomic_complement
-3.9 gto_genomic_reverse (also under the alias gto_reverse)
-3.10 gto_genomic_variation_map
-3.11 gto_genomic_variation_filter
-3.12 gto_genomic_variation_visual
+3.8 gto_genomic_decompressor (also under the alias gto_gede)
+3.9 gto_genomic_complement
+3.10 gto_genomic_reverse (also under the alias gto_reverse)
+3.11 gto_genomic_variation_map
+3.12 gto_genomic_variation_filter
+3.13 gto_genomic_variation_visual
 ```
 
 ### 4. Amino acid sequence tools
@@ -106,7 +107,11 @@ The GTO provides pipe support for easy integration with the majority of the tool
 ```bash
 4.1 gto_amino_acid_to_group
 4.2 gto_amino_acid_to_pseudo_dna
-4.2 gto_amino_acid_compressor
+4.3 gto_amino_acid_compressor
+4.4 gto_amino_acid_decompressor
+4.5 gto_amino_acid_from_fastq
+4.6 gto_amino_acid_from_fasta
+4.7 gto_amino_acid_from_seq
 ```
 
 
@@ -137,7 +142,7 @@ The GTO provides pipe support for easy integration with the majority of the tool
 
 ## CITE
 Please cite the followings, if you use GTO:
-J. R. Almeida, D. Pratas. GTO: the genomics toolkit, 2018.
+in progress
 
 ## ISSUES
 Please let us know if there is any

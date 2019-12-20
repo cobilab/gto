@@ -1,10 +1,13 @@
 \section{Program gto\char`_fastq\char`_metagenomics}
+
 The \texttt{gto\char`_fastq\char`_metagenomics} is an ultra-fast method to infer metagenomic composition of sequenced reads relative to a database. gto\char`_fastq\char`_metagenomics measures similarity between any FASTQ file (or FASTA), independently from the size, against any multi-FASTA database, such as the entire set of complete genomes from the NCBI. gto\char`_fastq\char`_metagenomics supports single reads, paired-end reads, and compositions of both. It has been tested in many platforms, such as Illumina MySeq, HiSeq, Novaseq, Ion Torrent.\\
 gto\char`_fastq\char`_metagenomics is efficient in detecting the presence and authenticating a given species in FASTQ reads. The core of the method is based on relative data compression. gto\char`_fastq\char`_metagenomics uses variable multi-threading, without multiplying the memory for each thread, being able to run efficiently in a common laptop.\\
+
 For help type:
 \begin{lstlisting}
 ./gto_fastq_metagenomics -h
 \end{lstlisting}
+
 In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
@@ -71,7 +74,9 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
 \end{lstlisting}
 
 \subsection*{Output}
+
 The output of the \texttt{gto\char`_fastq\char`_metagenomics} program is a CSV file (top.csv) with the highest probability of being contained in the samples. An example of this CSV file is:
+
 \begin{lstlisting}
 1  66725   12.263   NC_037703.1_Saccharomycodes_ludwigii_strain_Y-8871_mitochondrion
 2  66725   12.263   NC_037703.1_Saccharomycodes_ludwigii_strain_Y-8871_mitochondrion
