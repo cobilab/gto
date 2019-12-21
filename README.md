@@ -5,7 +5,7 @@
 <p align="center"><img src="imgs/logo.png"
 alt="GTO" height="76" border="0" /></p>
 
-<p align="center"><b>The geno-protomics toolkit</b></p>
+<p align="center"><b>The geno-proteomics toolkit</b></p>
 
 ## INSTALL
 
