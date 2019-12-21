@@ -3,9 +3,9 @@
 [![License: MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 <p align="center"><img src="imgs/logo.png"
-alt="GTO" height="74" border="0" /></p>
+alt="GTO" height="76" border="0" /></p>
 
-<p align="center"><b>The genomics toolkit</b></p>
+<p align="center"><b>The geno-protomics toolkit</b></p>
 
 ## INSTALL
 
