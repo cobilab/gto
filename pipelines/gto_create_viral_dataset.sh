@@ -27,5 +27,5 @@ cat trash.fa B19_P.fa HPV_5_P.fa B19_1.fa HV4_P.fa TTV_5.fa HV5_5.fa B19_1.fa HV
 #
 art_illumina -ss HS25 -sam -i data.fa -p -l 150 -f 30 -m 200 -s 10 -o reads
 #
-gto_build_dbs.sh -vi
+# gto_build_dbs.sh -vi
 #
