@@ -5,7 +5,7 @@
 <p align="center"><img src="imgs/logo.png"
 alt="GTO" height="76" border="0" /></p>
 
-<p align="center"><b>The geno-proteomics toolkit</b></p>
+<p align="center"><b>The genomics-proteomics toolkit</b></p>
 
 ## INSTALL
 
@@ -151,7 +151,8 @@ The GTO provides pipe support for easy integration with the majority of the tool
 
 ## CITE
 Please cite the followings, if you use GTO:
-in progress
+
+GTO: a toolkit to unify pipelines in genomic and proteomic research. J. R. Almeida, A. J. Pinho, J. L. Oliveira, O. Fajarda, D. Pratas. bioRxiv 2020.01.07.882845; doi: [https://doi.org/10.1101/2020.01.07.882845](https://doi.org/10.1101/2020.01.07.882845).
 
 ## ISSUES
 Please let us know if there is any
