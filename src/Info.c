@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <malloc.h>
+#if defined(OSX)
+  #include <malloc/malloc.h>
+#else
+  #include <malloc.h>
+#endif
 #include <ctype.h>
 #include <string.h>
 #include "defs.h"

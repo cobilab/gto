@@ -64,7 +64,16 @@ int main(int argc, char *argv[])
   FileType(Parser, stdin);
   fstat(fd, &s);
   size = s.st_size;
-  buf = (uint8_t *) mmap(0, size, PROT_READ, MAP_PRIVATE|MAP_POPULATE, fd, 0);
+  
+  #if defined(OSX)
+    // OSX doesnt have a MAP_POPULATE flag
+    #define MAP_FLAGS MAP_PRIVATE
+  #else
+    #define MAP_FLAGS MAP_PRIVATE|MAP_POPULATE
+  #endif
+  buf = (uint8_t *) mmap(0, size, PROT_READ, MAP_FLAGS, fd, 0);
+  #undef MAP_FLAGS
+
   madvise(buf, s.st_size, MADV_SEQUENTIAL);
   for(streamSize = 0 ; streamSize < size ; ++streamSize)
   {
