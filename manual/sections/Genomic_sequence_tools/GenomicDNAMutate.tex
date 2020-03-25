@@ -1,14 +1,14 @@
 \section{Program gto\char`_genomic\char`_dna\char`_mutate}
-The \texttt{gto\char`_genomic\char`_dna\char`_mutate} creates a synthetic mutation of a sequence file given specific rates of mutations, deletions and additions. All these paramenters are defined by the user, and their are optional.\\
+The \texttt{gto\char`_genomic\char`_dna\char`_mutate} creates a synthetic mutation of a sequence file given specific rates of mutations, deletions and additions. All these parameters are defined by the user, and are optional.\\
 For help type:
 \begin{lstlisting}
 ./gto_genomic_dna_mutate -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_genomic\char`_dna\char`_mutate} program needs two streams for the computation, namely the input and output standard. However, optional settings can be supplied too, such as the starting point to the random generator, and the edition, deletion and insertion rates. Also, the user can choose to use the ACGTN alphabet in the synthetic mutation. The input stream is a sequence File.\\
+The \texttt{gto\char`_genomic\char`_dna\char`_mutate} program needs two streams for the computation, namely the input and output standard. However, optional settings can be supplied too, such as the starting point to the random generator, and the edition, deletion and insertion rates. The user can also choose to use the ACGTN alphabet in the synthetic mutation. The input stream is a sequence file.\\
 The attribution is given according to:
 \begin{lstlisting}
 Usage: ./gto_genomic_dna_mutate [options] [[--] args]
@@ -44,8 +44,8 @@ TGAACAACCTTGTTCCCGGCAAAGCCCACTGCGTCATGGAGCTCACGGTCTACATTCATGACTGACTAACCGTAAACTGC
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_genomic\char`_dna\char`_mutate} program is a sequence file whith the synthetic mutation of input file.\\
-Using the input above with the seed value as 1 and the mutation rate as 0.5, an output example for this is the following:
+The output of the \texttt{gto\char`_genomic\char`_dna\char`_mutate} program is a sequence file with the synthetic mutation of the input file.\\
+Using the input above with 1 as seed value and value 0.5 as mutation rate, an output example of this is:
 \begin{lstlisting}
 TCACGACTGTCGCGTTGGCACACCAGATAGGTGCTTCTACGTTTTGTATCTAATTTACAATTCTCGCTGGGAGTTCATTC
 GCTATTGATGGGACTAGAAACCCATCCGTAGCTTGCCGCCGTTTAAGAATAAACACTCCACTTGCACCGAGACGTAGCGC

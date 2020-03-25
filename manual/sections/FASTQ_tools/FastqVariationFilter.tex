@@ -1,14 +1,17 @@
 \section{Program gto\char`_fastq\char`_variation\char`_filter}
-The \texttt{gto\char`_fastq\char`_variation\char`_filter} filters and segments the regions of singularity from the output of \texttt{gto\char`_fastq\char`_variation\char`_map}.\\
+
+The \texttt{gto\char`_fastq\char`_variation\char`_filter} filters and segments regions of singularity from the output of \texttt{gto\char`_fastq\char`_variation\char`_map}.\\
+
 For help type:
 \begin{lstlisting}
 ./gto_fastq_variation_filter -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_fastq\char`_variation\char`_filter} program needs a the output of \texttt{gto\char`_fastq\char`_variation\char`_map} to compute.\\
+The \texttt{gto\char`_fastq\char`_variation\char`_filter} program needs the output of \texttt{gto\char`_fastq\char`_variation\char`_map} to compute.\\
+
 The attribution is given according to:
 \begin{lstlisting}
 Usage: ./gto_fastq_variation_filter <OPTIONS>... [FILE]:<...>      
@@ -32,8 +35,10 @@ An example of such an input file is:
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fastq\char`_variation\char`_filter} program is a text file with the coordenates of the segmented regions.\\
-Using the inputs above, an output example for this is the following:
+
+The output of the \texttt{gto\char`_fastq\char`_variation\char`_filter} program is a text file with the coordinates of segmented regions.\\
+Using the inputs above, an output example of this is:
+
 \begin{lstlisting}
 #132#132
 30:60

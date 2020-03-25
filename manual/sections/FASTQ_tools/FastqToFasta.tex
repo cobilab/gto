@@ -1,10 +1,10 @@
 \section{Program gto\char`_fastq\char`_to\char`_fasta}
-The \texttt{gto\char`_fastq\char`_to\char`_fasta} converts a FASTQ file format to a pseudo FASTA file. However, it does not align the sequence. Also, it extracts the sequence and adds a pseudo header.\\
+The \texttt{gto\char`_fastq\char`_to\char`_fasta} converts a FASTQ file format to a pseudo FASTA file. However, it does not align the sequence, but extracts it and adds a pseudo-header.\\
 For help type:
 \begin{lstlisting}
 ./gto_fastq_to_fasta -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
@@ -39,8 +39,8 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fastq\char`_to\char`_fasta} program a FASTA file.\\
-Using the input above, an output example for this is the following:
+The output of the \texttt{gto\char`_fastq\char`_to\char`_fasta} program is a FASTA file.\\
+Using the input above, an output example of this is:
 \begin{lstlisting}
 > Computed with Fastq2Fasta
 GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGGTTTTCAAATAGA

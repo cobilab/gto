@@ -1,31 +1,31 @@
 \chapter{Genomic sequence tools}
 \label{gst}
-The Genomic Sequence subset works directly with the DNA sequences, without any standard format. These tools allow the data extraction, summarising and some mathematical operations over those files. Usually, these are used in the pipeline as a complementary tool. The current available genomic sequence tools, for analysis and manipulation, are:
+The Genomic Sequence subset works directly with the DNA sequences, without any standard format. These tools allow data extraction, summarising and some mathematical operations over the files. Usually, these are used in the pipeline as complementary tools. Currently, genomic sequence tools, for analysis and manipulation, available are:
 \begin{enumerate}
 
-\item \texttt{gto\char`_genomic\char`_gen\char`_random\char`_dna}: it generates a synthetic DNA.
+\item \texttt{gto\char`_genomic\char`_gen\char`_random\char`_dna}: to generate a synthetic DNA.
 
-\item \texttt{gto\char`_genomic\char`_rand\char`_seq\char`_extra\char`_chars}: it substitues in the DNA sequence the outside ACGT chars by random ACGT symbols.
+\item \texttt{gto\char`_genomic\char`_rand\char`_seq\char`_extra\char`_chars}: to substitute in a DNA sequence the outside ACGT chars by random ACGT symbols.
 
-\item \texttt{gto\char`_genomic\char`_dna\char`_mutate}: it creates a synthetic mutation of a sequence file given specific rates of mutations, deletions and additions.
+\item \texttt{gto\char`_genomic\char`_dna\char`_mutate}: to create a synthetic mutation of a sequence file given specific rates of mutations, deletions and additions.
 
-\item \texttt{gto\char`_genomic\char`_extract}: it extracts sequences from a sequence file, which the range is defined by the user in the parameters.
+\item \texttt{gto\char`_genomic\char`_extract}: to extract sequences from a sequence file, whose range is defined by the user in the parameters.
 
-\item \texttt{gto\char`_genomic\char`_period}: it calculates the best order depth of a sequence, using FCMs.
+\item \texttt{gto\char`_genomic\char`_period}: to calculate the best order depth of a sequence, using FCMs.
 
-\item \texttt{gto\char`_genomic\char`_count\char`_bases}: it counts the number of bases in sequence, FASTA or FASTQ files.
+\item \texttt{gto\char`_genomic\char`_count\char`_bases}: to count the number of bases in a sequence, FASTA or FASTQ files.
 
-\item \texttt{gto\char`_genomic\char`_compressor}: it compress and decompress genomic sequences for storage purposes (also under the alias gto\char`_geco).
+\item \texttt{gto\char`_genomic\char`_compressor}: to compress and decompress genomic sequences for storage purposes (also under the alias gto\char`_geco).
 
-\item \texttt{gto\char`_genomic\char`_complement}: it replaces the ACGT bases with their complements in a DNA sequence.
+\item \texttt{gto\char`_genomic\char`_complement}: to replace the ACGT bases with their complements in a DNA sequence.
 
-\item \texttt{gto\char`_genomic\char`_reverse}: it reverses the ACGT bases order for each read in a sequence file (also under the alias gto\char`_reverse).
+\item \texttt{gto\char`_genomic\char`_reverse}: to reverse the ACGT bases order for each read in a sequence file (also under the alias gto\char`_reverse).
 
-\item \texttt{gto\char`_genomic\char`_variation\char`_map}: this tool is an alias to gto\char`_fastq\char`_variation\char`_map tool. Please check the documentation of this tool in the in the section of FASTQ tools. 
+\item \texttt{gto\char`_genomic\char`_variation\char`_map}: this tool is an alias to gto\char`_fastq\char`_variation\char`_map tool. Please check the documentation of this tool in the FASTQ tools section. 
 
-\item \texttt{gto\char`_genomic\char`_variation\char`_filter}: this tool is an alias to gto\char`_fastq\char`_variation\char`_filter tool. Please check the documentation of this tool in the in the section of FASTQ tools. 
+\item \texttt{gto\char`_genomic\char`_variation\char`_filter}: this tool is an alias to gto\char`_fastq\char`_variation\char`_filter tool. Please check the documentation of this tool in the FASTQ tools section. 
 
-\item \texttt{gto\char`_genomic\char`_variation\char`_visual}: this tool is an alias to gto\char`_fastq\char`_variation\char`_visual tool. Please check the documentation of this tool in the in the section of FASTQ tools. 
+\item \texttt{gto\char`_genomic\char`_variation\char`_visual}: this tool is an alias to gto\char`_fastq\char`_variation\char`_visual tool. Please check the documentation of this tool in the FASTQ tools section. 
 
 \end{enumerate}
 

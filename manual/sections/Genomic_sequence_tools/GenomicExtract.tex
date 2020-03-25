@@ -1,14 +1,14 @@
 \section{Program gto\char`_genomic\char`_extract}
-The \texttt{gto\char`_genomic\char`_extract} extracts sequences from a sequence file, which the range is defined by the user in the parameters.\\
+The \texttt{gto\char`_genomic\char`_extract} extracts sequences from a sequence file, whose range is defined by the user in the parameters.\\
 For help type:
 \begin{lstlisting}
 ./gto_genomic_extract -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_genomic\char`_extract} program needs two paramenters, which defines the begin and the end of the extraction, and two streams for the computation, namely the input and output standard. The input stream is a sequence file.\\
+The \texttt{gto\char`_genomic\char`_extract} program needs two parameters, which defines the beginning and end of the extraction, and two streams for the computation, namely the input and output standard. The input stream is a sequence file.\\
 The attribution is given according to:
 \begin{lstlisting}
 Usage: ./gto_genomic_extract [options] [[--] args]
@@ -38,7 +38,7 @@ TGAACAACCTTGTTCCCGGCAAAGCCCACTGCGTCATGGAGCTCACGGTCTACATTCATGACTGACTAACCGTAAACTGC
 
 \subsection*{Output}
 The output of the \texttt{gto\char`_genomic\char`_extract} program is a group sequence.\\
-Using the input above with the value 0 as the extraction starting point and the 50 as the ending, an output example for this is the following:
+Using the input above with value 0 as extraction starting point and value 50 as ending, an output example of this is:
 \begin{lstlisting}
 TCTTTACTCGCGCGTTGGAGAAATACAATAGTGCGGCTCTGTCTCCTTAT
 \end{lstlisting}

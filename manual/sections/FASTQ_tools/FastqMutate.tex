@@ -1,14 +1,14 @@
 \section{Program gto\char`_fastq\char`_mutate}
-The \texttt{gto\char`_fastq\char`_mutate} creates a synthetic mutation of a FASTQ file given specific rates of mutations, deletions and additions. All these paramenters are defined by the user, and their are optional.\\
+The \texttt{gto\char`_fastq\char`_mutate} creates a synthetic mutation of a FASTQ file given specific rates of mutations, deletions and additions. All these parameters are defined by the user, and they are optional.\\
 For help type:
 \begin{lstlisting}
 ./gto_fastq_mutate -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_fastq\char`_mutate} program needs two streams for the computation, namely the input and output standard. However, optional settings can be supplied too, such as the starting point to the random generator, and the edition, deletion and insertion rates. Also, the user can choose to use the ACGTN alphabet in the synthetic mutation. The input stream is a FASTQ File.\\
+The \texttt{gto\char`_fastq\char`_mutate} program needs two streams for the computation, namely the input and output standard. However, optional settings can be supplied too, such as the starting point to the random generator, and the edition, deletion and insertion rates. The user can also choose to use the ACGTN alphabet in the synthetic mutation. The input stream is a FASTQ File.\\
 The attribution is given according to:
 \begin{lstlisting}
 Usage: ./gto_fastq_mutate [options] [[--] args]
@@ -47,8 +47,8 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_fastq\char`_mutate} program is a FASTQ file whith the synthetic mutation of input file.\\
-Using the input above with the seed value as 1 and the mutation rate as 0.5, an output example for this is the following:
+The output of the \texttt{gto\char`_fastq\char`_mutate} program is a FASTQ file with the synthetic mutation of the input file.\\
+Using the input above with 1 as seed value and value 0.5 as mutation rate, an output example of this is:
 \begin{lstlisting}
 @SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72
 GGACTTTGAGGTGTGGCGATAGACTGAAAACACTTCAGGGTAAAATCACTCGCAAAAGTGCTATGGTTATGG

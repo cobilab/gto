@@ -1,10 +1,10 @@
 \section{Program gto\char`_fastq\char`_from\char`_seq}
-The \texttt{gto\char`_fastq\char`_from\char`_seq} converts a genomic sequence to pseudo FASTQ file format.\\
+The \texttt{gto\char`_fastq\char`_from\char`_seq} converts a genomic sequence to a pseudo FASTQ file format.\\
 For help type:
 \begin{lstlisting}
 ./gto_fastq_from_seq -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
@@ -44,7 +44,7 @@ TAATTACAGACCTGAA
 
 \subsection*{Output}
 The output of the \texttt{gto\char`_fastq\char`_from\char`_seq} program is a pseudo FASTQ file.\\
-An example, using the size line as 80 and the read's header as ''SeqToFastq'', for the input, is:
+Using the input above with value 80 as size line and ``SeqToFastq'' as read header, an output example of this is:
 \begin{lstlisting}
 @SeqToFastq1
 ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCCC

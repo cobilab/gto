@@ -1,14 +1,15 @@
 \section{Program gto\char`_sum}
-The \texttt{gto\char`_sum} adds decimal values in file, line by line, splitted by spaces or tabs.\\
+The \texttt{gto\char`_sum} adds decimal values from a file, line by line, split by spaces or tabs.\\
 For help type:
 \begin{lstlisting}
 ./gto_sum -h
 \end{lstlisting}
-In the following subsections, we explain the input and output paramters.
+In the following subsections, we explain the input and output parameters.
 
 \subsection*{Input parameters}
 
-The \texttt{gto\char`_sum} program needs two streams for the computation, namely the input, which is a decimal file.\\
+The \texttt{gto\char`_sum} program needs two streams for the computation, namely the input and output standard. The input is a file with decimal numbers.\\
+
 The attribution is given according to:
 \begin{lstlisting}
 Usage: ./gto_sum [options] [[--] args]
@@ -42,8 +43,8 @@ An example of such an input file is:
 \end{lstlisting}
 
 \subsection*{Output}
-The output of the \texttt{gto\char`_sum} program is a sum of the elements in the input file.\\
-Executing the application with the provided input and with the flag to add only the elements in each row, the output of this execution is:
+The output of the \texttt{gto\char`_sum} program is the sum of the numbers of the input file.\\
+Executing the application with the provided input and with the flag to add only the numbers in each row, the output of this execution is:
 \begin{lstlisting}
 10.123000
 3.432000
