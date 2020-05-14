@@ -17,6 +17,7 @@
 #include "buffer.h"
 #include "common.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application counts the number of bases in sequence, FASTA or FASTQ files.
@@ -57,7 +58,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt counts the number of bases in sequence, FASTA or FASTQ files.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   PARSER   *Parser = CreateParser();

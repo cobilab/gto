@@ -6,6 +6,7 @@
 #include "mem.h"
 #include "buffer.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application converts a protein sequence to a pseudo DNA sequence.
@@ -58,7 +59,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt converts a protein sequence to a pseudo DNA sequence.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   Buffer = CreateBuffer(BUF_SIZE);

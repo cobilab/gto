@@ -6,6 +6,7 @@
 #include "mem.h"
 #include "buffer.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application splits a Multi-FASTA file to multiple FASTA files.
@@ -39,7 +40,7 @@ int main(int argc, char *argv[])
     "\nIt splits a Multi-FASTA file to multiple FASTA files.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   Buffer = CreateBuffer(BUF_SIZE);

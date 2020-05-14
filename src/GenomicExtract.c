@@ -5,6 +5,7 @@
 #include "defs.h"
 #include "misc.h"
 #include "argparse.h"
+#include <unistd.h>
 
 #define END  100
 
@@ -36,7 +37,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt extracts sequences from a sequence file.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   do

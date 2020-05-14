@@ -7,6 +7,7 @@
 #include "mem.h"
 #include "buffer.h"
 #include "argparse.h"
+#include <unistd.h>
 
 
 #define MAX_HEADER 4096
@@ -43,7 +44,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt extracts reads from a Multi-FASTA file format given a pattern in the header (ID).", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
 

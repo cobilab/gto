@@ -8,6 +8,7 @@
 #include "mem.h"
 #include "reads.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application discards reads with average quality-score below value.
@@ -42,7 +43,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt discards reads with average quality-score below value.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   if(min_avg_qs <= 0 || min_avg_qs > UINT_MAX)

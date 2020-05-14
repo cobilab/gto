@@ -7,6 +7,7 @@
 #include "mem.h"
 #include "buffer.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application calculates the best order depth of a sequence, using FCMs.
@@ -41,7 +42,7 @@ int main(int argc, char *argv[])
                             "It only works \"ACGT\", while the rest will be discarded.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   // SEQUENCE

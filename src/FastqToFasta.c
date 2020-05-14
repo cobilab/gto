@@ -6,6 +6,7 @@
 #include "mem.h"
 #include "buffer.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application converts a FASTQ file format to a pseudo FASTA file.
@@ -37,7 +38,7 @@ int main(int argc, char *argv[])
     "It extracts the sequence and adds a pseudo header.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   Buffer = CreateBuffer(BUF_SIZE);

@@ -3,6 +3,7 @@
 #include <limits.h>
 #include <string.h>
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application converts a sequence of real numbers into a binary sequence
@@ -31,7 +32,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt converts a sequence of real numbers into a binary sequence given a threshold.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   if(threshold == UINT_MAX)

@@ -8,6 +8,7 @@
 #include "mem.h"
 #include "reads.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application discards the FASTQ reads with the minimum number of \"N\" symbols. 
@@ -44,7 +45,7 @@ int main(int argc, char *argv[])
     "If present, it will erase the second header (after +).", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   if(max_n_read <= 0 || max_n_read > UINT_MAX)

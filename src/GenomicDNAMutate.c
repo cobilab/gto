@@ -6,6 +6,7 @@
 #include "misc.h"
 #include "buffer.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application creates a synthetic mutation of a sequence file given specific 
@@ -43,7 +44,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nCreates a synthetic mutation of a sequence file given specific rates of mutations, deletions and additions", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   if(useACGTN == 1)

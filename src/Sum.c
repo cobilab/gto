@@ -5,6 +5,7 @@
 #include "misc.h"
 #include "buffer.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application adds decimal values in file, line by line, splitted by spaces or tabs.
@@ -39,7 +40,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt adds decimal values in file, line by line, splitted by spaces or tabs.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   if(sumRows == 0 && sumEverything == -1)

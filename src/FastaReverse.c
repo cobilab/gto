@@ -8,6 +8,8 @@
 #include "parser.h"
 #include "buffer.h"
 #include "argparse.h"
+#include <unistd.h>
+
 /*
  * This application reverses the ACGT bases order for each read in FASTA or Multi-FASTA file format.
  */
@@ -36,7 +38,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt reverses the ACGT bases order for each read in a FASTA or Multi-FASTA file.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   FileType(Parser, stdin);

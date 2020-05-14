@@ -7,6 +7,7 @@
 #include "mem.h"
 #include "reads.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application splits Paired End files according to the direction of the strand ('/1' or '/2'). 
@@ -45,7 +46,7 @@ int main(int argc, char *argv[])
     "\nIt writes by default singleton reads as forward stands.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   FILE *F = Fopen(output_forward, "w");

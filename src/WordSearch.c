@@ -4,6 +4,7 @@
 #include "defs.h"
 #include "misc.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This applications search for a word in a file.
@@ -34,7 +35,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nSearching for a word in a text file. It is case sensitive.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   if(word == NULL)

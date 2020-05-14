@@ -7,6 +7,7 @@
 #include "buffer.h"
 #include "argparse.h"
 #include "parser.h"
+#include <unistd.h>
 
 char TranslateCodon(char *codon)
   {
@@ -108,7 +109,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt converts FASTA or Multi-FASTA file format to an amino acid sequence (translation).", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);  
 
   if(frame < 1 || frame > 3)

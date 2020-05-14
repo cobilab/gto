@@ -7,6 +7,7 @@
 #include "parser.h"
 #include "argparse.h"
 #include <string.h>
+#include <unistd.h>
 
 /* 
  * This application substitues in the DNA sequence the outside ACGT chars by random ACGT symbols.
@@ -51,7 +52,7 @@ int main(int argc, char *argv[])
     "file formats\n", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   FileType(Parser, stdin);

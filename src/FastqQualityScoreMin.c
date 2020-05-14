@@ -7,6 +7,7 @@
 #include "mem.h"
 #include "reads.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application analyses the minimal quality-scores of a FASTQ file.
@@ -38,7 +39,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt analyses the minimal quality-scores of a FASTQ file.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   for(x = 0 ; x < 65535 ; ++x)

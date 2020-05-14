@@ -7,6 +7,7 @@
 #include "mem.h"
 #include "reads.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * This application analyses the basic information of FASTQ file format.
@@ -43,7 +44,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt analyses the basic information of FASTQ file format.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   while(GetRead(stdin, Read))

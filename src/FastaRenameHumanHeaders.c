@@ -6,6 +6,7 @@
 #include "mem.h"
 #include "buffer.h"
 #include "argparse.h"
+#include <unistd.h>
 
 /*
  * It changes the headers of FASTA or Multi-FASTA file to simple chr$1 by order.
@@ -38,7 +39,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt changes the headers of FASTA or Multi-FASTA file to simple chr$1 by order.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   Buffer = CreateBuffer(BUF_SIZE);

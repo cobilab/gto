@@ -7,6 +7,7 @@
 #include "mem.h"
 #include "reads.h"
 #include "argparse.h"
+#include <unistd.h>
 
 void PrintStream(uint8_t *b, uint32_t n, uint8_t terminator)
 {
@@ -52,7 +53,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt packages each FASTQ read in a single line.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
   
   while(GetRead(stdin, Read))

@@ -7,6 +7,7 @@
 #include "buffer.h"
 #include "argparse.h"
 #include "parser.h"
+#include <unistd.h>
 
 #define END  100
 
@@ -41,7 +42,7 @@ int main(int argc, char *argv[])
   argparse_describe(&argparse, "\nIt extracts sequences from a FASTA file.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0)
+  if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
   FileType(Parser, stdin);
@@ -50,7 +51,6 @@ int main(int argc, char *argv[])
     fprintf(stderr, "ERROR: This is not a FASTA file!\n");
     exit(1);
   }
-  
   Buffer = CreateBuffer(BUF_SIZE);
 
   while((streamSize = fread(Buffer->buf, 1, Buffer->size, stdin)))
