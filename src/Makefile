@@ -302,8 +302,47 @@ chester:
 	cp chester/src/CHESTER-visual $(BIN)/gto_genomic_variation_visual
 	rm -rf chester
 
+fastp:
+	git clone git@github.com:OpenGene/fastp.git
+	cd fastp && make
+	cp fastp/fastp $(BIN)/gto_external_fastp
+	rm -rf fastp
+
+copmem:
+	git clone git@github.com:wbieniec/copmem.git
+	cd copmem && make all
+	cp copmem/copmem $(BIN)/gto_external_copmem
+	cp copmem/memoryfill $(BIN)/gto_external_memoryfill
+	rm -rf copmem
+
+bfmem:
+	git clone https://github.com/yuansliu/bfmem.git
+	cd bfmem && make
+	cp bfmem/bfmem $(BIN)/gto_external_bfmem
+	cp bfmem/compareMEM $(BIN)/gto_external_compareMEM
+	cp bfmem/formatconvert $(BIN)/gto_external_formatconvert
+	rm -rf bfmem
+
+qvz:
+	git clone git@github.com:mikelhernaez/qvz.git
+	cd qvz && make
+	cp qvz/bin/qvz $(BIN)/gto_external_qvz
+	rm -rf qvz
+
+minicom:
+	git clone https://github.com/yuansliu/minicom.git
+	cd minicom && sh install.sh
+	cp minicom/minicom $(BIN)/gto_external_minicom
+	rm -rf minicom
+
+spring:
+	git clone git@github.com:shubhamchandak94/Spring.git
+	cd Spring && mkdir build && cd build && cmake .. && make
+	cp Spring/build/spring $(BIN)/gto_external_spring
+	rm -rf Spring
+
 externalProgs: 
-	make geco xs ac falcon chester
+	make geco xs ac falcon chester fastp copmem bfmem qvz minicom spring
 
 argparse.o: argparse.c argparse.h $(DEPS)
 	$(CC) -c $(CFLAGS) argparse.c

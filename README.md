@@ -135,18 +135,33 @@ The GTO provides pipe support for easy integration with the majority of the tool
 5.15 gto_min
 ``` 
 
-### 6. Scripts / Pipelines
+### 6. General purpose tools
+
 ```bash
-6.1 gto_build_dbs.sh
-6.2 gto_complexity_profile_regions.sh
-6.3 gto_complexity_profiles.sh
-6.4 gto_create_viral_dataset.sh
-6.5 gto_find_motif.sh
-6.6 gto_map_rearrangements.sh
-6.7 gto_map_rearrangements_proteins.sh
-6.8 gto_metagenomics.sh
-6.9 gto_proteins_complexity_profile_regions.sh
-6.10 gto_simulate_rearragements.sh
+6.1 bin/gto_external_bfmem
+6.2 bin/gto_external_compareMEM
+6.3 bin/gto_external_copmem
+6.4 bin/gto_external_fastp
+6.5 bin/gto_external_formatconvert
+6.6 bin/gto_external_memoryfill
+6.7 bin/gto_external_minicom
+6.8 bin/gto_external_qvz
+6.10 bin/gto_external_spring
+```
+
+### 7. Scripts / Pipelines
+
+```bash
+7.1 gto_build_dbs.sh
+7.2 gto_complexity_profile_regions.sh
+7.3 gto_complexity_profiles.sh
+7.4 gto_create_viral_dataset.sh
+7.5 gto_find_motif.sh
+7.6 gto_map_rearrangements.sh
+7.7 gto_map_rearrangements_proteins.sh
+7.8 gto_metagenomics.sh
+7.9 gto_proteins_complexity_profile_regions.sh
+7.10 gto_simulate_rearragements.sh
 ```
 
 ## CITE

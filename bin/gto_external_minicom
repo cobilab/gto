@@ -1,0 +1,489 @@
+#!/bin/bash
+set -e
+
+usage()
+{
+cat << EOF
+
+Minicom is a tool for compressing short reads in FASTQ. 
+
+Usage: 
+Compression - compresses FASTQ reads. Output written to '*.minicom' file
+minicom -r file.fastq 
+minicom -1 file_1.fastq -2 file_2.fastq
+
+Options:
+	-h 		print help message
+	-t 		number of threads, default: 24 
+	-r 		reads file 
+	-1 		reads file of paired-end reads
+	-2 		reads file of paired-end reads
+	-k 		length of k-mer, k <= 31, default: 31
+	-e 		difference threshold, default: 4
+	-m 		number of minimizer, default 6
+	-w 		window size, default L/2-k, where L is the length of reads
+	-s 		number of indexed substring, default L/17 for L > 80; otherwise L/11
+	-S 		step size of threshold, default S = e
+	-E 		maximum threshold, default L/2
+	-p 		order-preserving mode [only used for compressing single FASTQ file]
+
+Decompression - decompresses reads. Output written to '_dec.reads' file
+./minicom -d file.minicom 
+	-d 		a compressed file .minicom [only for decompression]
+ 	-t 		number of threads, default: 24
+
+See README and more supplementary information at:
+https://github.com/yuansliu/minicom
+
+EOF
+# exit 0
+}
+
+compressSingle()
+{	
+	compfiles=$(dirname $filename)"/"$(basename "$filename" .fastq)_comp
+	# compfiles_temp=$(dirname $filename)"/"$(basename "$filename" .fastq)_temp
+	# echo $pathname
+	# echo $compfiles
+	# return
+	echo "compress single-end reads..."
+	readlen="$(head -2 $filename | tail -1 | wc -L)"
+	if (($readlen > 256));then
+		echo "Maximum read length exceeded" 
+		exit 1
+	fi
+	# let thresh=$readlen*4/100
+	echo "#pragma once" > src/config.h
+	# echo "#define maxmatch $((readlen/2))" >> src/config.h
+	if ($preserve_order); then 
+		compfiles=$(dirname $filename)"/"$(basename "$filename" .fastq)_comp_order
+		echo "#define ORDER" >> src/config.h
+		echo "int cmpcluster3(const void *a_, const void *b_);" >> src/config.h
+	fi
+	# echo "#define thresh 4" >> src/config.h
+	# echo "#define numdict 2" >> src/config.h
+	# echo "#define maxsearch 500" >> src/config.h
+	echo "#define readlen $readlen" >> src/config.h
+	echo "#define num_thr $num_thr" >> src/config.h
+	rdm1=$(cat /dev/urandom | head -n 10 | md5sum | head -c 10)
+	rdm2=$(cat /dev/urandom | head -n 10 | md5sum | head -c 10)
+	uuid=$rdm1_$rdm2
+	# echo $uuid
+	echo "#define uniqid \"u$uuid\"" >> src/config.h
+	echo "#define output \"output_$rdm1/\"" >> src/config.h
+	# --- 
+	# inik=0
+	# threshold=0
+	# num_dict=0
+	# w=0
+
+	# tfn=$(basename "$filename" .fastq)_contig_size.txt
+	# echo "$tfn" > filename.txt  #for test
+
+	echo "#define inik $inik" >> src/config.h
+	echo "#define inithr $threshold" >> src/config.h
+	echo "#define inimaxthr $maxthr" >> src/config.h
+	echo "#define inistep $step" >> src/config.h
+	echo "#define ininumdict $num_dict" >> src/config.h
+	echo "#define iniw $w" >> src/config.h
+	echo "#define inim $m" >> src/config.h
+	echo "#define inicbthr $cbthr" >> src/config.h
+	echo "#define inimaxrounds $maxrounds" >> src/config.h
+	# echo 'std::string outdir = "output_$rdm1/";' >> src/config.h
+	# echo 'std::string uuid = "u$uuid";' >> src/config.h
+	# echo $w
+	# return
+
+	mkdir -p output_$rdm1
+	mkdir -p $compfiles
+
+	cd src
+	# make clean  1>/dev/null 2>/dev/null
+	make minicomsg 1>/dev/null #2>/dev/null
+	cd ..
+	cp src/minicomsg ./
+	# time 
+	./minicomsg $filename $compfiles
+	
+	# ls -l $compfiles
+
+	if ($preserve_order); then 
+		mkdir -p $compfiles/idsbin
+		mv $compfiles/ids.bin.* $compfiles/idsbin/
+		mv $compfiles/*.ids.bin $compfiles/idsbin/
+		tar -cf $compfiles/idsbin.tar -C $compfiles/idsbin .
+		./bsc e $compfiles/idsbin.tar $compfiles/idsbin.tar.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+		# ./7z a $compfiles/idsbin.tar.7z $compfiles/idsbin.tar -mmt=$num_thr &
+		# rm -rf $compfiles/idsbin
+		# rm -rf $compfiles/idsbin.tar
+	fi
+
+	mkdir -p $compfiles/dif_char
+	mv $compfiles/dif_char.txt.* $compfiles/dif_char/
+	tar -cf $compfiles/dif_char.tar -C $compfiles/dif_char .
+	./bsc e $compfiles/dif_char.tar $compfiles/dif_char.tar.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+
+	mkdir -p $compfiles/begposbin
+	mv $compfiles/beg_pos.bin.* $compfiles/begposbin/
+	tar -cf $compfiles/begposbin.tar -C $compfiles/begposbin .
+	./bsc e $compfiles/begposbin.tar $compfiles/begposbin.tar.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+	
+	mkdir -p $compfiles/refbin
+	mv $compfiles/ref.bin.* $compfiles/refbin/
+	tar -cf $compfiles/refbin.tar -C $compfiles/refbin .
+	./bsc e $compfiles/refbin.tar $compfiles/refbin.tar.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+
+	./bsc e $compfiles/single_N.seq $compfiles/single_N.seq.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+	./bsc e $compfiles/single.seq $compfiles/single.seq.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+
+	mkdir -p $compfiles/dirbin
+	mv $compfiles/dir.bin.* $compfiles/dirbin
+	tar -cf $compfiles/dirbin.tar -C $compfiles/dirbin .
+	./bsc e $compfiles/dirbin.tar $compfiles/dirbin.tar.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+
+	./bsc e $compfiles/AA.txt $compfiles/AA.txt.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+	./bsc e $compfiles/TT.txt $compfiles/TT.txt.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+	./bsc e $compfiles/NN.txt $compfiles/NN.txt.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+
+	wait #wait for all 
+	# echo 'all bsc finished...'
+	rm -rf $compfiles/refbin
+	rm -rf $compfiles/refbin.tar
+	rm -rf $compfiles/dirbin
+	rm -rf $compfiles/dirbin.tar
+	rm -rf $compfiles/dif_char
+	rm -rf $compfiles/dif_char.tar
+	rm -rf $compfiles/begposbin
+	rm -rf $compfiles/begposbin.tar
+	rm -rf $compfiles/*.seq
+	rm -rf $compfiles/AA.txt
+	rm -rf $compfiles/TT.txt
+	rm -rf $compfiles/NN.txt
+	if ($preserve_order); then 
+		rm -rf $compfiles/idsbin
+		rm -rf $compfiles/idsbin.tar
+	fi
+
+	tar -cf $compfiles.minicom -C $compfiles .
+	rm -rf $compfiles
+	# ls -l $compfiles
+	rm -rf output_$rdm1
+	csz=$(ls -l $compfiles.minicom | awk '{print $5}')
+	echo -e "\033[31m Compressed file:  $compfiles.minicom; its size: $csz byte\033[0m"
+	# ls -l ref5.tar.bsc beg_pos5.tar.bsc dir5.tar.bsc dif5_pos.tar.bsc dif5_char.tar.bsc -lh
+}
+
+compressPairedEnd() 
+{
+
+	compfiles=$(dirname $filename)"/"`echo $(basename "$filename" .fastq) | cut -d \_ -f 1`_comp_pe
+	readlen="$(head -2 $filename | tail -1 | wc -L)"
+	if (($readlen > 256));then
+		echo "Maximum read length exceeded" 
+		exit 1
+	fi
+	echo "compress paired-end reads..."
+
+	echo "#pragma once" > src/config.h
+	echo "#define _PE" >> src/config.h
+	echo "int cmpcluster3(const void *a_, const void *b_);" >> src/config.h
+	echo "#define readlen $readlen" >> src/config.h
+	echo "#define num_thr $num_thr" >> src/config.h
+
+	rdm1=$(cat /dev/urandom | head -n 10 | md5sum | head -c 10)
+	rdm2=$(cat /dev/urandom | head -n 10 | md5sum | head -c 10)
+	uuid=$rdm1_$rdm2
+	# echo $uuid
+	echo "#define uniqid \"u$uuid\"" >> src/config.h
+	echo "#define output \"output_$rdm1/\"" >> src/config.h
+	# --- 
+	# inik=0
+	# threshold=0
+	# num_dict=0
+	# w=0
+
+	echo "#define inik $inik" >> src/config.h
+	echo "#define inithr $threshold" >> src/config.h
+	echo "#define inimaxthr $maxthr" >> src/config.h
+	echo "#define inistep $step" >> src/config.h
+	echo "#define ininumdict $num_dict" >> src/config.h
+	echo "#define iniw $w" >> src/config.h
+	echo "#define inim $m" >> src/config.h
+	echo "#define inicbthr $cbthr" >> src/config.h
+	echo "#define inimaxrounds $maxrounds" >> src/config.h
+	# echo 'std::string outdir = "output_$rdm1/";' >> src/config.h
+	# echo 'std::string uuid = "u$uuid";' >> src/config.h
+	# echo $w
+	# return
+
+	mkdir -p output_$rdm1
+	# mkdir -p output
+	mkdir -p $compfiles
+
+	cd src
+	make clean 1>/dev/null 2>/dev/null
+	make minicompe 1>/dev/null 2>/dev/null
+	cd ..
+	cp src/minicompe ./
+	# time 
+	./minicompe $filename $secondfilename $compfiles
+
+
+	mkdir -p $compfiles/dif_char
+	mv $compfiles/dif_char.txt.* $compfiles/dif_char/
+	tar -cf $compfiles/dif_char.tar -C $compfiles/dif_char .
+	./bsc e $compfiles/dif_char.tar $compfiles/dif_char.tar.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+
+	mkdir -p $compfiles/begposbin
+	mv $compfiles/beg_pos.bin.* $compfiles/begposbin/
+	tar -cf $compfiles/begposbin.tar -C $compfiles/begposbin .
+	./bsc e $compfiles/begposbin.tar $compfiles/begposbin.tar.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+
+	rm -rf $compfiles/ids.txt.*
+	mkdir -p $compfiles/peidsbin
+	mv $compfiles/peids.bin.* $compfiles/peidsbin/
+	tar -cf $compfiles/peidsbin.tar -C $compfiles/peidsbin .
+	# ./bsc e $compfiles/peidsbin.tar $compfiles/peidsbin.tar.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+	./7z a $compfiles/peidsbin.tar.7z $compfiles/peidsbin.tar -mmt=$num_thr 1>/dev/null & # 2>/dev/null
+
+	mkdir -p $compfiles/refbin
+	mv $compfiles/ref.bin.* $compfiles/refbin/
+	tar -cf $compfiles/refbin.tar -C $compfiles/refbin .
+	./bsc e $compfiles/refbin.tar $compfiles/refbin.tar.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+
+	mkdir -p $compfiles/dirbin
+	mv $compfiles/dir.bin.* $compfiles/dirbin
+	tar -cf $compfiles/dirbin.tar -C $compfiles/dirbin .
+	./bsc e $compfiles/dirbin.tar $compfiles/dirbin.tar.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+	
+	mkdir -p $compfiles/filebin
+	mv $compfiles/file.bin.* $compfiles/filebin/
+	tar -cf $compfiles/filebin.tar -C $compfiles/filebin .
+	./bsc e $compfiles/filebin.tar $compfiles/filebin.tar.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+
+	# # ./bsc e $compfiles/file.bin $compfiles/file.bin.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+	# rm -rf $compfiles/file.bin
+
+	./bsc e $compfiles/single_N.seq $compfiles/single_N.seq.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+	./bsc e $compfiles/single.seq $compfiles/single.seq.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+	./bsc e $compfiles/AA.txt $compfiles/AA.txt.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+	./bsc e $compfiles/TT.txt $compfiles/TT.txt.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+	./bsc e $compfiles/NN.txt $compfiles/NN.txt.bsc -b64p -t$num_thr -e2 1>/dev/null & # 2>/dev/null
+	
+	wait #wait for all 
+	# echo 'all bsc finished...'
+
+	rm -rf $compfiles/refbin
+	rm -rf $compfiles/refbin.tar
+	rm -rf $compfiles/dirbin
+	rm -rf $compfiles/dirbin.tar
+	rm -rf $compfiles/dif_char
+	rm -rf $compfiles/dif_char.tar
+	rm -rf $compfiles/begposbin
+	rm -rf $compfiles/begposbin.tar
+	rm -rf $compfiles/peidsbin
+	rm -rf $compfiles/peidsbin.tar
+	rm -rf $compfiles/filebin
+	rm -rf $compfiles/filebin.tar
+	rm -rf $compfiles/*.seq
+	rm -rf $compfiles/AA.txt
+	rm -rf $compfiles/TT.txt
+	rm -rf $compfiles/NN.txt
+
+	tar -cf $compfiles.minicom -C $compfiles .
+	rm -rf $compfiles
+	rm -rf output_$rdm1
+	# echo -e "\033[31m Compressed file:  $compfiles.minicom \033[0m"
+	csz=$(ls -l $compfiles.minicom | awk '{print $5}')
+	echo -e "\033[31m Compressed file:  $compfiles.minicom; its size: $csz byte\033[0m"
+	# ls -l $compfiles.minicom
+	# ls -l ref5.tar.bsc beg_pos5.tar.bsc dir5.tar.bsc dif5_pos.tar.bsc dif5_char.tar.bsc -lh
+
+}
+
+decompress()
+{
+	echo "decompress ..."
+	# pathname=$(dirname $filename)
+	# if [[ ! -f "$filename" ]]; then
+	# 	echo "The file $filename not exit"
+	# 	exit 1
+	# fi
+	
+	# if [[ ${filename##*.} -ne "minicom" ]]; then
+	# 	echo "The file can not be decompressed"
+	# 	exit 1
+	# fi
+
+	decomp=$(basename "$filename" .minicom)
+	result=$(basename "$filename" .minicom)_dec.reads
+	# echo $decomp
+	# echo $result
+
+	mkdir -p $decomp
+	tar -xf $filename -C $decomp
+
+	preserve_order=false
+	if [ -f $decomp/idsbin.tar.bsc ]; then
+		# echo "Reads order not saved in the compressed file. The command is ignored."
+		preserve_order=true
+	fi
+
+	pe=false
+	if [ -f $decomp/filebin.tar.bsc ]; then
+		pe=true
+	fi
+
+	if ($pe); then
+		result=$(basename "$filename" .minicom)_dec_1.reads
+		result0=$(basename "$filename" .minicom)_dec_2.reads
+	fi
+
+	./bsc d $decomp/refbin.tar.bsc $decomp/refbin.tar -t$num_thr  1>/dev/null & # 2>/dev/null 
+	./bsc d $decomp/dirbin.tar.bsc $decomp/dirbin.tar -t$num_thr  1>/dev/null & # 2>/dev/null 
+	./bsc d $decomp/begposbin.tar.bsc $decomp/begposbin.tar -t$num_thr  1>/dev/null & # 2>/dev/null 
+	./bsc d $decomp/dif_char.tar.bsc $decomp/dif_char.tar -t$num_thr  1>/dev/null & # 2>/dev/null 
+	if ($preserve_order); then 
+		./bsc d $decomp/idsbin.tar.bsc $decomp/idsbin.tar -t$num_thr  1>/dev/null & # 2>/dev/null 
+		# ./7z e $decomp/idsbin.tar.7z -o$decomp/ &
+	fi
+	
+	if ($pe); then
+		./bsc d $decomp/filebin.tar.bsc $decomp/filebin.tar -t$num_thr  1>/dev/null & # 2>/dev/null 
+		# ./bsc d $decomp/peidsbin.tar.bsc $decomp/peidsbin.tar -t$num_thr  1>/dev/null & # 2>/dev/null 
+		./7z e $decomp/peidsbin.tar.7z -o$decomp/ -mmt=$num_thr  1>/dev/null & # 2>/dev/null
+	fi
+
+	./bsc d $decomp/single_N.seq.bsc $decomp/single_N.seq -t$num_thr  1>/dev/null & # 2>/dev/null 
+	./bsc d $decomp/single.seq.bsc $decomp/single.seq -t$num_thr  1>/dev/null & # 2>/dev/null 
+	./bsc d $decomp/AA.txt.bsc $decomp/AA.txt -t$num_thr  1>/dev/null & # 2>/dev/null 
+	./bsc d $decomp/TT.txt.bsc $decomp/TT.txt -t$num_thr  1>/dev/null & # 2>/dev/null 
+	./bsc d $decomp/NN.txt.bsc $decomp/NN.txt -t$num_thr  1>/dev/null & # 2>/dev/null 
+
+	wait #
+
+	if ($preserve_order); then 
+		tar -xf $decomp/idsbin.tar -C $decomp/
+	fi
+	
+	if ($pe); then
+		tar -xf $decomp/filebin.tar -C $decomp/
+		tar -xf $decomp/peidsbin.tar -C $decomp/
+	fi
+	tar -xf $decomp/refbin.tar -C $decomp/
+	tar -xf $decomp/dirbin.tar -C $decomp/
+	tar -xf $decomp/begposbin.tar -C $decomp/
+	tar -xf $decomp/dif_char.tar -C $decomp/
+
+	# cd src
+	# make decompress
+	# cd ..
+	# cp src/decompress ./
+	# time 
+	./decompress $decomp $result $pe $preserve_order $num_thr $result0
+	# rm decompress
+
+	if (! $pe ); then
+		if (! $preserve_order); then 
+			# wc -l $decomp/aatt.fasta $decomp/single_N.seq $decomp/single_dec.fasta $decomp/result_*.seq
+			cat $decomp/aatt.fasta $decomp/single_N.seq $decomp/single_dec.fasta $decomp/result_*.seq > $result
+		fi
+		# echo "The decompressed file is: $result"
+		echo -e "\033[31m The decompressed file: $result \033[0m"
+	else
+		# wc -l $decomp/aatt.fasta $decomp/single_dec.fasta $decomp/result_*.seq
+		# cat $decomp/aatt.fasta $decomp/single_dec.fasta $decomp/result_*.seq > $result
+		cp $decomp/catsh.sh ./
+		sh catsh.sh
+		rm -rf catsh.sh
+		echo -e "\033[31m The two decompressed files: $result; $result0 \033[0m"
+	fi
+
+	rm -rf $decomp
+}
+
+#Initialize variables to default values.
+num_thr=24
+inik=0
+threshold=0
+cbthr=0
+num_dict=0
+E=0
+w=0
+m=0
+maxrounds=0
+step=0
+maxthr=0;
+
+#Check the number of arguments. If none are passed, print help and exit.
+argnum=$#
+if [[ $argnum -eq 0 || $1 == "-h" ]]; then
+ usage
+fi
+
+mode="c"
+preserve_order=false
+if [[ !($1 == "-d" || $1 == "-1" || $1 == "-r") ]]; then
+	usage
+	echo -e "\033[31m Error parameters. \033[0m"
+	exit 1
+fi
+
+if [[ $1 == "-d" ]]; then
+	mode='d'
+fi
+
+if [[ $mode = 'c' ]]; then
+	date "+%Y-%m-%d %H:%M:%S"
+	if [[ $1 == "-1" ]]; then #PE
+		while getopts ":1:2:t:k:e:s:w:g:E:S:R:m:" opt; do
+			case "$opt" in
+				1) filename=$OPTARG;;
+				2) secondfilename=$OPTARG;;
+				t) num_thr=$OPTARG;;
+				k) inik=$OPTARG;; #length of k
+				e) threshold=$OPTARG;; #different threshold
+				g) cbthr=$OPTARG;; #merging threshold
+				R) maxrounds=$OPTARG;;
+				E) maxthr=$OPTARG;; # max threshold
+				S) step=$OPTARG;; # step
+				s) num_dict=$OPTARG;; #number of dict
+				w) w=$OPTARG;; #w
+				m) m=$OPTARG;; # number of minimizers
+				\?) usage; echo -e "\033[31m Error parameters. \033[0m"; exit 0;;
+				*) usage; echo -e "\033[31m Error parameters. \033[0m"; exit 0;;
+			esac
+		done
+		compressPairedEnd
+	elif [[ $1 == "-r" ]]; then #single file
+		while getopts ":r:t:k:e:s:w:g:E:S:R:m:p" opt; do
+			case "$opt" in
+				r) filename=$OPTARG;;
+				t) num_thr=$OPTARG;;
+				p) preserve_order=true;;
+				k) inik=$OPTARG;; #length of k
+				e) threshold=$OPTARG;; #different threshold
+				g) cbthr=$OPTARG;; #merging threshold
+				R) maxrounds=$OPTARG;; # max rounds
+				E) maxthr=$OPTARG;;
+				S) step=$OPTARG;;
+				s) num_dict=$OPTARG;; #number of dict
+				w) w=$OPTARG;; #w
+				m) m=$OPTARG;; # number of minimizers
+				\?) usage; echo -e "\033[31m Error parameters. \033[0m"; exit 0;;
+				*) usage; echo -e "\033[31m Error parameters. \033[0m"; exit 0;;
+			esac
+		done
+		compressSingle
+	fi
+elif [[ $mode = 'd' ]]; then
+	while getopts ':d:t:' opt; do
+		case "$opt" in
+			d) filename=$OPTARG;;
+			t) num_thr=$OPTARG;;
+			\?) usage; echo -e "\033[31m Error parameters. \033[0m"; exit 0;;
+			*) usage; echo -e "\033[31m Error parameters. \033[0m"; exit 0;;
+		esac
+	done
+	decompress
+fi
