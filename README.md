@@ -135,7 +135,7 @@ The GTO provides pipe support for easy integration with the majority of the tool
 5.15 gto_min
 ``` 
 
-### 6. General purpose tools
+### 6. External tools
 
 ```bash
 6.1 bin/gto_external_bfmem
