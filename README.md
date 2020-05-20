@@ -138,15 +138,15 @@ The GTO provides pipe support for easy integration with the majority of the tool
 ### 6. External tools
 
 ```bash
-6.1 bin/gto_external_bfmem
-6.2 bin/gto_external_compareMEM
-6.3 bin/gto_external_copmem
-6.4 bin/gto_external_fastp
-6.5 bin/gto_external_formatconvert
-6.6 bin/gto_external_memoryfill
-6.7 bin/gto_external_minicom
-6.8 bin/gto_external_qvz
-6.10 bin/gto_external_spring
+6.1 gto_external_bfmem
+6.2 gto_external_compareMEM
+6.3 gto_external_copmem
+6.4 gto_external_fastp
+6.5 gto_external_formatconvert
+6.6 gto_external_memoryfill
+6.7 gto_external_minicom
+6.8 gto_external_qvz
+6.10 gto_external_spring
 ```
 
 ### 7. Scripts / Pipelines
