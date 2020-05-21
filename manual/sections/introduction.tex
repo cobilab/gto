@@ -57,6 +57,23 @@ sh runAllTests.sh
 \end{itemize}
 Some of these tests require internet connection to download external files and it will create new files.
 
+\section{Execution control}
+The quality control in Unix/Linux pipelines using GTO's tools is made in three ways:  
+\begin{enumerate}
+\item Input verification: where the tools verify the format of the input file; 
+
+\item  Stderr logs: Some execution errors are directly sent for the stderr channel. 
+
+\item Scripting validation: In complex pipelines, the verification of all the tools in the pipeline were executed properly, it is used the PIPESTATUS variable, e.g.:  
+\begin{lstlisting}
+gto_fasta_rand_extra_chars < input.fa | gto_fasta_to_seq > output.seq 
+echo "${PIPESTATUS[0]} ${PIPESTATUS[1]}" 
+0 0 
+\end{lstlisting}
+
+\end{enumerate}
+
+
 \section{License}
 
 The license is \textbf{MIT}. In resume, it is a short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.\\

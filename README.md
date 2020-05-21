@@ -27,7 +27,8 @@ the `bin/` directory.
 
 ## GTO Programs
 
-The GTO provides pipe support for easy integration with the majority of the tools. These include programs to shuffle, transform, simulate, compress, vizualize, among others. The GTO includes the following tools, divided by genomic data format type.
+The GTO provides pipe support for easy integration with the majority of the tools. These include programs to shuffle, transform, simulate, compress, vizualize, among others. The GTO includes the following tools, divided by genomic data format type. The documentation of those tools is available 
+[here](https://github.com/cobilab/gto/blob/master/manual/manual.pdf).
 
 ### 1. FASTQ tools
 
@@ -152,6 +153,7 @@ The tools present in this section are from other authors that were considered to
 
 ### 7. Scripts / Pipelines
 
+The following shell scripts are examples of pipelines that combined some of this toolkit's features.
 
 - 7.1 gto_build_dbs.sh
 - 7.2 gto_complexity_profile_regions.sh
