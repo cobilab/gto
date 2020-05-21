@@ -1,6 +1,6 @@
 # Script: gto_complexity_profile_regions.sh
 
-This pipeline computes the bi-directional complexity profiles in any genomic sequences. These profiles can localise specific features in the sequences, namely low and high complexity sequences, inverted repeats regions, tandem duplications, among others. The construction of these profiles follows the pipeline described below, which is composed of several transformations (e.g. reversing, segmenting, inverting) as well as the use of specific low-pass filters after data compression applications. The execution of this pipeline requires: 1) a FASTA file; and 2) the level of compression. This is then executed as below:
+This pipeline computes the bi-directional complexity profiles in any genomic sequences. These profiles can localise specific features in the sequences, namely low and high complexity sequences, inverted repeats regions, tandem duplications, among others. The construction of these profiles follows the pipeline described follows, which is composed of several transformations (e.g. reversing, segmenting, inverting) as well as the use of specific low-pass filters after data compression applications. The execution of this pipeline requires: 1) a FASTA file; and 2) the level of compression. This is then executed as follows:
 
 ```sh
 gto_complexity_profile_regions.sh sequence.fa level

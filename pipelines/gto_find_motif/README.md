@@ -1,6 +1,6 @@
 # Script: gto_find_motif.sh
 
-This pipeline finds and localizes a motif sequence in a FASTA file. The execution of this pipeline requires: 1) the motif; and 2) a FASTA file. This is then executed as below:
+This pipeline finds and localizes a motif sequence in a FASTA file. The execution of this pipeline requires: 1) the motif; and 2) a FASTA file. This is then executed as follows:
 
 ```sh
 gto_find_motif.sh <motif> sequence.fa 
