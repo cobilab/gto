@@ -153,7 +153,7 @@ The tools present in this section are from other authors that were considered to
 
 ### 7. Scripts / Pipelines
 
-The following shell scripts are examples of pipelines that combined some of this toolkit's features.
+The following shell scripts are examples of pipelines that combined some of this toolkit's features. More information available [here](https://github.com/cobilab/gto/tree/master/pipelines)
 
 - 7.1 gto_build_dbs.sh
 - 7.2 gto_complexity_profile_regions.sh
