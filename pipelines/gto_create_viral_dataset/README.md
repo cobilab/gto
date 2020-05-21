@@ -1,8 +1,8 @@
-# Script: gto_create_rival_dataset.sh
+# Script: gto_create_viral_dataset.sh
 
 This pipeline creates a viral dataset considering the following set of ids:  "AY386330.1", "JN561323.2", "X04370.1", "DQ279927.1", "X69198.1", "AB041963.1", "MG921180.1". This is executed as follows:
 ```sh
-gto_create_rival_dataset.sh
+gto_create_viral_dataset.sh
 ```
 
 ## Tools
