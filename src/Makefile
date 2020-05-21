@@ -303,13 +303,13 @@ chester:
 	rm -rf chester
 
 fastp:
-	git clone git@github.com:OpenGene/fastp.git
+	git clone https://github.com/OpenGene/fastp.git
 	cd fastp && make
 	cp fastp/fastp $(BIN)/gto_external_fastp
 	rm -rf fastp
 
 copmem:
-	git clone git@github.com:wbieniec/copmem.git
+	git clone https://github.com/wbieniec/copmem.git
 	cd copmem && make all
 	cp copmem/copmem $(BIN)/gto_external_copmem
 	cp copmem/memoryfill $(BIN)/gto_external_memoryfill
@@ -324,7 +324,7 @@ bfmem:
 	rm -rf bfmem
 
 qvz:
-	git clone git@github.com:mikelhernaez/qvz.git
+	git clone https://github.com/mikelhernaez/qvz.git
 	cd qvz && make
 	cp qvz/bin/qvz $(BIN)/gto_external_qvz
 	rm -rf qvz
@@ -336,7 +336,7 @@ minicom:
 	rm -rf minicom
 
 spring:
-	git clone git@github.com:shubhamchandak94/Spring.git
+	git clone https://github.com/shubhamchandak94/Spring.git
 	cd Spring && mkdir build && cd build && cmake .. && make
 	cp Spring/build/spring $(BIN)/gto_external_spring
 	rm -rf Spring
