@@ -15,4 +15,5 @@ gto_map_rearrangements_proteins.sh
 gto_metagenomics.sh
 gto_proteins_complexity_profile_regions.sh
 gto_simulate_rearragements.sh
+gto_merge_fasta_dbs.sh
 ```
