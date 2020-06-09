@@ -165,6 +165,7 @@ The following shell scripts are examples of pipelines that combined some of this
 - 7.8 gto_metagenomics.sh
 - 7.9 gto_proteins_complexity_profile_regions.sh
 - 7.10 gto_simulate_rearragements.sh
+- 7.11 gto_merge_fasta_dbs.sh
 
 
 ## CITE
