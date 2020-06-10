@@ -18,6 +18,7 @@ gto_simulate_rearragements.sh
 gto_merge_fasta_dbs.sh
 gto_build_xs_viral_db.sh
 gto_create_sars_dataset.sh
+gto_sars_simulation_detection.sh
 ```
 
 ### How to proceed when added a new script?
@@ -44,4 +45,7 @@ gto_create_sars_dataset.sh
     - **gto_tool_2**: the importance of this tool in the pipeline.
 
 2. Add the script name in this file and the README at the repository root.
-3. The instruction for adding this in Conda will be added soon.
+3. Add the script in the conda/build.sh file. This script has the following syntax:
+    - cp pipelines/gto_gto_script_name/gto_gto_script_name.sh $PREFIX/bin/
+
+

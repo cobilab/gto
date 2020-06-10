@@ -1,0 +1,23 @@
+# This file created by conda-build 3.17.8
+# meta.yaml template originally from:
+# /mnt/e/bioconda-recipes/recipes/gto
+# ------------------------------------------------
+
+package:
+    name: gto
+    version: '1.5.1'
+
+source:
+    git_rev: v1.5.1
+    git_url: https://github.com/cobilab/gto.git
+
+requirements:
+    build:
+        - gxx_linux-64
+        - cmake
+
+about:
+    home: http://bioinformatics.ua.pt/gto
+    license: GPL v3 License
+    license_family: GPL
+    summary: A genomic toolkit 

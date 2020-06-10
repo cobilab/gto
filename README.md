@@ -168,6 +168,7 @@ The following shell scripts are examples of pipelines that combined some of this
 - 7.11 gto_merge_fasta_dbs.sh
 - 7.12 gto_build_xs_viral_db.sh
 - 7.13 gto_create_sars_dataset.sh
+- 7.14 gto_sars_simulation_detection.sh
 
 
 ## CITE
