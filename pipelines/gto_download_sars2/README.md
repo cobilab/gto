@@ -1,6 +1,6 @@
 # Script: gto_download_sars2.sh
 
-This pipeline downlaods 93 SARS-CoV-2 genome sequences. This is executed as follows:
+This pipeline downloads 93 SARS-CoV-2 genome sequences. This is executed as follows:
 
 ```sh
 gto_download_sars2.sh
