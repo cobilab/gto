@@ -22,6 +22,8 @@ cp pipelines/gto_merge_fasta_dbs/gto_merge_fasta_dbs.sh $PREFIX/bin/
 cp pipelines/gto_build_xs_viral_db/gto_build_xs_viral_db.sh $PREFIX/bin/
 cp pipelines/gto_create_sars_dataset/gto_create_sars_dataset.sh $PREFIX/bin/
 cp pipelines/gto_sars_simulation_detection/gto_sars_simulation_detection.sh $PREFIX/bin/
+cp pipelines/gto_download_sars2/gto_download_sars2.sh $PREFIX/bin/
+cp pipelines/gto_find_best_sars2/gto_find_best_sars2.sh $PREFIX/bin/
 
 
 cp bin/gto $PREFIX/bin/
