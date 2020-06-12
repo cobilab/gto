@@ -169,6 +169,8 @@ The following shell scripts are examples of pipelines that combined some of this
 - 7.12 gto_build_xs_viral_db.sh
 - 7.13 gto_create_sars_dataset.sh
 - 7.14 gto_sars_simulation_detection.sh
+- 7.15 gto_download_sars2.sh
+- 7.16 gto_find_best_sars2.sh
 
 
 ## CITE
