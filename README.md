@@ -176,7 +176,21 @@ The following shell scripts are examples of pipelines that combined some of this
 ## CITE
 Please cite the followings, if you use GTO:
 
-GTO: a toolkit to unify pipelines in genomic and proteomic research. J. R. Almeida, A. J. Pinho, J. L. Oliveira, O. Fajarda, D. Pratas. bioRxiv 2020.01.07.882845; doi: [https://doi.org/10.1101/2020.01.07.882845](https://doi.org/10.1101/2020.01.07.882845).
+GTO: A toolkit to unify pipelines in genomic and proteomic research.  J. R. Almeida, A. J. Pinho, J. L. Oliveira, O. Fajarda, D. Pratas, SoftwareX, Volume 12, 2020, 100535, doi: [https://doi.org/10.1016/j.softx.2020.100535](https://doi.org/10.1016/j.softx.2020.100535)
+
+```bib
+@article{ALMEIDA2020100535,
+  title   = "GTO: A toolkit to unify pipelines in genomic and proteomic research",
+  journal = "SoftwareX",
+  volume  = "12",
+  pages   = "100535",
+  year    = "2020",
+  issn    = "2352-7110",
+  doi     = "https://doi.org/10.1016/j.softx.2020.100535",
+  url     = "http://www.sciencedirect.com/science/article/pii/S2352711020301473",
+  author  = "João R. Almeida and Armando J. Pinho and José L. Oliveira and Olga Fajarda and Diogo Pratas"
+}
+```
 
 ## ISSUES
 Please let us know if there is any
