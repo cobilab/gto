@@ -395,6 +395,11 @@ int main(int argc, char *argv[])
   "      at <https://opensource.org/licenses/MIT>. There is NOT              \n"
   "      ANY WARRANTY, to the extent permitted by law.                       \n"
   "                                                                          \n",
+  "If you use GTO, please cite the following:                                \n",
+  "      GTO: A toolkit to unify pipelines in genomic and proteomic research.\n",
+  "      J. R. Almeida, A. J. Pinho, J. L. Oliveira, O. Fajarda, D. Pratas,  \n",
+  "      SoftwareX, Volume 12, 2020, 100535,                                 \n",
+  "      doi: https://doi.org/10.1016/j.softx.2020.100535                    \n",
   VERSION, RELEASE);
   return EXIT_SUCCESS;
 }
