@@ -1,0 +1,44 @@
+\section{Program gto\char`_fasta\char`_split\char`_streams}
+The \texttt{gto\char`_fasta\char`_split\char`_streams} splits and writes a FASTA file into three channels of information: headers, extra and DNA.\\
+For help type:
+\begin{lstlisting}
+./gto_fasta_split_streams -h
+\end{lstlisting}
+In the following subsections, we explain the input and output paramters.
+
+\subsection*{Input parameters}
+
+The \texttt{gto\char`_fasta\char`_split\char`_streams} program needs the input standard stream for the computation. The input stream is a FASTA or Multi-FASTA file.\\
+The attribution is given according to:
+\begin{lstlisting}
+Usage: ./gto_fasta_split_streams [options] [[--] args]
+   or: ./gto_fasta_split_streams [options]
+
+It splits and writes a FASTA file into three channels of information: headers, extra and DNA.
+
+    -h, --help            Show this help message and exit
+
+Basic options
+    < input.fastq         Input FASTA file format (stdin)
+
+Example: ./gto_fasta_split_streams < input.fastq
+\end{lstlisting}
+An example of such an input file is:
+\begin{lstlisting}
+>AB000264 |acc=AB000264|descr=Homo sapiens mRNA 
+ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCC
+CGGCCCCACCTAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGG
+AAGTGGTTTGAGTGGACCTCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGCAGGCCAGT
+GCCGCGAATCCGCGCGCCGGGACAGAATCTCCTGCAAAGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCACCCCCC
+CAGCTAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+>AB000263 |acc=AB000263|descr=Homo sapiens mRNA 
+ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCCCCTGGAGGG
+TGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGCCTCCTGACTTTCCTCGCT
+TGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGG
+AAGGCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTG
+CAAATAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
+\end{lstlisting}
+
+\subsection*{Output}
+
+The output of the \texttt{gto\char`_fasta\char`_split\char`_streams} program are three files containing the headers, extra information and DNA.

@@ -211,3 +211,6 @@ cd ..
 cd gto_fastq_variation_visual
 sh runExample.sh
 cd ..
+cd gto_fasta_split_streams
+sh runExample.sh
+cd ..
