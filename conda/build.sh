@@ -111,3 +111,4 @@ cp bin/gto_sum $PREFIX/bin/
 cp bin/gto_upper_bound $PREFIX/bin/
 cp bin/gto_word_search $PREFIX/bin/
 cp bin/gto_fasta_split_streams $PREFIX/bin/
+cp bin/gto_fasta_merge_streams $PREFIX/bin/
