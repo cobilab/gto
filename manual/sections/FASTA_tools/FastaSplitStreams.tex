@@ -19,9 +19,12 @@ It splits and writes a FASTA file into three channels of information: headers, e
     -h, --help            Show this help message and exit
 
 Basic options
+    -e, --extra=<str>     Output file for the extra information
+    -d, --dna=<str>       Output file for the DNA information
+    -H, --headers=<str>   Output file for the headers information
     < input.fastq         Input FASTA file format (stdin)
 
-Example: ./gto_fasta_split_streams < input.fastq
+Example: ./gto_fasta_split_streams -e <filename> -d <filename> -H <filename> < input.fasta
 \end{lstlisting}
 An example of such an input file is:
 \begin{lstlisting}
@@ -41,4 +44,4 @@ CAAATAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA
 
 \subsection*{Output}
 
-The output of the \texttt{gto\char`_fasta\char`_split\char`_streams} program are three files containing the headers, extra information and DNA.
+The output of the \texttt{gto\char`_fasta\char`_split\char`_streams} program are three files containing the headers, extra information and DNA. The name of those files can be passed in the tool's paramenters. The default names are HEADERS.JV2, EXTRA.JV2 and DNA.JV2. 

@@ -5,16 +5,18 @@
 #include "argparse.h"
 #include <unistd.h>
 
+
 /* 
- * This application splits FASTA into three channels of information: 
+ * This application merges FASTA into three channels of information: 
  *        - HEADERS;
  *        - EXTRA;
  *        - DNA.
  */
 int main(int argc, char *argv[])
 {
+
   FILE *HEADERS, *EXTRA, *DNA;
-  int c;
+  int c, d = 0;
   const char *output_headers = NULL;
   const char *output_extra = NULL;
   const char *output_dna = NULL;
@@ -26,26 +28,26 @@ int main(int argc, char *argv[])
         OPT_STRING('e', "extra", &output_extra, "Output file for the extra information"),
         OPT_STRING('d', "dna", &output_dna, "Output file for the DNA information"),
         OPT_STRING('H', "headers", &output_headers, "Output file for the headers information"),
-        OPT_BUFF('<', "input.fastq", "Input FASTA file format (stdin)"),
+        OPT_BUFF('>', "output", "Output FASTA file format (stdout)"),
         OPT_END(),
   };
   struct argparse argparse;
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " -e <filename> -d <filename> -H <filename> < input.fasta\n");
+  strcat(usage, " -e <filename> -d <filename> -H <filename> > output.fasta\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
-  argparse_describe(&argparse, "\nIt splits and writes a FASTA file into three channels of information: headers, extra and DNA.", usage);
+  argparse_describe(&argparse, "\nIt merges the three channels of information (headers, extra and DNA) and writes it into a FASTA file.", usage);
   argc = argparse_parse(&argparse, argc, argv);
 
-  if(argc != 0 || isatty(STDIN_FILENO))
+  if(argc != 0)
     argparse_help_cb(&argparse, options);
 
   if(output_headers == NULL)
     output_headers = "HEADERS.JV2";
 
-  if((HEADERS = fopen (output_headers, "w")) == NULL)
+  if((HEADERS = fopen (output_headers, "r")) == NULL)
   {
     fprintf(stderr, "Error: could not open file!");
     return 1;
@@ -54,7 +56,7 @@ int main(int argc, char *argv[])
   if(output_extra == NULL)
     output_extra = "EXTRA.JV2";
 
-  if((EXTRA = fopen (output_extra, "w")) == NULL)
+  if((EXTRA = fopen (output_extra, "r")) == NULL)
   {
     fprintf(stderr, "Error: could not open file!");
     return 1;
@@ -63,41 +65,51 @@ int main(int argc, char *argv[])
   if(output_dna == NULL)
     output_dna = "DNA.JV2";
 
-  if((DNA = fopen (output_dna, "w")) == NULL)
+  if((DNA = fopen (output_dna, "r")) == NULL)
   {
     fprintf(stderr, "Error: could not open file!");
     return 1;
   }
 
-  while((c = fgetc(stdin)) != EOF)
+  while((c = fgetc(EXTRA)) != EOF)
   {
+    
     if(c == '>')
     {
-      fprintf(EXTRA, "%c", c);
-      while((c = fgetc(stdin)) != EOF)
+      fprintf(stdout, "%c", c);
+      while((c = fgetc(HEADERS)) != EOF)
       {
         if(c == EOF) goto x;
-        fprintf(HEADERS, "%c", c);
+        fprintf(stdout, "%c", c);
         if(c == '\n') break;
       }
       continue;
     }
-      
+    
     switch(c)
     {
-      case 'A': case 'C': case 'G': case 'T':
-        fprintf(DNA,   "%c", c); 
-        fprintf(EXTRA, "%c", 0); 
-      break;
-
-      case 'a': case 'c': case 'g': case 't':
-        fprintf(DNA,   "%c", toupper(c));  
-        fprintf(EXTRA, "%c", 1);
-      break;
       
-      default:
-        fprintf(EXTRA, "%c", c);
-      break;      
+      case 0:
+        if((d = fgetc(DNA)) == EOF)
+        {
+          fprintf(stderr, "Error: invalid format!");
+          return 1;
+        }
+        fprintf(stdout, "%c", d); 
+        break;
+
+      case 1:
+        if((d = fgetc(DNA)) == EOF)
+        {
+          fprintf(stderr, "Error: invalid format!");
+          return 1;
+        }
+        fprintf(stdout, "%c", tolower(d));
+        break;
+      
+        default:
+          fprintf(stdout, "%c", c);
+        break;      
     }
   }
 

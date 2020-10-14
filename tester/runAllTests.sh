@@ -214,3 +214,6 @@ cd ..
 cd gto_fasta_split_streams
 sh runExample.sh
 cd ..
+cd gto_fasta_merge_streams
+sh runExample.sh
+cd ..

@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
   "                    ╚═════╝   ╚═╝    ╚═════╝                              \n"
   "                                                                          \n"
   "NAME                                                                      \n"
-  "      GTO v%u.%u.3,                                                       \n"
+  "      GTO v1.5.4,                                                         \n"
   "      The Genomics-Proteomics Toolkit.                                    \n"
   "                                                                          \n"
   "AUTHORS                                                                   \n"
@@ -243,6 +243,14 @@ int main(int argc, char *argv[])
   "          It uses the Chester-visual to visualize relative singularity    \n"
   "          regions.                                                        \n"
   "                                                                          \n"
+  "      [gto_fasta_split_streams]                                           \n"
+  "          It splits and writes a FASTA file into three channels of        \n"
+  "          information: headers, extra and DNA.                            \n"
+  "                                                                          \n"
+  "      [gto_fasta_merge_streams]                                           \n"
+  "          It merges the three channels of information (headers, extra     \n"
+  "          and DNA) and writes it into a FASTA file.                       \n"
+  "                                                                          \n"
   "Genomic Sequence Tools                                                    \n"
   "      [gto_genomic_count_bases]                                           \n"
   "          It counts the number of bases in sequence, FASTA or             \n"
@@ -399,7 +407,6 @@ int main(int argc, char *argv[])
   "      GTO: A toolkit to unify pipelines in genomic and proteomic research.\n",
   "      J. R. Almeida, A. J. Pinho, J. L. Oliveira, O. Fajarda, D. Pratas,  \n",
   "      SoftwareX, Volume 12, 2020, 100535,                                 \n",
-  "      doi: https://doi.org/10.1016/j.softx.2020.100535                    \n",
-  VERSION, RELEASE);
+  "      doi: https://doi.org/10.1016/j.softx.2020.100535                    \n");
   return EXIT_SUCCESS;
 }
