@@ -15,11 +15,17 @@ int main(int argc, char *argv[])
 {
   FILE *HEADERS, *EXTRA, *DNA;
   int c;
+  const char *output_headers = NULL;
+  const char *output_extra = NULL;
+  const char *output_dna = NULL;
 
   char *programName = argv[0];
   struct argparse_option options[] = {
         OPT_HELP(),
         OPT_GROUP("Basic options"),
+        OPT_STRING('e', "extra", &output_extra, "Output file for the extra information"),
+        OPT_STRING('d', "dna", &output_dna, "Output file for the DNA information"),
+        OPT_STRING('H', "headers", &output_headers, "Output file for the headers information"),
         OPT_BUFF('<', "input.fastq", "Input FASTA file format (stdin)"),
         OPT_END(),
   };
@@ -27,7 +33,7 @@ int main(int argc, char *argv[])
 
   char usage[250] = "\nExample: "; 
   strcat(usage, programName);
-  strcat(usage, " < input.fastq\n");
+  strcat(usage, " -e <filename> -d <filename> -H <filename> < input.fastq\n");
 
   argparse_init(&argparse, options, NULL, programName, 0);
   argparse_describe(&argparse, "\nIt splits and writes a FASTA file into three channels of information: headers, extra and DNA.", usage);
@@ -36,20 +42,28 @@ int main(int argc, char *argv[])
   if(argc != 0 || isatty(STDIN_FILENO))
     argparse_help_cb(&argparse, options);
 
+  if(output_headers == NULL)
+    output_headers = "HEADERS.JV2";
 
-  if((HEADERS = fopen ("HEADERS.JV2", "w")) == NULL)
+  if((HEADERS = fopen (output_headers, "w")) == NULL)
   {
     fprintf(stderr, "Error: could not open file!");
     return 1;
   }
 
-  if((EXTRA = fopen ("EXTRA.JV2", "w")) == NULL)
+  if(output_extra == NULL)
+    output_extra = "EXTRA.JV2";
+
+  if((EXTRA = fopen (output_extra, "w")) == NULL)
   {
     fprintf(stderr, "Error: could not open file!");
     return 1;
   }
 
-  if((DNA = fopen ("DNA.JV2", "w")) == NULL)
+  if(output_dna == NULL)
+    output_dna = "DNA.JV2";
+
+  if((DNA = fopen (output_dna, "w")) == NULL)
   {
     fprintf(stderr, "Error: could not open file!");
     return 1;
