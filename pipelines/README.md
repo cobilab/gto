@@ -21,6 +21,7 @@ gto_create_sars_dataset.sh
 gto_sars_simulation_detection.sh
 gto_download_sars2.sh
 gto_find_best_sars2.sh
+gto_relative_complexity_profile.sh
 ```
 
 ### How to proceed when added a new script?

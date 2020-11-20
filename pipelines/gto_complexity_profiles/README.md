@@ -41,8 +41,7 @@ The GTO tools used and their role in this pipeline are the following:
 
 - **gto_fasta_extract_read_by_pattern**:  it extracts reads from a Multi-FASTA file format given a
 pattern in the header.
-- **gto_fasta_rand_extra_chars**: it substitues in the DNA sequence the outside ACGT chars by ran-
-dom ACGT symbols.
+- **gto_fasta_rand_extra_chars**: it substitues in the DNA sequence the outside ACGT chars by random ACGT symbols.
 - **gto_reverse**: it reverses the ACGT bases order for each read in a sequence file.
 - **gto_geco**: it compress and decompress genomic sequences for storage purposes.
 - **gto_upper_bound**: it sets an upper bound in a file with a value per line.
