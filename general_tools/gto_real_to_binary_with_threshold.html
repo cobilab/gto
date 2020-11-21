@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GTO - The Genomic Toolkit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+       $('#navbar').load("/gto/navbar.html");
+       $('#footer').load("/gto/footer.html");
+    });
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="/gto/style.css">
+    <link rel="stylesheet" href="/gto/icons/styles.css">
+  </head>
+  <body>
+
+    <div id="navbar"></div>
+<div class="container-fluid"><br/><br/><br/>
+	<h1>Program gto_real_to_binary_with_threshold</h1>
+<p>The <strong>gto_real_to_binary_with_threshold</strong> converts a sequence of real numbers into a binary sequence, given a threshold. The numbers below to the threshold will be 0.</p>
+<p>For help type:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>./gto_real_to_binary_with_threshold -h<br></p></code></div></div><br><p>In the following subsections, we explain the input and output paramters.</p>
+<p></p>
+<h3>Input parameters</h3>
+<p></p>
+<p>The <strong>gto_real_to_binary_with_threshold</strong> program needs two streams for the computation, namely the real sequence as input. These numbers should be splitted by lines.</p>
+<p>The attribution is given according to:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>Usage: ./gto_real_to_binary_with_threshold [options] [[--] args]<br>or: ./gto_real_to_binary_with_threshold [options]<br><br>It converts a sequence of real numbers into a binary sequence given a threshold.<br><br>-h, --help                show this help message and exit<br><br>Basic options<br>-t, --threshold=<dbl>     The threshold in real format<br>< input.num               Input numeric file (stdin)<br>> output.bin              Output binary file (stdout)<br><br>Example: ./gto_real_to_binary_with_threshold -t <threshold> < input.num > output.bin<br></p></code></div></div><br><p>An example of such an input file is:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>12.25<br>1.2<br>5.44<br>5.51<br>7.97<br>2.34<br>8.123<br></p></code></div></div><br><p></p>
+<h3>Output</h3>
+<p>The output of the <strong>gto_real_to_binary_with_threshold</strong> program is a binary sequence.</p>
+<p>Using the input above with the threshold of 5.5, an output example for this is the following:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>1<br>0<br>0<br>1<br>1<br>0<br>1<br></p></code></div></div><br></div><br/><br/><br/><br/>
+    <div id="footer"></div>
+  </body>
+</html>

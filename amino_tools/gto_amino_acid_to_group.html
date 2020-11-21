@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GTO - The Genomic Toolkit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+       $('#navbar').load("/gto/navbar.html");
+       $('#footer').load("/gto/footer.html");
+    });
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="/gto/style.css">
+    <link rel="stylesheet" href="/gto/icons/styles.css">
+  </head>
+  <body>
+
+    <div id="navbar"></div>
+<div class="container-fluid"><br/><br/><br/>
+	<h1>Program gto_amino_acid_to_group</h1>
+<p></p>
+<p>The <strong>gto_amino_acid_to_group</strong> converts an amino acid sequence to a group</p>
+<p>sequence.</p>
+<p>For help type:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>./gto_amino_acid_to_group -h<br></p></code></div></div><br><p>In the following subsections, we explain the input and output paramters.</p>
+<p></p>
+<h3>Input parameters</h3>
+<p></p>
+<p>The <strong>gto_amino_acid_to_group</strong> program needs two streams for the computation, namely the input and output standard. The input stream is an amino acid sequence.</p>
+<p>The attribution is given according to:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>Usage: ./gto_amino_acid_to_group [options] [[--] args]<br>or: ./gto_amino_acid_to_group [options]<br><br>It converts a amino acid sequence to a group sequence.<br><br>-h, --help            show this help message and exit<br><br>Basic options<br>< input.prot          Input amino acid sequence file (stdin)<br>> output.group        Output group sequence file (stdout)<br><br>Example: ./gto_amino_acid_to_group < input.prot > output.group<br>Table:<br>Prot	Group<br>R		P<br>H		P  Amino acids with electric charged side chains: POSITIVE<br>K		P<br>-		-<br>D		N<br>E		N  Amino acids with electric charged side chains: NEGATIVE<br>-		-<br>S		U<br>T		U<br>N		U  Amino acids with electric UNCHARGED side chains<br>Q		U<br>-		-<br>C		S<br>U		S<br>G		S  Special cases<br>P		S<br>-		-<br>A		H<br>V		H<br>I		H<br>L		H<br>M		H  Amino acids with hydrophobic side chains<br>F		H<br>Y		H<br>W		H<br>-		-<br>*		*  Others<br>X		X  Unknown<br></p></code></div></div><br><p>It can be used to group amino acids by properties, such as electric charge (positive</p>
+<p>and negative), uncharged side chains, hydrophobic side chains and special cases.</p>
+<p>An example of such an input file is:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>IPFLLKKQFALADKLVLSKLRQLLGGRIKMMPCGGAKLEPAIGLFFHAIGINIKLGYGMTETTATVSCWHDFQFNPNSIG<br>TLMPKAEVKIGENNEILVRGGMVMKGYYKKPEETAQAFTEDGFLKTGDAGEFDEQGNLFITDRIKELMKTSNGKYIAPQY<br>IESKIGKDKFIEQIAIIADAKKYVSALIVPCFDSLEEYAKQLNIKYHDRLELLKNSDILKMFE<br></p></code></div></div><br><p></p>
+<h3>Output</h3>
+<p></p>
+<p>The output of the <strong>gto_amino_acid_to_group</strong> program is a group sequence.</p>
+<p>Using the input above, an output example for this is the following:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>HSHHHPPUHHHHNPHHHUPHPUHHSSPHPHHSSSSHPHNSHHSHHHPHHSHUHPHSHSHUNUUHUHUSHPNHUHUSUUHS<br>UHHSPHNHPHSNUUNHHHPSSHHHPSHHPPSNNUHUHHUNNSHHPUSNHSNHNNUSUHHHUNPHPNHHPUUUSPHHHSUH<br>HNUPHSPNPHHNUHHHHHNHPPHHUHHHHSSHNUHNNHHPUHUHPHPNPHNHHPUUNHHPHHN<br></p></code></div></div><br></div><br/><br/><br/><br/>
+    <div id="footer"></div>
+  </body>
+</html>

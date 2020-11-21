@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GTO - The Genomic Toolkit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+       $('#navbar').load("/gto/navbar.html");
+       $('#footer').load("/gto/footer.html");
+    });
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="/gto/style.css">
+    <link rel="stylesheet" href="/gto/icons/styles.css">
+  </head>
+  <body>
+
+    <div id="navbar"></div>
+<div class="container-fluid"><br/><br/><br/>
+	<h1>Program gto_fasta_extract_by_read</h1>
+<p>The <strong>gto_fasta_extract_by_read</strong> extracts sequences from a FASTA or Multi-FASTA file, which the range is defined by the user in the parameters.</p>
+<p>For help type:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>./gto_fasta_extract_by_read -h<br></p></code></div></div><br><p>In the following subsections, we explain the input and output paramters.</p>
+<p></p>
+<h3>Input parameters</h3>
+<p></p>
+<p>The <strong>gto_fasta_extract_by_read</strong> program needs two paramenters, which defines the begin and the end of the extraction, and two streams for the computation, namely the input and output standard. The input stream is a FASTA or Multi-FASTA file.</p>
+<p>The attribution is given according to:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>Usage: ./gto_fasta_extract_by_read [options] [[--] args]<br>or: ./gto_fasta_extract_by_read [options]<br><br>It extracts sequences from each read in a Multi-FASTA file (splited by \n)<br><br>-h, --help            show this help message and exit<br><br>Basic options<br>-i, --init=<int>      The first position to start the extraction (default 0)<br>-e, --end=<int>       The last extract position (default 100)<br>< input.fasta         Input FASTA or Multi-FASTA file format (stdin)<br>> output.fasta        Output FASTA or Multi-FASTA file format (stdout)<br><br>Example: ./gto_fasta_extract_by_read -i <init> -e <end> < input.mfasta > output.mfasta<br></p></code></div></div><br><p>An example of such an input file is:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>>AB000264 |acc=AB000264|descr=Homo sapiens mRNA<br>ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGGGTCCACCGCTGCCCTGCTGCCATTGTCCCC<br>GGCCCCACCTAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAA<br>GTGGTTTGAGTGGACCTCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGCAGGCCAGTGCC<br>GCGAATCCGCGCGCCGGGACAGAATCTCCTGCAAAGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCACCCCCCCAGC<br>TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA<br>>AB000263 |acc=AB000263|descr=Homo sapiens mRNA<br>ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCCCCTGGAGGGT<br>GGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTG<br>GTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAG<br>GCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAA<br>TAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA<br></p></code></div></div><br><p></p>
+<h3>Output</h3>
+<p>The output of the <strong>gto_fasta_extract_by_read</strong> program is FASTA or Multi-FASTA file wiht the extracted sequences.</p>
+<p>Using the input above with the value 0 as the extraction starting point and the 50 as the ending, an output example for this is the following:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>>AB000264 |acc=AB000264|descr=Homo sapiens mRNA<br>ACAAGACGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCCTGGAGG<br>>AB000263 |acc=AB000263|descr=Homo sapiens mRNA<br>ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCC<br></p></code></div></div><br></div><br/><br/><br/><br/>
+    <div id="footer"></div>
+  </body>
+</html>

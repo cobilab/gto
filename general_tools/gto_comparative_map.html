@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GTO - The Genomic Toolkit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+       $('#navbar').load("/gto/navbar.html");
+       $('#footer').load("/gto/footer.html");
+    });
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="/gto/style.css">
+    <link rel="stylesheet" href="/gto/icons/styles.css">
+  </head>
+  <body>
+
+    <div id="navbar"></div>
+<div class="container-fluid"><br/><br/><br/>
+	<h1>Program gto_comparative_map</h1>
+<p>The <strong>gto_comparative_map</strong> creates a visualization for comparative maps.</p>
+<p>For help type:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>./gto_comparative_map -h<br></p></code></div></div><br><p>In the following subsections, we explain the input and output paramters.</p>
+<p></p>
+<h3>Input parameters</h3>
+<p></p>
+<p>The <strong>gto_comparative_map</strong> program needs an input file with the plot positions, respecting a defined structure.</p>
+<p>The attribution is given according to:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>Usage: ./gto_comparative_map [options] [[--] args]<br>or: ./gto_comparative_map [options]<br><br>It creates a visualization for comparative maps.<br><br>-h, --help            Show this help message and exit<br><br>Basic options<br><FILE>                Contigs filename with positions (.pos),<br><br>Optional<br><br>-h                    Give this help,<br>-V                    Display version number,<br>-v                    Verbose mode (more information),<br>-l <link>             Link type between maps [0;4],<br>-w <width>            Chromosome width,<br>-s <space>            Space between chromosomes,<br>-m <mult>             Color id multiplication factor,<br>-b <begin>            Color id beggining,<br>-c <minimum>          Minimum block size to consider,<br>-i                    Do NOT show inversion maps,<br>-r                    Do NOT show regular maps,<br>-o <FILE>             Output image filename with map,<br><br>Example: ./gto_comparative_map -o map.svg map.config<br></p></code></div></div><br><p>%The input file needs to have the following structure:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>%todo<br></p></code></div></div><br><p>An example of such an input file is:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>#SCF    5000000 5000000<br>aaa     1       1000000 1       1000000 bbbb    3000000 4000000 3000000 4000000<br>bbb     1500000 2000000 1500000 2000000 cccc    1500000 2000000 1500000 2000000<br>aaa     2000000 3000000 2000000 3000000 bbbb    3000000 2000000 3000000 2000000<br></p></code></div></div><br><p></p>
+<h3>Output</h3>
+<p>The output of the <strong>gto_comparative_map</strong> program is a executing report, and a svg plot with the maps.</p>
+<p>Using the input above, an output example for this is the following:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>==[ PROCESSING ]====================<br>Printing plot ...<br>Found 2 regular regions.<br>Found 1 inverted regions.<br>Done!<br><br>==[ STATISTICS ]====================<br>Total cpu time: 0 second(s).<br></p></code></div></div><br><p></p>
+<p>In the Figure is represented the plot for the execution above.</p>
+<p></p>
+<img src='/gto/images/gto_comparative_map.png'></div><br/><br/><br/><br/>
+    <div id="footer"></div>
+  </body>
+</html>

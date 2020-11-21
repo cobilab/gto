@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GTO - The Genomic Toolkit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+       $('#navbar').load("/gto/navbar.html");
+       $('#footer').load("/gto/footer.html");
+    });
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="/gto/style.css">
+    <link rel="stylesheet" href="/gto/icons/styles.css">
+  </head>
+  <body>
+
+    <div id="navbar"></div>
+<div class="container-fluid"><br/><br/><br/>
+	<h1>Program gto_fastq_metagenomics</h1>
+<p>The <strong>gto_fastq_metagenomics</strong> is an ultra-fast method to infer metagenomic composition of sequenced reads relative to a database. gto_fastq_metagenomics measures similarity between any FASTQ file (or FASTA), independently from the size, against any multi-FASTA database, such as the entire set of complete genomes from the NCBI. gto_fastq_metagenomics supports single reads, paired-end reads, and compositions of both. It has been tested in many plataforms, such as Illumina MySeq, HiSeq, Novaseq, IonTorrent.</p>
+<p>gto_fastq_metagenomics is efficient to detect the presence and authenticate a given species in the FASTQ reads. The core of the method is based on relative data compression. gto_fastq_metagenomics uses variable multi-threading, without multiplying the memory for each thread, being able to run efficiently in a common laptop.</p>
+<p>For help type:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>./gto_fastq_metagenomics -h<br></p></code></div></div><br><p>In the following subsections, we explain the input and output paramters.</p>
+<p></p>
+<h3>Input parameters</h3>
+<p></p>
+<p>The <strong>gto_fastq_metagenomics</strong> program needs a FASTQ file to compute.</p>
+<p>The attribution is given according to:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>NAME<br>gto_fastq_metagenomics v3.1: a tool to infer metagenomic composition.<br><br>SYNOPSIS<br>gto_fastq_metagenomics [OPTION]... [FILE1]:[FILE2]:... [FILE]<br><br>SAMPLE<br>gto_fastq_metagenomics -v -F -l 47 -Z -y pro.com reads1.fq:reads2.fq DB.fa<br><br>DESCRIPTION<br>It infers metagenomic sample composition of sequenced reads.<br>The core of the method uses a cooperation between multiple<br>context and tolerant context models with several depths.<br>The reference sequences must be in a multi-FASTA format.<br>The sequenced reads must be trimmed and in FASTQ format.<br><br>Non-mandatory arguments:<br><br>-h                   give this help,<br>-F                   force mode (overwrites top file),<br>-V                   display version number,<br>-v                   verbose mode (more information),<br>-Z                   database local similarity,<br>-s                   show compression levels,<br><br>-l <level>           compression level [1;47],<br>-p <sample>          subsampling (default: 1),<br>-t <top>             top of similarity (default: 20),<br>-n <nThreads>        number of threads (default: 2),<br><br>-x <FILE>            similarity top filename,<br>-y <FILE>            profile filename (-Z must be on).<br><br>Mandatory arguments:<br><br>[FILE1]:[FILE2]:...  metagenomic filename (FASTQ),<br>Use ":" for splitting files.<br><br>[FILE]               database filename (Multi-FASTA).<br><br>COPYRIGHT<br>Copyright (C) 2014-2019, IEETA, University of Aveiro.<br>This is a Free software, under GPLv3. You may redistribute<br>copies of it under the terms of the GNU - General Public<br>License v3 <http://www.gnu.org/licenses/gpl.html>.<br></p></code></div></div><br><p>An example of such an input file is:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72<br>GGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGGTTTTCAAATAGA<br>+SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72<br>IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/<br>@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72<br>GTTCAGGGATACGACGTTTGTATTTTAAGAATCTGAAGCAGAAGTCGATGATAATACGCGTCGTTTTATCAT<br>+SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72<br>IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I<br></p></code></div></div><br><p></p>
+<h3>Output</h3>
+<p>The output of the <strong>gto_fastq_metagenomics</strong> program is a CSV file (top.csv) with the highest probability of being contained in the samples. An example for this CSV file is the following:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>1  66725   12.263   NC_037703.1_Saccharomycodes_ludwigii_strain_Y-8871_mitochondrion<br>2  66725   12.263   NC_037703.1_Saccharomycodes_ludwigii_strain_Y-8871_mitochondrion<br>3  107123  11.492   NC_012621.1_Nakaseomyces_bacillisporus_mitochondrion<br>4  107123  11.492   NC_012621.1_Nakaseomyces_bacillisporus_mitochondrion<br>5  16592   11.153   NC_024030.1_Equus_przewalskii_mitochondrial_DNA<br>6  14583   10.851   NC_021120.1_Bursaphelenchus_mucronatus_mitochondrion<br>7  162504  10.607   NC_018415.1_Candidatus_Carsonella_ruddii_CS_isolate_Thao2000<br>8  10315   10.586   NC_016117.1_Mnemiopsis_leidyi_mitochondrion<br>9  162589  10.550   NC_018414.1_Candidatus_Carsonella_ruddii_CE_isolate_Thao2000<br>10 166163  10.476   NC_018416.1_Candidatus_Carsonella_ruddii_HC_isolate_Thao2000<br></p></code></div></div><br></div><br/><br/><br/><br/>
+    <div id="footer"></div>
+  </body>
+</html>

@@ -1,1 +1,228 @@
-My GitHub Page
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GTO - The Genomic Toolkit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+       $('#navbar').load("/gto/navbar.html");
+       $('#footer').load("/gto/footer.html");
+    });
+    </script>
+    <script type="text/javascript" language="javascript" src="/gto/navbar.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="/gto/style.css">
+    <link rel="stylesheet" href="/gto/icons/styles.css">
+  </head>
+  <body>
+
+    <div id="navbar"></div>
+      
+    <div class="container-fluid">
+    <br/><br/><br/>    
+    <h1>What is GTO ?</h1>
+    <hr>
+    <h3>GTO is a toolkit to unify pipelines in genomic and proteomic research.</h3>
+
+    <p><strong>GTO</strong> is a toolkit for genomics and proteomics, namely for FASTQ, FASTA and SEQ formats, with many complementary tools. The toolkit is for Unix-based systems, built for ultra-fast computations. <strong>GTO</strong> supports pipes for easy integration with the sub-programs belonging to <strong>GTO</strong> as well as external tools. <strong>GTO</strong> works as LEGOs, since it allows the construction of multiple pipelines with many combinations.</p>
+
+    <p><strong>GTO</strong> includes tools for information display, randomisation, edition, conversion, extraction, search, calculation, compression, simulation and visualisation. <strong>GTO</strong> is prepared to deal with very large datasets, typically in the scale of Gigabytes or Terabytes (but not limited).
+    The complete toolkit is an optimised command-line version, using the prefix "gto_" followed by the suffix with the respective name of the program. <strong>GTO</strong> is implemented in C language and it is available, under the MIT license</p>
+    <hr>
+
+    <h3>Installation</h3>
+    <p>Get GTO by installing them directly using the Cobilab channel from Conda:</p>
+      <div class="card">
+        <div class="card-body">
+          <code>
+              <p>conda install -c cobilab gto --yes</p>
+          </code>
+        </div>
+       </div>
+    <br>
+    <p>Or through the GitHub repository:</p>
+      <div class="card">
+        <div class="card-body">
+          <code>
+              <p>git clone https://github.com/cobilab/gto.git<br/>
+                 cd gto/src/<br/>
+                 make
+              </p>
+          </code>
+        </div>
+       </div>
+    <br>
+    <p>Note, an already compiled version of GTO is available for 64 bit Linux OS in the bin/ directory.</p>
+    <hr>
+
+    <h3>GTO Programs</h3>
+
+    <p>The GTO provides pipe support for easy integration with the majority of the tools. These include programs to shuffle, transform, simulate, compress, vizualize, among others. The GTO includes the following tools, divided by genomic data format type.</p>
+    <br>
+
+      <br>
+      <h4>1. FASTQ tools</h4>
+      <div class="card">
+        <div class="card-body">
+          <code>
+            <p>
+              <a href="/gto/fastq_tools/gto_fastq_to_fasta.html">1.1 gto_fastq_to_fasta</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_to_mfasta.html">1.2 gto_fastq_to_mfasta</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_exclude_n.html">1.3 gto_fastq_exclude_n</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_extract_quality_scores.html">1.4 gto_fastq_extract_quality_scores</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_info.html">1.5 gto_fastq_info</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_maximum_read_size.html">1.6 gto_fastq_maximum_read_size</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_minimum_quality_score.html">1.7 gto_fastq_minimum_quality_score</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_minimum_read_size.html">1.8 gto_fastq_minimum_read_size</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_rand_extra_chars.html">1.9 gto_fastq_rand_extra_chars</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_from_seq.html">1.10 gto_fastq_from_seq</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_mutate.html">1.11 gto_fastq_mutate</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_split.html">1.12 gto_fastq_split</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_pack.html">1.13 gto_fastq_pack</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_unpack.html">1.14 gto_fastq_unpack</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_quality_score_info.html">1.15 gto_fastq_quality_score_info</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_quality_score_max.html">1.16 gto_fastq_quality_score_max</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_quality_score_min.html">1.17 gto_fastq_quality_score_min</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_cut.html">1.18 gto_fastq_cut</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_minimum_local_quality_score_forward.html">1.19 gto_fastq_minimum_local_quality_score_forward</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_minimum_local_quality_score_reverse.html">1.20 gto_fastq_minimum_local_quality_score_reverse</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_xs.html">1.21 gto_fastq_xs</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_clust_reads.html">1.22 gto_fastq_clust_reads</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_complement.html">1.23 gto_fastq_complement</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_reverse.html">1.24 gto_fastq_reverse</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_variation_map.html">1.25 gto_fastq_variation_map</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_variation_filter.html">1.26 gto_fastq_variation_filter</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_variation_visual.html">1.27 gto_fastq_variation_visual</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_metagenomics.html">1.28 gto_fastq_metagenomics</a>
+            </p>
+          </code>
+        </div>
+       </div>
+
+      <br>
+      <h4>2. FASTA tools</h4>
+      <div class="card">
+        <div class="card-body">
+          <code>
+            <p>
+              <a href="/gto/fasta_tools/gto_fasta_to_seq.html">2.1 gto_fasta_to_seq</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_from_seq.html">2.2 gto_fasta_from_seq</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_extract.html">2.3 gto_fasta_extract</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_extract_by_read.html">2.4 gto_fasta_extract_by_read</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_info.html">2.5 gto_fasta_info</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_mutate.html">2.6 gto_fasta_mutate</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_rand_extra_chars.html">2.7 gto_fasta_rand_extra_chars</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_extract_read_by_pattern.html">2.8 gto_fasta_extract_read_by_pattern</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_find_n_pos.html">2.9 gto_fasta_find_n_pos</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_split_reads.html">2.10 gto_fasta_split_reads</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_rename_human_headers.html">2.11 gto_fasta_rename_human_headers</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_extract_pattern_coords.html">2.12 gto_fasta_extract_pattern_coords</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_complement.html">2.13 gto_fasta_complement</a><br>
+              <a href="/gto/fasta_tools/gto_fasta_reverse.html">2.14 gto_fasta_reverse</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_variation_map.html">2.15 gto_fasta_variation_map (also an alias to gto_fastq_variation_map)</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_variation_filter.html">2.16 gto_fasta_variation_filter (also an alias to gto_fastq_variation_filter)</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_variation_visual.html">2.17 gto_fasta_variation_visual (also an alias to gto_fastq_variation_visual)</a>
+            </p>
+          </code>
+        </div>
+       </div>
+
+      <br>
+      <h4>3. Genomic sequence tools</h4>
+      <div class="card">
+        <div class="card-body">
+          <code>
+            <p>
+              <a href="/gto/genomic_tools/gto_genomic_gen_random_dna.html">3.1 gto_genomic_gen_random_dna</a><br>
+              <a href="/gto/genomic_tools/gto_genomic_rand_seq_extra_chars.html">3.2 gto_genomic_rand_seq_extra_chars</a><br>
+              <a href="/gto/genomic_tools/gto_genomic_dna_mutate.html">3.3 gto_genomic_dna_mutate</a><br>
+              <a href="/gto/genomic_tools/gto_genomic_extract.html">3.4 gto_genomic_extract</a><br>
+              <a href="/gto/genomic_tools/gto_genomic_period.html">3.5 gto_genomic_period</a><br>
+              <a href="/gto/genomic_tools/gto_genomic_count_bases.html">3.6 gto_genomic_count_bases</a><br>
+              <a href="/gto/genomic_tools/gto_genomic_compressor.html">3.7 gto_genomic_compressor</a><br>
+              <a href="/gto/genomic_tools/gto_genomic_compressor.html">3.8 gto_genomic_decompressor</a><br>
+              <a href="/gto/genomic_tools/gto_genomic_complement.html">3.9 gto_genomic_complement</a><br>
+              <a href="/gto/genomic_tools/gto_genomic_reverse.html">3.10 gto_genomic_reverse</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_variation_map.html">3.11 gto_genomic_variation_map (also an alias to gto_fastq_variation_map)</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_variation_filter.html">3.12 gto_genomic_variation_filter (also an alias to gto_fastq_variation_filter)</a><br>
+              <a href="/gto/fastq_tools/gto_fastq_variation_visual.html">3.13 gto_genomic_variation_visual (also an alias to gto_fastq_variation_visual)</a>
+            </p>
+          </code>
+        </div>
+       </div>
+      
+      <br>
+      <h4>4. Amino acid sequence tools</h4>
+      <div class="card">
+        <div class="card-body">
+          <code>
+            <p>
+              <a href="/gto/amino_tools/gto_amino_acid_to_group.html">4.1 gto_amino_acid_to_group</a><br>
+              <a href="/gto/amino_tools/gto_amino_acid_to_pseudo_dna.html">4.2 gto_amino_acid_to_pseudo_dna</a><br>
+              <a href="/gto/amino_tools/gto_amino_acid_compressor.html">4.3 gto_amino_acid_compressor</a><br>
+              <a href="/gto/amino_tools/gto_amino_acid_compressor.html">4.4 gto_amino_acid_decompressor</a><br>
+              <a href="/gto/amino_tools/gto_amino_acid_from_fastq.html">4.5 gto_amino_acid_from_fastq</a><br>
+              <a href="/gto/amino_tools/gto_amino_acid_from_fasta.html">4.6 gto_amino_acid_from_fasta</a><br>
+              <a href="/gto/amino_tools/gto_amino_acid_from_seq.html">4.7 gto_amino_acid_from_seq</a>
+            </p>
+          </code>
+        </div>
+       </div>
+
+      <br>
+      <h4>5. General purpose tools</h4>
+      <div class="card">
+        <div class="card-body">
+          <code>
+            <p>
+              <a href="/gto/general_tools/gto_char_to_line.html">5.1 gto_char_to_line</a><br>
+              <a href="/gto/general_tools/gto_new_line_on_new_x.html">5.2 gto_new_line_on_new_x</a><br>
+              <a href="/gto/general_tools/gto_upper_bound.html">5.3 gto_upper_bound</a><br>
+              <a href="/gto/general_tools/gto_lower_bound.html">5.4 gto_lower_bound</a><br>
+              <a href="/gto/general_tools/gto_brute_force_string.html">5.5 gto_brute_force_string</a><br>
+              <a href="/gto/general_tools/gto_real_to_binary_with_threshold.html">5.6 gto_real_to_binary_with_threshold</a><br>
+              <a href="/gto/general_tools/gto_sum.html">5.7 gto_sum</a><br>
+              <a href="/gto/general_tools/gto_filter.html">5.8 gto_filter</a><br>
+              <a href="/gto/general_tools/gto_word_search.html">5.9 gto_word_search</a><br>
+              <a href="/gto/general_tools/gto_permute_by_blocks.html">5.10 gto_permute_by_blocks</a><br>
+              <a href="/gto/general_tools/gto_info.html">5.11 gto_info</a><br>
+              <a href="/gto/general_tools/gto_segment.html">5.12 gto_segment</a><br>
+              <a href="/gto/general_tools/gto_comparative_map.html">5.13 gto_comparative_map</a><br>
+              <a href="/gto/general_tools/gto_max.html">5.14 gto_max</a><br>
+              <a href="/gto/general_tools/gto_min.html">5.15 gto_min</a>
+            </p>
+          </code>
+        </div>
+       </div>
+
+    <hr>
+    <h3>Contribute</h3>
+    <p>You can contribute to this project <a href="https://github.com/bioinformatics-ua/gto">here <i class="fab fa-github-square"></i></a>.</p>
+
+    <hr>
+    <h3>Core team</h3>
+      <ul>
+        <li>João R. Almeida</li>
+        <li>Armando José Pinho</li>
+        <li>José Luís Oliveira</li>
+        <li>Olga Fajarda</li>
+        <li>Diogo Pratas</li>
+      </ul>
+    </div>
+    <br><br><br>
+    <div id="footer"></div>
+  </body>
+</html>

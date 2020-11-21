@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GTO - The Genomic Toolkit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+       $('#navbar').load("/gto/navbar.html");
+       $('#footer').load("/gto/footer.html");
+    });
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="/gto/style.css">
+    <link rel="stylesheet" href="/gto/icons/styles.css">
+  </head>
+  <body>
+
+    <div id="navbar"></div>
+<div class="container-fluid"><br/><br/><br/>
+	<h1>Program gto_amino_acid_compressor</h1>
+<p>The <strong>gto_amino_acid_compressor</strong> is a new lossless compressor to compress efficiently amino acid sequences (proteins). It uses a cooperation between multiple context and substitutional tolerant context models. The cooperation between models is balanced with weights that benefit the models with better performance according to a forgetting function specific for each model.</p>
+<p>For help type:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>./gto_amino_acid_compressor -h<br></p></code></div></div><br><p>In the following subsections, we explain the input and output paramters.</p>
+<p></p>
+<h3>Input parameters</h3>
+<p></p>
+<p>The <strong>gto_amino_acid_compressor</strong> program needs a file with amino acid sequences to compress.</p>
+<p>The attribution is given according to:</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>Usage: ./gto_amino_acid_compressor [OPTION]... -r [FILE]  [FILE]:[...]<br>Compression of amino acid sequences.<br><br>Non-mandatory arguments:<br><br>-h                     give this help,<br>-s                     show AC compression levels,<br>-v                     verbose mode (more information),<br>-V                     display version number,<br>-f                     force overwrite of output,<br>-l <level>             level of compression [1;7] (lazy -tm setup),<br>-t <threshold>         threshold frequency to discard from alphabet,<br>-e                     it creates a file with the extension ".iae"<br>with the respective information content.<br><br>-rm <c>:<d>:<g>/<m>:<e>:<a>  reference model (-rm 1:10:0.9/0:0:0),<br>-rm <c>:<d>:<g>/<m>:<e>:<a>  reference model (-rm 5:90:0.9/1:50:0.8),<br>...<br>-tm <c>:<d>:<g>/<m>:<e>:<a>  target model (-tm 1:1:0.8/0:0:0),<br>-tm <c>:<d>:<g>/<m>:<e>:<a>  target model (-tm 7:100:0.9/2:10:0.85),<br>...<br>target and reference templates use <c> for<br>context-order size, <d> for alpha (1/<d>), <g><br>for gamma (decayment forgetting factor) [0;1),<br><m> to the maximum sets the allowed mutations,<br>on the context without being discarded (for<br>deep contexts), under the estimator <e>, using<br><a> for gamma (decayment forgetting factor)<br>[0;1) (tolerant model),<br><br>-r <FILE>              reference file ("-rm" are loaded here),<br><br>Mandatory arguments:<br><br><FILE>:<...>:<...>     file to compress (last argument). For more<br>files use splitting ":" characters.<br><br>Example:<br><br>[Compress]   ./gto_amino_acid_compressor -v -tm 1:1:0.8/0:0:0 -tm 5:20:0.9/3:20:0.9 seq.txt<br>[Decompress] ./gto_amino_acid_decompressor -v seq.txt.co<br></p></code></div></div><br><p>In the following example, it will be downloaded nine amino acid sequences and compress and decompress one of the smallest (HI). Finally, it compares if the uncompressed sequence is equal to the original.</p>
+
+			<div class="card">
+				<div class="card-body">
+					<code>
+			  			<p>wget http://sweet.ua.pt/pratas/datasets/AminoAcidsCorpus.zip<br>unzip AminoAcidsCorpus.zip<br>cp AminoAcidsCorpus/HI .<br>./gto_amino_acid_compressor -v -l 2 HI<br>./gto_amino_acid_decompressor -v HI.co<br>cmp HI HI.de<br></p></code></div></div><br></div><br/><br/><br/><br/>
+    <div id="footer"></div>
+  </body>
+</html>

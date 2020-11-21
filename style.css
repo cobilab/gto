@@ -1,0 +1,114 @@
+.scrollable-menu {
+    height: auto;
+    max-height: 65vh;
+    overflow-x: hidden;
+    overflow-y: scroll;    
+}
+
+.navbar-brand {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+  }
+  /* Remove the navbar's default margin-bottom and rounded borders */ 
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+  
+  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+  .row.content {height: 450px}
+  
+  /* Set gray background color and 100% height */
+  .sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+  }
+  
+  /* Set black background color, white text and some padding */
+  footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+  }
+  
+  /* On small screens, set height to 'auto' for sidenav and grid */
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
+  }
+
+.container-fluid {
+  padding-right: 200px;
+  padding-left: 200px;
+} 
+
+@media (max-width: 767px) {
+  .container-fluid {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+h1,
+.h1 {
+  font-size: 36px;
+}
+h2,
+.h2 {
+  font-size: 30px;
+}
+h3,
+.h3 {
+  font-size: 24px;
+}
+h4,
+.h4 {
+  font-size: 18px;
+}
+h5,
+.h5 {
+  font-size: 14px;
+}
+h6,
+.h6 {
+  font-size: 12px;
+}
+p {
+  margin: 0 0 10px;
+}
+.text-justify {
+}
