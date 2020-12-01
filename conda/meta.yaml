@@ -5,10 +5,10 @@
 
 package:
     name: gto
-    version: '1.5.4'
+    version: '1.5.6'
 
 source:
-    git_rev: v1.5.4
+    git_rev: v1.5.6
     git_url: https://github.com/cobilab/gto.git
 
 requirements:

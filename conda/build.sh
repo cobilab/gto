@@ -25,7 +25,7 @@ cp pipelines/gto_sars_simulation_detection/gto_sars_simulation_detection.sh $PRE
 cp pipelines/gto_download_sars2/gto_download_sars2.sh $PREFIX/bin/
 cp pipelines/gto_find_best_sars2/gto_find_best_sars2.sh $PREFIX/bin/
 cp pipelines/gto_relative_complexity_profile/gto_relative_complexity_profile.sh $PREFIX/bin/
-
+cp pipelines/gto_fasta_align_bwa/gto_fasta_align_bwa.sh $PREFIX/bin/
 
 cp bin/gto $PREFIX/bin/
 cp bin/gto_amino_acid_compressor $PREFIX/bin/
