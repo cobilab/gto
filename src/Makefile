@@ -121,7 +121,7 @@ OBJS     	= argparse.o csmodel.o buffer.o mem.o misc.o parser.o reads.o \
 OBJSCMAP    = common-cmap.o mem-cmap.o msg-cmap.o paint-cmap.o time-cmap.o
 #-----------------------------------------------------------------------------
 all:
-	$(MAKE) progs externalProgs
+	$(MAKE) progs
 progs: $(PROGS)
 $(BIN)/gto: GTO.c $(DEPS) $(OBJS) 
 	$(CC) $(CFLAGS) -o $(BIN)/gto GTO.c $(OBJS) $(LIBS)
