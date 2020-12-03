@@ -22,7 +22,7 @@ SHOW_MENU () {
   echo " -c, --install                  Installation (w/ conda),  ";
   echo "                                                          ";
   echo " -n <STR>, --name <STR>         TAG name for uniqueness,  ";
-  echo " -t <INT>, --threads <INT>      Number of threads,        ";
+  echo " -d <INT>, --threads <INT>      Number of threads,        ";
   echo " -w <INT>, --window <INT>       Low-pass filter size,     ";
   echo " -l <STR>, --level <STR>        Compression parameters.   ";
   echo "                                                          ";
