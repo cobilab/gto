@@ -7,15 +7,14 @@ int main(int argc, char *argv[])
   fprintf(stderr, 
   "                                                                          \n"
   "                                                                          \n"
-  "                    ██████╗████████╗ ██████╗                              \n"
-  "                   ██╔════╝╚══██╔══╝██╔═══██╗                             \n"
-  "                   ██║  ███╗  ██║   ██║   ██║                             \n"
-  "                   ██║   ██║  ██║   ██║   ██║                             \n"
-  "                   ╚██████╔╝  ██║   ╚██████╔╝                             \n"
-  "                    ╚═════╝   ╚═╝    ╚═════╝                              \n"
+  "      ████████ ████████ ████████                                          \n"
+  "      ██          ██    ██    ██                                          \n"
+  "      ██  ████    ██    ██    ██                                          \n"
+  "      ██    ██    ██    ██    ██                                          \n"
+  "      ████████    ██    ████████                                          \n"
   "                                                                          \n"
   "NAME                                                                      \n"
-  "      GTO v1.5.4,                                                         \n"
+  "      GTO v1.5.7,                                                         \n"
   "      The Genomics-Proteomics Toolkit.                                    \n"
   "                                                                          \n"
   "AUTHORS                                                                   \n"
@@ -32,12 +31,12 @@ int main(int argc, char *argv[])
   "      Run Info:  gto_info < sequence.txt                                  \n"
   "                                                                          \n"
   "DESCRIPTION                                                               \n"
-  "      A complete set of fast and efficient tools for genomics.            \n"
+  "      A complete set of efficient tools for genomics & proteomics.        \n"
   "      The gto works as the \"LEGOs\", since it allows multiple            \n"
   "      combinations through the usage of multiple programs with            \n"
   "      pipes. The gto includes multiple functions, such as view,           \n"
   "      convert, compress, simulate, analyze, invert, modify, and           \n"
-  "      many others.                                                        \n"
+  "      many others. GTO is under MIT license.                              \n"
   "                                                                          \n"
   "PROGRAMS                                                                  \n"
   "      [gto_info]                                                          \n"
@@ -403,13 +402,14 @@ int main(int argc, char *argv[])
   "      Copyright (C) 2014-2020, IEETA, University of Aveiro.               \n"
   "      This is a Free software, under MIT. You may redistribute            \n"
   "      copies of it under the terms of the MIT license. See more           \n"
-  "      at <https://opensource.org/licenses/MIT>. There is NOT              \n"
-  "      ANY WARRANTY, to the extent permitted by law.                       \n"
-  "                                                                          \n",
-  "If you use GTO, please cite the following:                                \n",
-  "      GTO: A toolkit to unify pipelines in genomic and proteomic research.\n",
-  "      J. R. Almeida, A. J. Pinho, J. L. Oliveira, O. Fajarda, D. Pratas,  \n",
-  "      SoftwareX, Volume 12, 2020, 100535,                                 \n",
-  "      doi: https://doi.org/10.1016/j.softx.2020.100535                    \n");
+  "      at <https://opensource.org/licenses/MIT>.                           \n"
+  "                                                                          \n"
+  "REFERENCE                                                                 \n"
+  "      If you use GTO, please cite:                                        \n"
+  "      GTO: A toolkit to unify pipelines in genomic and proteomic research.\n"
+  "      J. R. Almeida, A. J. Pinho, J. L. Oliveira, O. Fajarda, D. Pratas,  \n"
+  "      SoftwareX, Volume 12, 2020, 100535,                                 \n"
+  "      doi: https://doi.org/10.1016/j.softx.2020.100535                    \n"
+  "                                                                          \n");
   return EXIT_SUCCESS;
 }
