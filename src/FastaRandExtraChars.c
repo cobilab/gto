@@ -72,17 +72,17 @@ int main(int argc, char *argv[])
       switch(line)
       {
         case 0: 
-          if(position == 0 && value != '>')
-          {
-            RandIfExtra(value, bases);
-            line = 1;
-            break;
-          }
-
           if(value == '\n')
           { 
             line = 1;
             putchar(value);
+            break;
+          }
+
+          if(position == 0 && value != '>')
+          {
+            RandIfExtra(value, bases);
+            line = 1;
             break;
           }
 
