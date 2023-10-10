@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
   "      ████████    ██    ████████                                          \n"
   "                                                                          \n"
   "NAME                                                                      \n"
-  "      GTO v1.5.9,                                                         \n"
+  "      GTO v1.6.1,                                                         \n"
   "      The Genomics-Proteomics Toolkit.                                    \n"
   "                                                                          \n"
   "AUTHORS                                                                   \n"
