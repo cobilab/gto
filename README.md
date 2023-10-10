@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/cobilab/gto.svg?branch=master)](https://travis-ci.org/cobilab/gto)
 [![License: MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 <p align="center"><img src="imgs/logo.png"

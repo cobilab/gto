@@ -102,6 +102,7 @@ PROGS  	 	= $(BIN)/gto \
 	          $(BIN)/gto_max \
 	          $(BIN)/gto_min \
          	  $(BIN)/gto_fastq_complement \
+		  $(BIN)/gto_fasta_filter_extra_char_seqs \
          	  $(BIN)/gto_fasta_complement \
          	  $(BIN)/gto_genomic_complement \
          	  $(BIN)/gto_fastq_reverse \
@@ -261,6 +262,8 @@ $(BIN)/gto_fasta_split_streams: FastaSplitStreams.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_split_streams FastaSplitStreams.c $(OBJS) $(LIBS)
 $(BIN)/gto_fasta_merge_streams: FastaMergeStreams.c $(DEPS) $(OBJS)
 	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_merge_streams FastaMergeStreams.c $(OBJS) $(LIBS)
+$(BIN)/gto_fasta_filter_extra_char_seqs: FastaFilterExtraCharSeqs.c $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(BIN)/gto_fasta_filter_extra_char_seqs FastaFilterExtraCharSeqs.c $(OBJS) $(LIBS)
 
 #$(BIN)/gto_amino_acid_to_seq: AminoAcidToSeq.c $(DEPS) $(OBJS)
 #	$(CC) $(CFLAGS) -o $(BIN)/gto_amino_acid_to_seq AminoAcidToSeq.c $(OBJS) $(LIBS)

@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
 
   fprintf(PLOT, "e\n");
   fflush(PLOT);
-  fclose(PLOT);
+  pclose(PLOT);
 
   return EXIT_SUCCESS;
 }

@@ -26,8 +26,6 @@
 #define MIN_MINP               1
 #define MAX_MINP               99999999
 
-uint32_t ratio;
-
 typedef struct
   {
   char    *backColor;

@@ -104,7 +104,5 @@ typedef int8_t   I8;
 #define MAX(a,b) (((a)>(b))?(a):(b))
 #define MIN(a,b) (((a)<(b))?(a):(b))
 
-uint32_t garbage;
-
 #endif
 

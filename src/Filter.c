@@ -139,12 +139,12 @@ int main(int argc, char *argv[]){
       {
         if(p1 == 0)
         {
-          printf("%d\t%.3f\n", entries[nEntries - n - 1].position,
+          printf("%d\t%.6f\n", entries[nEntries - n - 1].position,
 	  CalcMean(entries, nEntries, n, M, w));
         }
         else
         {
-          printf("%.3f\n", CalcMean(entries, nEntries, n, M, w));
+          printf("%.6f\n", CalcMean(entries, nEntries, n, M, w));
         }
       }
   }
@@ -154,12 +154,12 @@ int main(int argc, char *argv[]){
       {
         if(p1 == 0)
         {
-          printf("%d\t%.3f\n", entries[n].position, CalcMean(entries, nEntries, 
+          printf("%d\t%.6f\n", entries[n].position, CalcMean(entries, nEntries, 
           n, M, w));
         }
         else
         {
-          printf("%.3f\n", CalcMean(entries, nEntries, n, M, w));
+          printf("%.6f\n", CalcMean(entries, nEntries, n, M, w));
         }
       }
 

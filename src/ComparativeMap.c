@@ -19,6 +19,8 @@
 #include "common-cmap.h"
 #include "paint-cmap.h"
 
+Parameters *P;
+
 //////////////////////////////////////////////////////////////////////////////
 // - - - - - - - - - - - - - - - - - - P L O T - - - - - - - - - - - - - - - -
 void PrintPlot(char *posFile, uint32_t width, uint32_t space, uint32_t mult,

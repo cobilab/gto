@@ -7,6 +7,8 @@
 #include "common-cmap.h"
 #include "mem-cmap.h"
 
+uint32_t ratio;
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 RgbColor HsvToRgb(HsvColor hsv)

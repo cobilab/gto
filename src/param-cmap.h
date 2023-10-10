@@ -42,8 +42,6 @@ typedef struct{
   }
 Threads;
 
-Parameters *P;
-
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 #endif
