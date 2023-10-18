@@ -64,46 +64,19 @@ int main(int argc, char *argv[])
 
   Buffer = CreateBuffer(BUF_SIZE);
 
+  uint8_t header = 0, sym;
   while((streamSize = fread(Buffer->buf, 1, Buffer->size, stdin)))
   {
     for(index = 0 ; index < streamSize ; ++index)
     {
-      value = Buffer->buf[index];
-      switch(line)
-      {
-        case 0: 
-          if(value == '\n')
-          { 
-            line = 1;
-            putchar(value);
-            break;
-          }
+      sym = Buffer->buf[index];
 
-          if(position == 0 && value != '>')
-          {
-            RandIfExtra(value, bases);
-            line = 1;
-            break;
-          }
+      if(sym == '>'){ header = 1; putchar(sym); continue; }
+      if(sym == '\n' && header == 1){ header = 0; putchar(sym); continue; }
+      if(sym == '\n'){ putchar(sym); continue; }
+      if(header == 1){ putchar(sym); continue; }
 
-          if(position++ == 0 && value == '>')
-          {
-            putchar(value);
-            break;
-          }
-          putchar(value);
-          break;
-        case 1: 
-          if(value == '\n')
-          { 
-            line   = 0; 
-            position    = 0;
-            putchar(value);
-            break; 
-          }
-          RandIfExtra(value, bases);
-          break;
-      } 
+      RandIfExtra(sym, bases);
     }
   }
 
